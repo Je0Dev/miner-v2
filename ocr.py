@@ -150,10 +150,11 @@ def _filter_garbage(text: str, lang: str = "zh") -> str:
 def ocr_image(image_path: Path, lang: str = "zh", use_confidence: bool = True) -> str:
     """Extract text from image using Tesseract OCR.
 
-    Uses PSM 6 (uniform block of text) for game text.
-    For borderless window mode with smaller text, PSM 3 (fully automatic)
-    is used as fallback if PSM 6 returns empty.
-    Also tries without preprocessing if all else fails.
+    Tries multiple approaches:
+    1. PSM 6 (uniform block) - horizontal text
+    2. PSM 3 (fully automatic) - mixed layouts
+    3. PSM 5 (vertical text) - vertical Y-axis text
+    4. Fallback without preprocessing
     """
     prewarm_tesseract(OCR_LANGS.get(lang, lang))
     t_lang = OCR_LANGS.get(lang, lang)
@@ -161,13 +162,21 @@ def ocr_image(image_path: Path, lang: str = "zh", use_confidence: bool = True) -
     # Try with preprocessing first
     try:
         img = preprocess_image(image_path)
+        
         # Try PSM 6 first (uniform block of text)
         config = f"--oem 3 --psm 6 -l {t_lang}"
         text = pytesseract.image_to_string(img, config=config).strip()
-        # If empty, try PSM 3 (fully automatic) for smaller text
+        
+        # If empty, try PSM 3 (fully automatic)
         if not text:
             config = f"--oem 3 --psm 3 -l {t_lang}"
             text = pytesseract.image_to_string(img, config=config).strip()
+        
+        # If still empty, try PSM 5 (vertical text)
+        if not text:
+            config = f"--oem 3 --psm 5 -l {t_lang}"
+            text = pytesseract.image_to_string(img, config=config).strip()
+        
         if text:
             text = _ensure_utf8(text)
             return _filter_garbage(text, lang)
@@ -177,11 +186,21 @@ def ocr_image(image_path: Path, lang: str = "zh", use_confidence: bool = True) -
     # Fallback: try without preprocessing
     try:
         img = Image.open(image_path).convert("L")
+        
+        # Try PSM 6
         config = f"--oem 3 --psm 6 -l {t_lang}"
         text = pytesseract.image_to_string(img, config=config).strip()
+        
+        # Try PSM 3
         if not text:
             config = f"--oem 3 --psm 3 -l {t_lang}"
             text = pytesseract.image_to_string(img, config=config).strip()
+        
+        # Try PSM 5 (vertical text)
+        if not text:
+            config = f"--oem 3 --psm 5 -l {t_lang}"
+            text = pytesseract.image_to_string(img, config=config).strip()
+        
         if text:
             text = _ensure_utf8(text)
             return _filter_garbage(text, lang)
@@ -194,9 +213,10 @@ def ocr_image(image_path: Path, lang: str = "zh", use_confidence: bool = True) -
 def ocr_long_text(image_path: Path, lang: str = "zh") -> str:
     """Extract text from image optimized for long dialogue/story text.
 
-    Uses PSM 3 (fully automatic) for multi-line text.
-    Uses specialized preprocessing for longer text regions.
-    Falls back to no preprocessing if needed.
+    Tries multiple approaches:
+    1. PSM 3 (fully automatic) - multi-line horizontal
+    2. PSM 5 (vertical text) - Y-axis vertical text
+    3. Fallback without preprocessing
     """
     prewarm_tesseract(OCR_LANGS.get(lang, lang))
     t_lang = OCR_LANGS.get(lang, lang)
@@ -204,8 +224,16 @@ def ocr_long_text(image_path: Path, lang: str = "zh") -> str:
     # Try with preprocessing first
     try:
         img = preprocess_image_long(image_path)
+        
+        # Try PSM 3 (fully automatic)
         config = f"--oem 3 --psm 3 -l {t_lang}"
         text = pytesseract.image_to_string(img, config=config).strip()
+        
+        # Try PSM 5 (vertical text)
+        if not text:
+            config = f"--oem 3 --psm 5 -l {t_lang}"
+            text = pytesseract.image_to_string(img, config=config).strip()
+        
         if text:
             text = _ensure_utf8(text)
             return _filter_garbage(text, lang)
@@ -215,8 +243,16 @@ def ocr_long_text(image_path: Path, lang: str = "zh") -> str:
     # Fallback: try without preprocessing
     try:
         img = Image.open(image_path).convert("L")
+        
+        # Try PSM 3
         config = f"--oem 3 --psm 3 -l {t_lang}"
         text = pytesseract.image_to_string(img, config=config).strip()
+        
+        # Try PSM 5 (vertical text)
+        if not text:
+            config = f"--oem 3 --psm 5 -l {t_lang}"
+            text = pytesseract.image_to_string(img, config=config).strip()
+        
         if text:
             text = _ensure_utf8(text)
             return _filter_garbage(text, lang)
@@ -240,3 +276,36 @@ def ocr_image_with_boxes(image_path: Path, lang: str = "zh") -> dict:
     except Exception as e:
         log.error(f"OCR with boxes failed: {e}")
         return {}
+
+
+def ocr_vertical_text(image_path: Path, lang: str = "zh") -> str:
+    """Extract vertical (Y-axis) text from image.
+    
+    Uses PSM 5 (assume a single uniform block of vertically aligned text).
+    Also tries rotating the image 90 degrees as a fallback.
+    """
+    prewarm_tesseract(OCR_LANGS.get(lang, lang))
+    t_lang = OCR_LANGS.get(lang, lang)
+    
+    # Try PSM 5 (vertical text)
+    try:
+        img = preprocess_image(image_path)
+        config = f"--oem 3 --psm 5 -l {t_lang}"
+        text = pytesseract.image_to_string(img, config=config).strip()
+        if text:
+            text = _ensure_utf8(text)
+            return _filter_garbage(text, lang)
+    except Exception as e:
+        log.warning(f"Vertical OCR failed: {e}")
+    
+    # Fallback: rotate 90 degrees and try horizontal OCR
+    try:
+        img = Image.open(image_path).convert("L").rotate(90, expand=True)
+        img.save('/tmp/rotated_ocr.png')
+        text = ocr_image(Path('/tmp/rotated_ocr.png'), lang)
+        if text:
+            return text
+    except Exception as e:
+        log.warning(f"Rotated OCR fallback failed: {e}")
+    
+    return ""

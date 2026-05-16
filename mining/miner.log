@@ -747,3 +747,63 @@ Saved: 20260516_114557
 2026-05-16 11:46:30,748 [INFO] Notification: [Test] Notification test
 2026-05-16 11:46:32,231 [INFO] Copied to clipboard: 9 8 一 2 2 2 。 一 源 、 人 2Rea 梁 ax 李 808 二′….鳗匿 EE08 
 2026-05-16 11:46:36,076 [INFO] Copied to clipboard: 9 8 一 2 2 2 。 一 源 、 人 2Rea 梁 ax 李 808 二′….鳗匿 EE08 
+2026-05-16 11:46:40,133 [INFO] Copied to clipboard: 9 8 一 2 2 2 。 一 源 、 人 2Rea 梁 ax 李 808 二′….鳗匿 EE08 
+2026-05-16 11:46:43,383 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 11:46:43,900 [INFO] Copied to clipboard: 9 8 一 2 2 2 。 一 源 、 人 2Rea 梁 ax 李 808 二′….鳗匿 EE08 
+2026-05-16 11:46:44,991 [INFO] Copied to clipboard: 9 8 一 2 2 2 。 一 源 、 人 2Rea 梁 ax 李 808 二′….鳗匿 EE08 
+2026-05-16 11:46:47,035 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 11:46:47,357 [INFO] Copied to clipboard: 1- 02 医 「堕′愤熹 命 河 17 9 uow 李 Eal 颊 EEEE 05008
+二 02
+2026-05-16 11:46:48,622 [INFO] Audio recording: success
+2026-05-16 11:46:48,664 [INFO] Copied to clipboard: 9 8 一 2 2 2 。 一 源 、 人 2Rea 梁 ax 李 808 二′….鳗匿 EE08 
+2026-05-16 11:46:48,675 [INFO] Notification: [Sentence Mined] Text: 9 8 一 2 2 2 。 一 源 、 人 2Rea 梁 ax 李 808 二′….鳗匿 EE08 8008 。
+1- 
+Translation: 
+2026-05-16 11:46:51,116 [INFO] Copied to clipboard: 史 Ee , , 标 , 版 应 水 , 02 巳 ewg “ 英 途 国 0 颊 Eett 600
+2026-05-16 11:46:52,250 [INFO] Audio recording: success
+2026-05-16 11:46:52,288 [INFO] Copied to clipboard: 9 8 一 2 2 2 。 一 源 、 人 2Rea 梁 ax 李 808 二′….鳗匿 EE08 
+2026-05-16 11:46:52,297 [INFO] Notification: [Sentence Mined] Text: 9 8 一 2 2 2 。 一 源 、 人 2Rea 梁 ax 李 808 二′….鳗匿 EE08 8008 。
+1- 
+Translation: 
+2026-05-16 11:47:49,512 [INFO] Mining: zh->en
+2026-05-16 11:47:49,512 [INFO] Select text region...
+2026-05-16 11:47:49,520 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:47:51,814 [INFO] Captured region: 1060,405 431x408
+2026-05-16 11:47:51,814 [INFO] OCRing region: 1060,405 431x408
+2026-05-16 11:47:52,316 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:47:53,427 [INFO] OCR result: / 一 口 4 1 1 3 2 圆 鼻携吏′荟 留 1 …^`二"、 河 - "′亡 2 ′〉′ “ 发 视 医 ) 标
+2026-05-16 11:47:54,648 [INFO] Translation: / 一口 4 1 1 3 2 round nose carrying official ′hui liu 1...^`二
+2026-05-16 11:47:54,834 [INFO] Notification: [Sentence Captured] Text: / 一 口 4 1 1 3 2 圆 鼻携吏′荟 留 1 …^`二"、 河 - "′亡 2 ′〉′ “ 发 视 医 ) 标 - `艾、` 沥 _′ \
+2026-05-16 11:47:54,865 [INFO] Copied to clipboard: / 一 口 4 1 1 3 2 圆 鼻携吏′荟 留 1 …^`二"、 河 - "′亡 2 ′〉′ “
+2026-05-16 11:47:54,865 [INFO] Recording 5s audio...
+2026-05-16 11:47:54,872 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 11:47:54,880 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 11:48:00,124 [INFO] Audio recording: success
+2026-05-16 11:48:00,134 [INFO] Notification: [Sentence Mined] Text: / 一 口 4 1 1 3 2 圆 鼻携吏′荟 留 1 …^`二"、 河 - "′亡 2 ′〉′ “ 发 视 医 ) 标
+Translation: 
+2026-05-16 11:48:00,134 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_114749
+2026-05-16 11:48:04,247 [INFO] Mining: zh->en
+2026-05-16 11:48:04,247 [INFO] Select text region...
+2026-05-16 11:48:04,253 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:48:05,666 [INFO] Captured region: 1310,414 83x37
+2026-05-16 11:48:05,666 [INFO] OCRing region: 1310,414 83x37
+2026-05-16 11:48:06,187 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:48:07,678 [INFO] OCR result: … 1
+2026-05-16 11:48:08,754 [INFO] Translation: … 1
+2026-05-16 11:48:08,911 [INFO] Notification: [Sentence Captured] Text: … 1
+Pinyin: … 1
+Translation: … 1
+2026-05-16 11:48:08,949 [INFO] Copied to clipboard: … 1
+2026-05-16 11:48:08,949 [INFO] Recording 5s audio...
+2026-05-16 11:48:08,960 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 11:48:08,970 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 11:48:14,185 [INFO] Audio recording: success
+2026-05-16 11:48:14,194 [INFO] Notification: [Sentence Mined] Text: … 1
+Translation: … 1
+Audio: Yes
+Saved: 20260516_114804
+2026-05-16 11:48:14,194 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_114804
+2026-05-16 11:48:14,527 [INFO] Exported 2 entries to /home/mastroni/miner-v2/mining/test_anki_export.csv
+2026-05-16 11:48:14,993 [INFO] Tesseract pre-warmed (eng)
+2026-05-16 11:48:16,994 [INFO] Copied to clipboard: test clipboard content
+2026-05-16 11:48:17,010 [INFO] Notification: [Test] Notification test
