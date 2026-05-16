@@ -1,14 +1,17 @@
 """Main mining logic - capture, OCR, translate, save, notify."""
-import json
+import json, csv
 import time
 from datetime import datetime
 from pathlib import Path
-from config import MINING_DIR, AUDIO_DIR, IMAGES_DIR, VIDEO_DIR
+from config import MINING_DIR, AUDIO_DIR, IMAGES_DIR, VIDEO_DIR, ANKI_EXPORT_FILE
 from text import clean_text, is_valid_text, is_duplicate, load_history, format_with_pinyin
 from ocr import ocr_image, ocr_long_text
 from translate import translate_text, copy_to_clipboard, record_audio, notify
 from capture import capture_region
 from log import log
+
+ANKI_CSV = MINING_DIR / ANKI_EXPORT_FILE
+ANKI_FIELDS = ["Sentence", "Translation", "Pinyin", "Audio", "Source", "Timestamp"]
 
 
 def mine_sentence(ocr_lang="zh", translate_to="en", audio_duration=5, source_name="Game",
@@ -116,9 +119,50 @@ def mine_sentence(ocr_lang="zh", translate_to="en", audio_duration=5, source_nam
     with open(MINING_DIR / "history_sentences.txt", "a", encoding="utf-8") as f:
         f.write(f"[{ts}] {text} | {tr}\n")
 
+    # Append to Anki CSV
+    _append_to_anki_csv(entry)
+
     # Step 9: Confirmation notification
     confirm_body = f"Text: {text[:60]}\nTranslation: {tr[:60]}\nAudio: {'Yes' if audio_ok else 'No'}\nSaved: {sd.name}"
     notify("Sentence Mined", confirm_body, timeout=10000)
 
     log.info(f"Mining complete: {sd}")
     return entry
+
+
+def _append_to_anki_csv(entry: dict):
+    """Append a single entry to the Anki CSV file."""
+    from text import get_pinyin
+    
+    sentence = entry.get("sentence", "").strip()
+    if not sentence:
+        return
+    
+    # Create file with header if it doesn't exist
+    if not ANKI_CSV.exists():
+        with open(ANKI_CSV, "w", encoding="utf-8", newline="") as f:
+            writer = csv.DictWriter(f, fieldnames=ANKI_FIELDS, quoting=csv.QUOTE_ALL)
+            writer.writeheader()
+    
+    pinyin = entry.get("pinyin", "").strip()
+    if not pinyin:
+        pinyin = get_pinyin(sentence)
+    
+    audio_path = entry.get("audio", "").strip()
+    audio_tag = ""
+    if audio_path and Path(audio_path).exists():
+        audio_file = Path(audio_path).name
+        audio_tag = f"[sound:{audio_file}]"
+    
+    row = {
+        "Sentence": sentence,
+        "Translation": entry.get("translation", ""),
+        "Pinyin": pinyin,
+        "Audio": audio_tag,
+        "Source": entry.get("source", ""),
+        "Timestamp": entry.get("timestamp", ""),
+    }
+    
+    with open(ANKI_CSV, "a", encoding="utf-8", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=ANKI_FIELDS, quoting=csv.QUOTE_ALL)
+        writer.writerow(row)

@@ -20,12 +20,9 @@ OCR_LANGS = {
     "th": "tha", "ar": "ara",
 }
 
-# Translation target languages
+# Translation target languages (English only by default)
 TRANSLATION_LANGS = {
-    "en": "English", "ja": "Japanese", "de": "German", "el": "Greek",
-    "es": "Spanish", "zh": "Chinese", "fr": "French", "ko": "Korean",
-    "ru": "Russian", "pt": "Portuguese", "it": "Italian", "vi": "Vietnamese",
-    "th": "Thai", "ar": "Arabic",
+    "en": "English",
 }
 
 # Google Translate language code mapping

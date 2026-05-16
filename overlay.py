@@ -314,6 +314,9 @@ class LiveOCROverlay:
             with open(mining_dir / "history_sentences.txt", "a", encoding="utf-8") as f:
                 f.write(f"[{ts}] {text_to_mine[:100]} | {tr[:100]}\n")
 
+            # Append to Anki CSV
+            self._append_to_anki_csv(entry)
+
             copy_to_clipboard(text_to_mine)
             self.root.after(0, lambda: self._log(f"Mined: {text_to_mine[:60]}"))
             self.root.after(0, lambda: self.status_var.set(f"Mined! Saved to {sd.name}"))
@@ -327,6 +330,37 @@ class LiveOCROverlay:
     def _on_close(self):
         self.is_running = False
         self.root.destroy()
+
+    def _append_to_anki_csv(self, entry: dict):
+        """Append entry to Anki CSV for direct import."""
+        import csv
+        from pathlib import Path
+        from text import get_pinyin
+        
+        mining_dir = Path(__file__).parent / "mining"
+        csv_path = mining_dir / "anki_export.csv"
+        fields = ["Sentence", "Translation", "Pinyin", "Audio", "Source", "Timestamp"]
+        
+        sentence = entry.get("sentence", "").strip()
+        if not sentence:
+            return
+        
+        if not csv_path.exists():
+            with open(csv_path, "w", encoding="utf-8", newline="") as f:
+                writer = csv.DictWriter(f, fieldnames=fields, quoting=csv.QUOTE_ALL)
+                writer.writeheader()
+        
+        pinyin = entry.get("pinyin", "").strip() or get_pinyin(sentence)
+        audio_path = entry.get("audio", "").strip()
+        audio_tag = f"[sound:{Path(audio_path).name}]" if audio_path and Path(audio_path).exists() else ""
+        
+        row = {
+            "Sentence": sentence, "Translation": entry.get("translation", ""),
+            "Pinyin": pinyin, "Audio": audio_tag,
+            "Source": entry.get("source", ""), "Timestamp": entry.get("timestamp", ""),
+        }
+        with open(csv_path, "a", encoding="utf-8", newline="") as f:
+            csv.DictWriter(f, fieldnames=fields, quoting=csv.QUOTE_ALL).writerow(row)
 
     def run(self):
         self._log(f"OCR: {self.ocr_lang.upper()} -> {self.translate_to.upper()}")

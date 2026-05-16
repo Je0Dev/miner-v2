@@ -5,7 +5,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PYTHON="${PYTHON:-python3}"
 
 OCR_LANG="zh"; TRANSLATE_TO="en"; AUDIO_DURATION=5
-LIVE=false; LONG_TEXT=false
+LIVE=false; LONG_TEXT=false; EXTENDED=false
 
 while [[ $# -gt 0 ]]; do
     case $1 in
@@ -14,7 +14,8 @@ while [[ $# -gt 0 ]]; do
         -a) AUDIO_DURATION="$2"; shift 2 ;;
         --live) LIVE=true; shift ;;
         --long-text) LONG_TEXT=true; shift ;;
-        -h) echo "Usage: $0 [-l LANG] [-t LANG] [-a SEC] [--live] [--long-text]"; exit 0 ;;
+        --extended) EXTENDED=true; AUDIO_DURATION=15; shift ;;
+        -h) echo "Usage: $0 [-l LANG] [-t LANG] [-a SEC] [--live] [--long-text] [--extended]"; exit 0 ;;
         *) echo "Unknown: $1"; exit 1 ;;
     esac
 done

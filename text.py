@@ -98,21 +98,31 @@ def load_history(max_entries: int = 500) -> list[str]:
         return []
 
 
-def get_pinyin(text: str) -> str:
-    """Convert Chinese text to pinyin with tone marks."""
+def get_pinyin(text: str, tone_marks: bool = False) -> str:
+    """Convert Chinese text to pinyin.
+    
+    Args:
+        text: Chinese text to convert
+        tone_marks: If True, use tone marks (nǐ hǎo), else use numbers (ni3 hao3)
+    """
     try:
         from pypinyin import pinyin, Style
-        result = pinyin(text, style=Style.TONE3)
+        style = Style.TONE if tone_marks else Style.TONE3
+        # Only convert CJK characters, keep others as-is
+        result = pinyin(text, style=style, heteronym=False)
         return " ".join([item[0] for item in result])
     except Exception:
         return ""
 
 
 def format_with_pinyin(text: str) -> str:
-    """Return text with pinyin annotation: 你好 (ni3 hao3)"""
+    """Return text with pinyin annotation: 你好 (ni3 hao3)
+    
+    Handles mixed CJK/non-CJK text properly.
+    """
     if not text or not CJK_CHARS.search(text):
         return text
     py = get_pinyin(text)
     if py:
-        return f"{text} ({py})"
+        return f"{text}\n{py}"
     return text

@@ -152,3 +152,255 @@ Pinyin: 邸 箱 绑 定 任 务 教 程 百 科 攻 陷 站 (di3   xiang1
 Translation: Di Box Binding Task Tutorial Encycl
 2026-05-16 11:20:26,029 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_112017
 2026-05-16 11:21:04,031 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:22:13,702 [INFO] Mining: zh->en
+2026-05-16 11:22:13,702 [INFO] Select text region...
+2026-05-16 11:22:13,708 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:22:15,474 [INFO] Captured region: 1015,455 35x37
+2026-05-16 11:22:15,474 [INFO] OCRing region: 1015,455 35x37
+2026-05-16 11:22:15,984 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:22:16,490 [INFO] Notification: [Mining] No text detected
+2026-05-16 11:22:16,740 [INFO] Mining: zh->en
+2026-05-16 11:22:16,740 [INFO] Select text region...
+2026-05-16 11:22:16,747 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:22:17,877 [INFO] Captured region: 1030,473 150x43
+2026-05-16 11:22:17,878 [INFO] OCRing region: 1030,473 150x43
+2026-05-16 11:22:18,424 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:22:18,972 [INFO] OCR result: 点 击 以 编 辐 签 吊
+2026-05-16 11:22:20,397 [INFO] Translation: Click to edit the spokes
+2026-05-16 11:22:20,570 [INFO] Notification: [Sentence Captured] Text: 点 击 以 编 辐 签 吊
+Pinyin: 点 击 以 编 辐 签 吊 (dian3   ji1   yi3   bian1   fu2   qia
+2026-05-16 11:22:20,611 [INFO] Copied to clipboard: 点 击 以 编 辐 签 吊
+2026-05-16 11:22:20,611 [INFO] Recording 5s audio...
+2026-05-16 11:22:20,618 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 11:22:20,627 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 11:22:25,890 [INFO] Audio recording: success
+2026-05-16 11:22:25,902 [INFO] Notification: [Sentence Mined] Text: 点 击 以 编 辐 签 吊
+Translation: Click to edit the spokes
+Audio: Yes
+Saved: 2026
+2026-05-16 11:22:25,902 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_112216
+2026-05-16 11:22:39,857 [INFO] Mining: zh->en
+2026-05-16 11:22:39,857 [INFO] Select text region...
+2026-05-16 11:22:39,864 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:22:42,099 [INFO] Captured region: 1246,541 334x28
+2026-05-16 11:22:42,099 [INFO] OCRing region: 1246,541 334x28
+2026-05-16 11:22:42,598 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:22:43,111 [INFO] OCR result: \ 编 辑 文 孙 内 容 请 遇 宇 当 地 法 律 法 规
+2026-05-16 11:22:44,339 [INFO] Translation: \ Editorial content Please check local laws and regulations
+2026-05-16 11:22:44,524 [INFO] Notification: [Sentence Captured] Text: \ 编 辑 文 孙 内 容 请 遇 宇 当 地 法 律 法 规
+Pinyin: \ 编 辑 文 孙 内 容 请 遇 宇 当 地 法 律 法 规 (\
+2026-05-16 11:22:44,559 [INFO] Copied to clipboard: \ 编 辑 文 孙 内 容 请 遇 宇 当 地 法 律 法 规
+2026-05-16 11:22:44,559 [INFO] Recording 5s audio...
+2026-05-16 11:22:44,567 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 11:22:44,575 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 11:22:49,242 [INFO] Notification: [Miner Test] Notifications are working!
+2026-05-16 11:22:49,279 [INFO] Copied to clipboard: Test from miner-v2
+2026-05-16 11:22:49,763 [INFO] Tesseract pre-warmed (eng)
+2026-05-16 11:22:49,816 [INFO] Audio recording: success
+2026-05-16 11:22:49,825 [INFO] Notification: [Sentence Mined] Text: \ 编 辑 文 孙 内 容 请 遇 宇 当 地 法 律 法 规
+Translation: \ Editorial content Please ch
+2026-05-16 11:22:49,825 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_112239
+2026-05-16 11:25:13,324 [INFO] Mining: zh->en
+2026-05-16 11:25:13,324 [INFO] Select text region...
+2026-05-16 11:25:13,331 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:25:14,690 [INFO] Captured region: 1217,227 641x503
+2026-05-16 11:25:14,690 [INFO] OCRing region: 1217,227 641x503
+2026-05-16 11:25:15,214 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:25:15,985 [INFO] OCR result: 园 。 更 。 哟
+共 鸣 者 合 成 成 就 E
+
+自 “ 然 。 国 。 西
+万 物 图 銮 地 图 背 包 反 馈
+2026-05-16 11:25:17,594 [INFO] Translation: garden. Even . Yo
+Sympathizer Synthesis Achievement E
+
+Since
+2026-05-16 11:25:17,793 [INFO] Notification: [Sentence Captured] Text: 园 。 更 。 哟
+共 鸣 者 合 成 成 就 E
+
+自 “ 然 。 国 。 西
+万 物 图 銮 地 图 背 包 反 馈
+
+出 创 团 略
+卵 箱 
+2026-05-16 11:25:17,838 [INFO] Copied to clipboard: 园 。 更 。 哟
+共 鸣 者 合 成 成 就 E
+
+自 “ 然 。 国 。 西
+万 物 图 銮 地
+2026-05-16 11:25:17,838 [INFO] Recording 5s audio...
+2026-05-16 11:25:17,851 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 11:25:17,860 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 11:25:23,120 [INFO] Audio recording: success
+2026-05-16 11:25:23,129 [INFO] Notification: [Sentence Mined] Text: 园 。 更 。 哟
+共 鸣 者 合 成 成 就 E
+
+自 “ 然 。 国 。 西
+万 物 图 銮 地 图 背 包 反 馈
+Translation: 
+2026-05-16 11:25:23,129 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_112513
+2026-05-16 11:27:15,459 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:15,500 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:17,570 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:17,606 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:19,680 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:19,715 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:21,806 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:21,850 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:23,960 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:23,997 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:26,084 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:26,121 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:28,221 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:28,278 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:30,355 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:30,394 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:32,472 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:32,507 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:34,590 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:34,626 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:36,701 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:36,746 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:38,817 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:38,852 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:40,927 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:40,981 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:43,063 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:43,096 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:45,170 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:45,204 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:47,276 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:47,312 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:49,391 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:49,429 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:51,507 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:51,540 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:53,609 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:53,645 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:55,763 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:55,799 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:59,609 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:27:59,645 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:01,680 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:01,697 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:03,733 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:03,752 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:05,786 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:05,802 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:07,842 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:07,858 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:17,288 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:17,307 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:19,342 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:19,359 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:21,394 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:21,409 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:23,447 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:23,463 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:25,505 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:25,521 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:27,555 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:27,572 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:29,615 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:29,631 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:31,664 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:31,679 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:33,717 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:33,731 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:35,772 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:35,787 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:37,829 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:37,847 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:39,879 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:39,894 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:41,935 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:41,953 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:43,989 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:44,006 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:46,042 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:46,057 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:48,095 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:48,109 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:50,137 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:50,151 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:52,191 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:52,205 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:54,248 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:54,263 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:56,306 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:56,320 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:58,353 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:28:58,371 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:29:00,412 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:29:00,427 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:29:02,464 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:29:02,482 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:29:04,517 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:29:04,534 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:29:06,571 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:29:06,587 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:29:08,624 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:29:08,640 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:29:10,679 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:29:10,693 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:29:41,349 [INFO] Mining: zh->en
+2026-05-16 11:29:41,349 [INFO] Select text region...
+2026-05-16 11:29:41,357 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:29:42,906 [INFO] Captured region: 635,550 104x112
+2026-05-16 11:29:42,906 [INFO] OCRing region: 635,550 104x112
+2026-05-16 11:29:43,426 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:29:43,957 [INFO] OCR result: 生 日 : 索 拉 等 级 : 联 觉 等 级 :
+2026-05-16 11:29:45,105 [INFO] Translation: Birthday: Sora Level: Synesthesia Level:
+2026-05-16 11:29:45,412 [INFO] Notification: [Sentence Captured] Text: 生 日 : 索 拉 等 级 : 联 觉 等 级 :
+Pinyin: 生 日 : 索 拉 等 级 : 联 觉 等 级 :
+sheng1   ri4  
+2026-05-16 11:29:45,479 [INFO] Copied to clipboard: 生 日 : 索 拉 等 级 : 联 觉 等 级 :
+2026-05-16 11:29:45,479 [INFO] Recording 5s audio...
+2026-05-16 11:29:45,495 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 11:29:45,546 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 11:29:50,831 [INFO] Audio recording: success
+2026-05-16 11:29:50,838 [INFO] Notification: [Sentence Mined] Text: 生 日 : 索 拉 等 级 : 联 觉 等 级 :
+Translation: Birthday: Sora Level: Synesthesia L
+2026-05-16 11:29:50,838 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_112941
+2026-05-16 11:30:32,918 [INFO] Mining: zh->en
+2026-05-16 11:30:32,918 [INFO] Select text region...
+2026-05-16 11:30:32,928 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:30:34,311 [INFO] Captured region: 1350,581 174x44
+2026-05-16 11:30:34,311 [INFO] OCRing region: 1350,581 174x44
+2026-05-16 11:30:34,839 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:30:35,368 [INFO] OCR result: 智 未 展 示 共 鸢 者
+2026-05-16 11:30:36,743 [INFO] Translation: Those who share the kite without wisdom
+2026-05-16 11:30:36,915 [INFO] Notification: [Sentence Captured] Text: 智 未 展 示 共 鸢 者
+Pinyin: 智 未 展 示 共 鸢 者
+zhi4   wei4   zhan3   shi4   gong4   y
+2026-05-16 11:30:36,948 [INFO] Copied to clipboard: 智 未 展 示 共 鸢 者
+2026-05-16 11:30:36,948 [INFO] Recording 5s audio...
+2026-05-16 11:30:36,956 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 11:30:36,965 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 11:30:42,206 [INFO] Audio recording: success
+2026-05-16 11:30:42,216 [INFO] Notification: [Sentence Mined] Text: 智 未 展 示 共 鸢 者
+Translation: Those who share the kite without wisdom
+Audio: 
+2026-05-16 11:30:42,216 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_113032
+2026-05-16 11:31:17,330 [INFO] Mining: zh->en
+2026-05-16 11:31:17,330 [INFO] Select text region...
+2026-05-16 11:31:17,338 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:31:19,156 [INFO] Captured region: 1145,780 85x99
+2026-05-16 11:31:19,156 [INFO] OCRing region: 1145,780 85x99
+2026-05-16 11:31:19,654 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:31:20,158 [INFO] OCR result: 牢 月 宣 拉 等 级 : 联 觉 等 红 :
+2026-05-16 11:31:21,006 [INFO] Translation: Lao Yue Xuan La Level: Lianjue, etc. Red:
+2026-05-16 11:31:21,168 [INFO] Notification: [Sentence Captured] Text: 牢 月 宣 拉 等 级 : 联 觉 等 红 :
+Pinyin: 牢 月 宣 拉 等 级 : 联 觉 等 红 :
+lao2   yue4   xuan
+2026-05-16 11:31:21,202 [INFO] Copied to clipboard: 牢 月 宣 拉 等 级 : 联 觉 等 红 :
+2026-05-16 11:31:21,203 [INFO] Recording 5s audio...
+2026-05-16 11:31:21,208 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 11:31:21,217 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 11:31:26,459 [INFO] Audio recording: success
+2026-05-16 11:31:26,467 [INFO] Notification: [Sentence Mined] Text: 牢 月 宣 拉 等 级 : 联 觉 等 红 :
+Translation: Lao Yue Xuan La Level: Lianjue, etc. 
+2026-05-16 11:31:26,467 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_113117
+2026-05-16 11:31:43,812 [INFO] Notification: [Miner Test] Notifications are working!
+2026-05-16 11:31:43,848 [INFO] Copied to clipboard: Test from miner-v2
+2026-05-16 11:31:44,372 [INFO] Tesseract pre-warmed (eng)

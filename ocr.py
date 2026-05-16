@@ -3,11 +3,11 @@
 Handles Tesseract OCR with preprocessing and caching.
 Optimized for game text including borderless window mode (smaller text).
 """
-import hashlib
+import hashlib, re
 from pathlib import Path
 try:
     import pytesseract
-    from PIL import Image, ImageEnhance, ImageFilter
+    from PIL import Image, ImageEnhance, ImageFilter, ImageOps
 except ImportError:
     print("ERROR: pip install pytesseract pillow"); import sys; sys.exit(1)
 from config import OCR_LANGS
@@ -43,8 +43,14 @@ def preprocess_image(image_path: Path) -> Image.Image:
     2. Increase contrast (1.5x)
     3. Sharpen to enhance small text
     4. Binarize with lower threshold (128) for smaller text
+    5. Invert if text is light on dark background
     """
     img = Image.open(image_path).convert("L")
+    # Auto-invert if dark background (common in games)
+    pixels = list(img.getdata())
+    avg_brightness = sum(pixels) / len(pixels)
+    if avg_brightness < 100:
+        img = ImageOps.invert(img)
     # Increase contrast for better text visibility
     enhancer = ImageEnhance.Contrast(img)
     img = enhancer.enhance(1.5)
@@ -91,6 +97,21 @@ def _ensure_utf8(text: str) -> str:
         return text
 
 
+def _filter_garbage(text: str, lang: str = "zh") -> str:
+    """Filter out OCR garbage like lone 'E' symbols and non-CJK noise."""
+    if not text:
+        return ""
+    # Remove lone Latin characters that are likely OCR errors for CJK
+    if lang in ("zh", "ja", "ko"):
+        # Remove standalone Latin letters not part of valid words
+        text = re.sub(r'(?<![A-Za-z])[A-Za-z](?![A-Za-z])', '', text)
+        # Remove repeated single letters like "E E E"
+        text = re.sub(r'\b([A-Za-z])\s+\1\b', '', text)
+    # Clean up multiple spaces
+    text = re.sub(r'\s+', ' ', text).strip()
+    return text
+
+
 def ocr_image(image_path: Path, lang: str = "zh", use_confidence: bool = True) -> str:
     """Extract text from image using Tesseract OCR.
 
@@ -109,7 +130,8 @@ def ocr_image(image_path: Path, lang: str = "zh", use_confidence: bool = True) -
         if not text:
             config = f"--oem 3 --psm 3 -l {t_lang}"
             text = pytesseract.image_to_string(img, config=config).strip()
-        return _ensure_utf8(text)
+        text = _ensure_utf8(text)
+        return _filter_garbage(text, lang)
     except Exception as e:
         log.error(f"OCR failed: {e}")
         return ""
@@ -128,7 +150,8 @@ def ocr_long_text(image_path: Path, lang: str = "zh") -> str:
         # PSM 3 for fully automatic page segmentation (best for multi-line)
         config = f"--oem 3 --psm 3 -l {t_lang}"
         text = pytesseract.image_to_string(img, config=config).strip()
-        return _ensure_utf8(text)
+        text = _ensure_utf8(text)
+        return _filter_garbage(text, lang)
     except Exception as e:
         log.error(f"OCR long text failed: {e}")
         return ""
