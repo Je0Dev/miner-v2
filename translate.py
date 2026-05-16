@@ -14,13 +14,15 @@ def _is_valid_for_translation(text: str) -> bool:
     # Accept if it has CJK characters (primary indicator of valid text)
     if CJK_RE.search(text):
         return True
-    # Reject text that's mostly single Latin letters (OCR garbage)
-    latin_only = re.sub(r'[^A-Za-z\s]', '', text)
-    if len(latin_only) > len(text) * 0.7:
+    # Reject repeated single letters like "E E E" or "A B C"
+    words = text.split()
+    if all(len(w) == 1 and w.isalpha() for w in words):
         return False
-    # Reject text with too many special characters
-    special_chars = re.findall(r'[^\w\s\u4e00-\u9fff\u3040-\u309f\u30a0-\u30ff]', text)
-    if len(special_chars) > len(text) * 0.3:
+    # Accept multi-word text (likely valid)
+    if len(words) >= 2 and all(len(w) >= 2 for w in words):
+        return True
+    # Reject single letters or garbage
+    if len(text.strip()) < 3:
         return False
     return True
 
