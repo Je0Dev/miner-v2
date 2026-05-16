@@ -33,6 +33,8 @@ def _is_valid_for_translation(text: str, lang: str = "zh") -> bool:
     if len(words) > 8 and all(len(w) <= 2 for w in words): return False
     if all(len(w) == 1 and w.isalpha() for w in words): return False
     if len(words) >= 2 and all(len(w) >= 2 for w in words): return True
+    # For CJK, require at least 2 CJK characters
+    if script == "cjk" and len(CJK_RE.findall(text)) >= 2: return True
     return len(text.strip()) >= 3
 
 def translate_text(text: str, src: str = "zh", dest: str = "en") -> str:

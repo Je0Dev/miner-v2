@@ -26,9 +26,8 @@ def mine_sentence(ocr_lang="zh", translate_to="en", audio_duration=5, source_nam
     log.info("Select text region...")
     geom = capture_region(img_path)
     if not geom:
-        notify("Mining", "Capture cancelled", timeout=3000)
+        notify("Mining", "Capture cancelled", timeout=2000)
         return None
-    notify("Mining", "Processing...", timeout=2000)
     log.info(f"OCRing region: {geom}")
     if long_text:
         text = clean_text(ocr_long_text(img_path, ocr_lang))

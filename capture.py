@@ -52,36 +52,31 @@ def parse_slurp_geom(geom_str: str) -> tuple | None:
 
 
 def capture_region(output_path: Path, geom: str = None) -> str | None:
-    """Capture screen region with slurp + grim. Retries on cancel."""
-    scale = get_display_scale()
-    for attempt in range(1, MAX_RETRIES + 1):
-        try:
-            if not geom:
-                result = subprocess.run(
-                    ["slurp", "-b", "333333cc", "-c", "ff0000ff", "-s", "ff000044", "-w", "3"],
-                    capture_output=True, text=True, timeout=30
-                )
-                if result.returncode != 0 or not result.stdout.strip():
-                    if attempt < MAX_RETRIES:
-                        log.info(f"Capture cancelled, retrying ({attempt}/{MAX_RETRIES})")
-                        time.sleep(0.3)
-                        continue
-                    return None
-                geom = result.stdout.strip()
-            parsed = parse_slurp_geom(geom)
-            if not parsed:
+    """Capture screen region with slurp + grim. Single attempt, no retries."""
+    try:
+        if not geom:
+            result = subprocess.run(
+                ["slurp", "-b", "333333cc", "-c", "ff0000ff", "-s", "ff000044", "-w", "3"],
+                capture_output=True, text=True, timeout=30
+            )
+            if result.returncode != 0 or not result.stdout.strip():
                 return None
-            x, y, w, h = parsed
-            subprocess.run(["grim", "-g", f"{x},{y} {w}x{h}", str(output_path)], check=True)
-            log.info(f"Captured region: {geom}")
-            return geom
-        except subprocess.CalledProcessError as e:
-            log.error(f"Capture failed (attempt {attempt}): {e}")
-            if attempt < MAX_RETRIES:
-                time.sleep(0.3)
-                continue
+            geom = result.stdout.strip()
+        parsed = parse_slurp_geom(geom)
+        if not parsed:
             return None
-    return None
+        x, y, w, h = parsed
+        # Small delay to let compositor settle after slurp closes
+        time.sleep(0.1)
+        subprocess.run(["grim", "-g", f"{x},{y} {w}x{h}", str(output_path)], check=True)
+        log.info(f"Captured region: {geom}")
+        return geom
+    except subprocess.CalledProcessError as e:
+        log.error(f"Capture failed: {e}")
+        return None
+    except subprocess.TimeoutExpired:
+        log.error("Capture timed out")
+        return None
 
 
 def capture_screenshot(output_path: Path, geom: str = None) -> bool:

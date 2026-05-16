@@ -1452,3 +1452,62 @@ Saved: 20260516_13
 2026-05-16 13:46:57,370 [INFO] Tesseract pre-warmed (chi_sim)
 2026-05-16 13:47:00,069 [INFO] Copied to clipboard: test clipboard content
 2026-05-16 13:47:00,085 [INFO] Notification: [Test] Notification test
+2026-05-16 13:48:02,387 [INFO] Mining: pl->en
+2026-05-16 13:48:02,387 [INFO] Select text region...
+2026-05-16 13:48:02,420 [INFO] Mining: zh->en
+2026-05-16 13:48:02,420 [INFO] Select text region...
+2026-05-16 13:48:05,160 [INFO] Captured region: 1562,511 109x58
+2026-05-16 13:48:05,160 [INFO] OCRing region: 1562,511 109x58
+2026-05-16 13:48:05,766 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 13:48:05,948 [INFO] Captured region: 1579,529 70x41
+2026-05-16 13:48:05,949 [INFO] OCRing region: 1579,529 70x41
+2026-05-16 13:48:06,328 [INFO] Notification: [Mining] No text detected
+2026-05-16 13:48:06,466 [INFO] Tesseract pre-warmed (pol)
+2026-05-16 13:48:06,848 [INFO] OCR result: suż
+2026-05-16 13:48:07,294 [INFO] Translation: sug
+2026-05-16 13:48:07,307 [INFO] Notification: [Sentence Captured] Text: suż
+Translation: sug
+2026-05-16 13:48:07,364 [INFO] Copied to clipboard: suż
+2026-05-16 13:48:07,365 [INFO] Recording 5s audio...
+2026-05-16 13:48:07,389 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 13:48:07,402 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 13:48:12,710 [INFO] Audio recording: success
+2026-05-16 13:48:12,722 [INFO] Notification: [Sentence Mined] Text: suż
+Translation: sug
+Audio: Yes
+Saved: 20260516_134802
+2026-05-16 13:48:12,722 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_134802
+2026-05-16 13:48:55,082 [INFO] Mining: zh->en
+2026-05-16 13:48:55,083 [INFO] Select text region...
+2026-05-16 13:48:55,092 [INFO] Mining: pl->en
+2026-05-16 13:48:55,092 [INFO] Select text region...
+2026-05-16 13:48:56,678 [INFO] Captured region: 1532,299 322x32
+2026-05-16 13:48:56,678 [INFO] OCRing region: 1532,299 322x32
+2026-05-16 13:48:56,960 [INFO] Tesseract pre-warmed (pol)
+2026-05-16 13:48:57,286 [INFO] Notification: [Mining] No text detected
+2026-05-16 13:48:57,999 [INFO] Captured region: 1518,288 314x47
+2026-05-16 13:48:58,000 [INFO] OCRing region: 1518,288 314x47
+2026-05-16 13:48:58,489 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 13:49:00,593 [INFO] OCR result: 共鸣者合成
+2026-05-16 13:49:01,878 [INFO] Translation: Resonator Synthesis
+2026-05-16 13:49:02,033 [INFO] Notification: [Sentence Captured] Text: 共鸣者合成
+pinyin: gong4 ming2 zhe3 he2 cheng2
+Translation: Resonator Synthesis
+2026-05-16 13:49:02,072 [INFO] Copied to clipboard: 共鸣者合成
+2026-05-16 13:49:02,072 [INFO] Recording 5s audio...
+2026-05-16 13:49:02,080 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 13:49:02,088 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 13:49:07,328 [INFO] Audio recording: success
+2026-05-16 13:49:07,339 [INFO] Notification: [Sentence Mined] Text: 共鸣者合成
+Translation: Resonator Synthesis
+Audio: Yes
+Saved: 20260516_134855
+2026-05-16 13:49:07,339 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_134855
+2026-05-16 13:49:13,412 [INFO] Exported 2 entries to /home/mastroni/miner-v2/mining/test_anki_export.csv
+2026-05-16 13:49:14,319 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 13:49:17,925 [INFO] Copied to clipboard: test clipboard content
+2026-05-16 13:49:17,952 [INFO] Notification: [Test] Notification test
+2026-05-16 13:49:39,305 [INFO] Exported 2 entries to /home/mastroni/miner-v2/mining/test_anki_export.csv
+2026-05-16 13:49:40,509 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 13:49:43,302 [INFO] Copied to clipboard: test clipboard content
+2026-05-16 13:49:43,318 [INFO] Notification: [Test] Notification test

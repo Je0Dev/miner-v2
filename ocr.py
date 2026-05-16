@@ -25,11 +25,18 @@ def prewarm_tesseract(lang: str = "chi_sim"):
         log.warning(f"Tesseract pre-warm failed: {e}")
 
 def _upscale_for_small_text(img: Image.Image, lang: str) -> Image.Image:
-    """Upscale image 2x for better small text OCR (CJK needs this)."""
+    """Upscale image for better small text OCR. CJK needs 3x, others 2x."""
     script = LANG_REGISTRY.get(lang, {}).get("script", "latin")
+    w, h = img.size
     if script == "cjk":
-        w, h = img.size
+        # CJK characters are dense, need more upscaling
+        if w < 1000 or h < 300:
+            img = img.resize((w * 3, h * 3), Image.LANCZOS)
+    elif script in ("greek", "cyrillic"):
         if w < 800 or h < 200:
+            img = img.resize((w * 2, h * 2), Image.LANCZOS)
+    else:
+        if w < 600 or h < 150:
             img = img.resize((w * 2, h * 2), Image.LANCZOS)
     return img
 

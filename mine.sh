@@ -4,6 +4,12 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PYTHON="${PYTHON:-python3}"
 
+# Prevent multiple instances
+if pgrep -f "miner-v2/main.py" > /dev/null 2>&1; then
+    notify-send "Miner Busy" "Another capture in progress, please wait" -t 2000
+    exit 0
+fi
+
 OCR_LANG="zh"; TRANSLATE_TO="en"; AUDIO_DURATION=5
 LIVE=false; LONG_TEXT=false; EXTENDED=false
 

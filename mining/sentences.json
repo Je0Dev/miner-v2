@@ -448,5 +448,25 @@
     "source": "Game",
     "timestamp": "20260516_134642",
     "screenshot": "images/capture.png"
+  },
+  {
+    "sentence": "suż",
+    "translation": "sug",
+    "audio": "audio/audio_20260516_134802.mp3",
+    "pronunciation": "",
+    "lang": "pl",
+    "source": "Game",
+    "timestamp": "20260516_134802",
+    "screenshot": "images/capture.png"
+  },
+  {
+    "sentence": "共鸣者合成",
+    "translation": "Resonator Synthesis",
+    "audio": "audio/audio_20260516_134855.mp3",
+    "pronunciation": "gong4 ming2 zhe3 he2 cheng2",
+    "lang": "zh",
+    "source": "Game",
+    "timestamp": "20260516_134855",
+    "screenshot": "images/capture.png"
   }
 ]
