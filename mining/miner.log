@@ -544,3 +544,206 @@ Translation:
 2026-05-16 11:42:13,170 [INFO] Tesseract pre-warmed (eng)
 2026-05-16 11:42:13,993 [INFO] Copied to clipboard: test clipboard content
 2026-05-16 11:42:14,014 [INFO] Notification: [Test] Notification test
+2026-05-16 11:42:25,884 [INFO] Mining: zh->en
+2026-05-16 11:42:25,884 [INFO] Select text region...
+2026-05-16 11:42:25,892 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:42:27,307 [INFO] Captured region: 1548,780 96x30
+2026-05-16 11:42:27,307 [INFO] OCRing region: 1548,780 96x30
+2026-05-16 11:42:27,925 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:42:29,017 [INFO] Notification: [Mining] No text detected
+2026-05-16 11:42:33,570 [INFO] Mining: zh->en
+2026-05-16 11:42:33,570 [INFO] Select text region...
+2026-05-16 11:42:33,579 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:42:35,766 [INFO] Captured region: 1514,514 104x31
+2026-05-16 11:42:35,766 [INFO] OCRing region: 1514,514 104x31
+2026-05-16 11:42:36,315 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:42:37,275 [INFO] Notification: [Mining] No text detected
+2026-05-16 11:42:38,360 [INFO] Mining: zh->en
+2026-05-16 11:42:38,360 [INFO] Select text region...
+2026-05-16 11:42:38,367 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:42:39,753 [INFO] Captured region: 1502,500 119x62
+2026-05-16 11:42:39,753 [INFO] OCRing region: 1502,500 119x62
+2026-05-16 11:42:40,281 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:42:41,265 [INFO] Notification: [Mining] No text detected
+2026-05-16 11:42:42,857 [INFO] Mining: zh->en
+2026-05-16 11:42:42,857 [INFO] Select text region...
+2026-05-16 11:42:42,865 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:42:43,942 [INFO] Captured region: 1504,505 137x57
+2026-05-16 11:42:43,942 [INFO] OCRing region: 1504,505 137x57
+2026-05-16 11:42:44,475 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:42:45,468 [INFO] Notification: [Mining] No text detected
+2026-05-16 11:42:49,454 [INFO] Mining: zh->en
+2026-05-16 11:42:49,455 [INFO] Select text region...
+2026-05-16 11:42:49,462 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:42:51,132 [INFO] Captured region: 1485,507 170x47
+2026-05-16 11:42:51,132 [INFO] OCRing region: 1485,507 170x47
+2026-05-16 11:42:51,618 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:42:52,618 [INFO] Notification: [Mining] No text detected
+2026-05-16 11:43:13,758 [INFO] Mining: zh->en
+2026-05-16 11:43:13,758 [INFO] Select text region...
+2026-05-16 11:43:13,765 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:43:14,846 [INFO] Captured region: 1341,855 73x40
+2026-05-16 11:43:14,846 [INFO] OCRing region: 1341,855 73x40
+2026-05-16 11:43:15,360 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:43:15,869 [INFO] OCR result: 心 一
+2026-05-16 11:43:16,793 [INFO] Translation: heart one
+2026-05-16 11:43:16,961 [INFO] Notification: [Sentence Captured] Text: 心 一
+Pinyin: xin1   yi1
+Translation: heart one
+2026-05-16 11:43:16,992 [INFO] Copied to clipboard: 心 一
+2026-05-16 11:43:16,992 [INFO] Recording 5s audio...
+2026-05-16 11:43:16,999 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 11:43:17,005 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 11:43:22,241 [INFO] Audio recording: success
+2026-05-16 11:43:22,249 [INFO] Notification: [Sentence Mined] Text: 心 一
+Translation: heart one
+Audio: Yes
+Saved: 20260516_114313
+2026-05-16 11:43:22,249 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_114313
+2026-05-16 11:43:27,742 [INFO] Mining: zh->en
+2026-05-16 11:43:27,742 [INFO] Select text region...
+2026-05-16 11:43:27,750 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:43:29,680 [INFO] Captured region: 1329,838 107x56
+2026-05-16 11:43:29,680 [INFO] OCRing region: 1329,838 107x56
+2026-05-16 11:43:30,473 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:43:30,995 [INFO] OCR result: 任 务
+2026-05-16 11:43:31,344 [INFO] Translation: Task
+2026-05-16 11:43:31,510 [INFO] Notification: [Sentence Captured] Text: 任 务
+Pinyin: ren4   wu4
+Translation: Task
+2026-05-16 11:43:31,544 [INFO] Copied to clipboard: 任 务
+2026-05-16 11:43:31,544 [INFO] Recording 5s audio...
+2026-05-16 11:43:31,550 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 11:43:31,556 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 11:43:36,761 [INFO] Audio recording: success
+2026-05-16 11:43:36,769 [INFO] Notification: [Sentence Mined] Text: 任 务
+Translation: Task
+Audio: Yes
+Saved: 20260516_114327
+2026-05-16 11:43:36,769 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_114327
+2026-05-16 11:43:56,670 [INFO] Mining: zh->en
+2026-05-16 11:43:56,670 [INFO] Select text region...
+2026-05-16 11:43:56,677 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:43:59,138 [INFO] Captured region: 718,535 106x173
+2026-05-16 11:43:59,138 [INFO] OCRing region: 718,535 106x173
+2026-05-16 11:43:59,646 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:44:00,729 [INFO] Notification: [Mining] No text detected
+2026-05-16 11:44:05,447 [INFO] Mining: zh->en
+2026-05-16 11:44:05,447 [INFO] Select text region...
+2026-05-16 11:44:05,454 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:44:07,704 [INFO] Captured region: 750,537 103x167
+2026-05-16 11:44:07,704 [INFO] OCRing region: 750,537 103x167
+2026-05-16 11:44:08,210 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:44:09,245 [INFO] Notification: [Mining] No text detected
+2026-05-16 11:44:21,032 [INFO] Mining: zh->en
+2026-05-16 11:44:21,032 [INFO] Select text region...
+2026-05-16 11:44:21,039 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:44:22,308 [INFO] Captured region: 712,524 120x182
+2026-05-16 11:44:22,308 [INFO] OCRing region: 712,524 120x182
+2026-05-16 11:44:22,818 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:44:23,862 [INFO] Notification: [Mining] No text detected
+2026-05-16 11:44:27,003 [INFO] Mining: zh->en
+2026-05-16 11:44:27,004 [INFO] Select text region...
+2026-05-16 11:44:27,010 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:44:28,541 [INFO] Captured region: 700,536 284x143
+2026-05-16 11:44:28,541 [INFO] OCRing region: 700,536 284x143
+2026-05-16 11:44:29,069 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:44:30,117 [INFO] Notification: [Mining] No text detected
+2026-05-16 11:44:33,909 [INFO] Mining: zh->en
+2026-05-16 11:44:33,909 [INFO] Select text region...
+2026-05-16 11:44:33,915 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:44:35,661 [INFO] Captured region: 792,787 854x284
+2026-05-16 11:44:35,661 [INFO] OCRing region: 792,787 854x284
+2026-05-16 11:44:36,195 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:44:37,233 [INFO] Notification: [Mining] No text detected
+2026-05-16 11:44:42,292 [INFO] Mining: zh->en
+2026-05-16 11:44:42,292 [INFO] Select text region...
+2026-05-16 11:44:42,299 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:44:43,920 [INFO] Captured region: 673,428 326x121
+2026-05-16 11:44:43,920 [INFO] OCRing region: 673,428 326x121
+2026-05-16 11:44:44,421 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:44:45,463 [INFO] Notification: [Mining] No text detected
+2026-05-16 11:44:52,593 [INFO] Mining: zh->en
+2026-05-16 11:44:52,594 [INFO] Select text region...
+2026-05-16 11:44:52,601 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:44:56,098 [INFO] Captured region: 621,449 136x607
+2026-05-16 11:44:56,098 [INFO] OCRing region: 621,449 136x607
+2026-05-16 11:44:56,625 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:44:57,255 [INFO] OCR result: 广 一 5“ 5 一 巴 书 玲 热 症 . 三
+2026-05-16 11:44:58,391 [INFO] Translation: Guang 1 5 " 5 1 Ba Shu Ling fever . 3
+2026-05-16 11:44:58,567 [INFO] Notification: [Sentence Captured] Text: 广 一 5“ 5 一 巴 书 玲 热 症 . 三
+Pinyin: guang3   yi1  5“ 5  yi1   ba1   shu1   li
+2026-05-16 11:44:58,602 [INFO] Copied to clipboard: 广 一 5“ 5 一 巴 书 玲 热 症 . 三
+2026-05-16 11:44:58,602 [INFO] Recording 5s audio...
+2026-05-16 11:44:58,611 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 11:44:58,617 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 11:45:03,859 [INFO] Audio recording: success
+2026-05-16 11:45:03,869 [INFO] Notification: [Sentence Mined] Text: 广 一 5“ 5 一 巴 书 玲 热 症 . 三
+Translation: Guang 1 5 " 5 1 Ba Shu Ling fever . 
+2026-05-16 11:45:03,869 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_114452
+2026-05-16 11:45:32,105 [INFO] Mining: zh->en
+2026-05-16 11:45:32,105 [INFO] Select text region...
+2026-05-16 11:45:32,112 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:45:33,272 [INFO] Captured region: 982,391 160x181
+2026-05-16 11:45:33,273 [INFO] OCRing region: 982,391 160x181
+2026-05-16 11:45:33,822 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:45:34,396 [INFO] OCR result: 5 园 1 | 许 , .
+2026-05-16 11:45:35,872 [INFO] Translation: 5 Garden 1 | Xu , .
+2026-05-16 11:45:36,038 [INFO] Notification: [Sentence Captured] Text: 5 园 1 | 许 , .
+Pinyin: 5  yuan2  1 |  xu3  , .
+Translation: 5 Garden 1 | Xu
+2026-05-16 11:45:36,071 [INFO] Copied to clipboard: 5 园 1 | 许 , .
+2026-05-16 11:45:36,072 [INFO] Recording 5s audio...
+2026-05-16 11:45:36,079 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 11:45:36,086 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 11:45:41,330 [INFO] Audio recording: success
+2026-05-16 11:45:41,339 [INFO] Notification: [Sentence Mined] Text: 5 园 1 | 许 , .
+Translation: 5 Garden 1 | Xu , .
+Audio: Yes
+Saved: 20260516_
+2026-05-16 11:45:41,339 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_114532
+2026-05-16 11:45:44,419 [INFO] Mining: zh->en
+2026-05-16 11:45:44,419 [INFO] Select text region...
+2026-05-16 11:45:44,425 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:45:47,317 [INFO] Captured region: 972,391 297x177
+2026-05-16 11:45:47,317 [INFO] OCRing region: 972,391 297x177
+2026-05-16 11:45:47,829 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:45:48,838 [INFO] OCR result: 2 沥 02 0 - 8 图 俊 一 “ 02 _ Fngp 叟麟`售′恰-气藿` 诊 大net 心 1 . 标 健 -
+2026-05-16 11:45:50,188 [INFO] Translation: 2 Li 02 0 - 8 Tu Junyi " 02 _ Fngp Soulin`shu'cha-qihao` Cli
+2026-05-16 11:45:50,349 [INFO] Notification: [Sentence Captured] Text: 2 沥 02 0 - 8 图 俊 一 “ 02 _ Fngp 叟麟`售′恰-气藿` 诊 大net 心 1 . 标 健 - 一 命 河 宴!宣簧】`薯
+2026-05-16 11:45:50,383 [INFO] Copied to clipboard: 2 沥 02 0 - 8 图 俊 一 “ 02 _ Fngp 叟麟`售′恰-气藿` 诊 大net 心
+2026-05-16 11:45:50,383 [INFO] Recording 5s audio...
+2026-05-16 11:45:50,391 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 11:45:50,397 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 11:45:55,600 [INFO] Audio recording: success
+2026-05-16 11:45:55,614 [INFO] Notification: [Sentence Mined] Text: 2 沥 02 0 - 8 图 俊 一 “ 02 _ Fngp 叟麟`售′恰-气藿` 诊 大net 心 1 . 标 健 -
+Translation: 
+2026-05-16 11:45:55,614 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_114544
+2026-05-16 11:45:57,859 [INFO] Mining: zh->en
+2026-05-16 11:45:57,860 [INFO] Select text region...
+2026-05-16 11:45:57,866 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:45:59,691 [INFO] Captured region: 1023,391 85x172
+2026-05-16 11:45:59,691 [INFO] OCRing region: 1023,391 85x172
+2026-05-16 11:46:00,169 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:46:00,704 [INFO] OCR result: 佳 8
+2026-05-16 11:46:01,237 [INFO] Translation: Good 8
+2026-05-16 11:46:01,402 [INFO] Notification: [Sentence Captured] Text: 佳 8
+Pinyin: jia1  8
+Translation: Good 8
+2026-05-16 11:46:01,435 [INFO] Copied to clipboard: 佳 8
+2026-05-16 11:46:01,435 [INFO] Recording 5s audio...
+2026-05-16 11:46:01,442 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 11:46:01,452 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 11:46:06,656 [INFO] Audio recording: success
+2026-05-16 11:46:06,665 [INFO] Notification: [Sentence Mined] Text: 佳 8
+Translation: Good 8
+Audio: Yes
+Saved: 20260516_114557
+2026-05-16 11:46:06,665 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_114557
+2026-05-16 11:46:28,398 [INFO] Exported 2 entries to /home/mastroni/miner-v2/mining/test_anki_export.csv
+2026-05-16 11:46:28,903 [INFO] Tesseract pre-warmed (eng)
+2026-05-16 11:46:29,931 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:46:30,709 [INFO] Copied to clipboard: test clipboard content
+2026-05-16 11:46:30,748 [INFO] Notification: [Test] Notification test
+2026-05-16 11:46:32,231 [INFO] Copied to clipboard: 9 8 一 2 2 2 。 一 源 、 人 2Rea 梁 ax 李 808 二′….鳗匿 EE08 
+2026-05-16 11:46:36,076 [INFO] Copied to clipboard: 9 8 一 2 2 2 。 一 源 、 人 2Rea 梁 ax 李 808 二′….鳗匿 EE08 

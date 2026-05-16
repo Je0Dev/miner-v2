@@ -70,11 +70,10 @@ def preprocess_image(image_path: Path) -> Image.Image:
 
     Optimized for game text including borderless window mode:
     1. Convert to grayscale
-    2. Detect and mask image regions (icons, portraits)
+    2. Auto-invert if text is light on dark background
     3. Increase contrast (1.5x)
     4. Sharpen to enhance small text
-    5. Binarize with lower threshold (128) for smaller text
-    6. Invert if text is light on dark background
+    5. Adaptive binarization for both light and dark backgrounds
     """
     img = Image.open(image_path).convert("L")
     # Auto-invert if dark background (common in games)
@@ -82,15 +81,16 @@ def preprocess_image(image_path: Path) -> Image.Image:
     avg_brightness = sum(pixels) / len(pixels)
     if avg_brightness < 100:
         img = ImageOps.invert(img)
-    # Detect and mask image regions
-    img = _detect_and_mask_images(img)
     # Increase contrast for better text visibility
     enhancer = ImageEnhance.Contrast(img)
     img = enhancer.enhance(1.5)
     # Sharpen to enhance small text edges
     img = img.filter(ImageFilter.SHARPEN)
-    # Binarize with lower threshold for smaller text
-    return img.point(lambda p: 255 if p > 128 else 0)
+    # Adaptive binarization: use Otsu-like threshold
+    arr = np.array(img)
+    # Use median-based threshold (more robust than percentile)
+    threshold = np.median(arr)
+    return img.point(lambda p: 255 if p > threshold else 0)
 
 
 def preprocess_image_long(image_path: Path) -> Image.Image:
@@ -98,21 +98,20 @@ def preprocess_image_long(image_path: Path) -> Image.Image:
 
     For larger regions with multiple lines of text:
     1. Convert to grayscale
-    2. Detect and mask image regions
-    3. Moderate contrast (1.3x) to preserve text gradients
-    4. Denoise to reduce background artifacts
-    5. Binarize with adaptive threshold
+    2. Moderate contrast (1.3x) to preserve text gradients
+    3. Denoise to reduce background artifacts
+    4. Adaptive binarization with median threshold
     """
     img = Image.open(image_path).convert("L")
-    # Detect and mask image regions
-    img = _detect_and_mask_images(img)
     # Moderate contrast for long text
     enhancer = ImageEnhance.Contrast(img)
     img = enhancer.enhance(1.3)
     # Reduce noise
     img = img.filter(ImageFilter.MedianFilter(size=3))
-    # Binarize
-    return img.point(lambda p: 255 if p > 135 else 0)
+    # Adaptive binarization using median
+    arr = np.array(img)
+    threshold = np.median(arr)
+    return img.point(lambda p: 255 if p > threshold else 0)
 
 
 def _ensure_utf8(text: str) -> str:
@@ -154,9 +153,12 @@ def ocr_image(image_path: Path, lang: str = "zh", use_confidence: bool = True) -
     Uses PSM 6 (uniform block of text) for game text.
     For borderless window mode with smaller text, PSM 3 (fully automatic)
     is used as fallback if PSM 6 returns empty.
+    Also tries without preprocessing if all else fails.
     """
     prewarm_tesseract(OCR_LANGS.get(lang, lang))
     t_lang = OCR_LANGS.get(lang, lang)
+    
+    # Try with preprocessing first
     try:
         img = preprocess_image(image_path)
         # Try PSM 6 first (uniform block of text)
@@ -166,11 +168,27 @@ def ocr_image(image_path: Path, lang: str = "zh", use_confidence: bool = True) -
         if not text:
             config = f"--oem 3 --psm 3 -l {t_lang}"
             text = pytesseract.image_to_string(img, config=config).strip()
-        text = _ensure_utf8(text)
-        return _filter_garbage(text, lang)
+        if text:
+            text = _ensure_utf8(text)
+            return _filter_garbage(text, lang)
     except Exception as e:
-        log.error(f"OCR failed: {e}")
-        return ""
+        log.warning(f"OCR with preprocessing failed: {e}")
+    
+    # Fallback: try without preprocessing
+    try:
+        img = Image.open(image_path).convert("L")
+        config = f"--oem 3 --psm 6 -l {t_lang}"
+        text = pytesseract.image_to_string(img, config=config).strip()
+        if not text:
+            config = f"--oem 3 --psm 3 -l {t_lang}"
+            text = pytesseract.image_to_string(img, config=config).strip()
+        if text:
+            text = _ensure_utf8(text)
+            return _filter_garbage(text, lang)
+    except Exception as e:
+        log.error(f"OCR failed completely: {e}")
+    
+    return ""
 
 
 def ocr_long_text(image_path: Path, lang: str = "zh") -> str:
@@ -178,19 +196,34 @@ def ocr_long_text(image_path: Path, lang: str = "zh") -> str:
 
     Uses PSM 3 (fully automatic) for multi-line text.
     Uses specialized preprocessing for longer text regions.
+    Falls back to no preprocessing if needed.
     """
     prewarm_tesseract(OCR_LANGS.get(lang, lang))
     t_lang = OCR_LANGS.get(lang, lang)
+    
+    # Try with preprocessing first
     try:
         img = preprocess_image_long(image_path)
-        # PSM 3 for fully automatic page segmentation (best for multi-line)
         config = f"--oem 3 --psm 3 -l {t_lang}"
         text = pytesseract.image_to_string(img, config=config).strip()
-        text = _ensure_utf8(text)
-        return _filter_garbage(text, lang)
+        if text:
+            text = _ensure_utf8(text)
+            return _filter_garbage(text, lang)
     except Exception as e:
-        log.error(f"OCR long text failed: {e}")
-        return ""
+        log.warning(f"OCR long text with preprocessing failed: {e}")
+    
+    # Fallback: try without preprocessing
+    try:
+        img = Image.open(image_path).convert("L")
+        config = f"--oem 3 --psm 3 -l {t_lang}"
+        text = pytesseract.image_to_string(img, config=config).strip()
+        if text:
+            text = _ensure_utf8(text)
+            return _filter_garbage(text, lang)
+    except Exception as e:
+        log.error(f"OCR long text failed completely: {e}")
+    
+    return ""
 
 
 def ocr_image_with_boxes(image_path: Path, lang: str = "zh") -> dict:
