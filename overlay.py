@@ -171,7 +171,7 @@ class LiveOCROverlay:
         time.sleep(0.3)
         try:
             result = subprocess.run(
-                ["slurp", "-d", "-b", "333333cc", "-c", "ff0000ff", "-s", "ff000044", "-w", "3"],
+                ["slurp", "-b", "333333cc", "-c", "ff0000ff", "-s", "ff000044", "-w", "3"],
                 capture_output=True, text=True, timeout=30
             )
             self.root.deiconify()

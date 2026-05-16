@@ -20,10 +20,23 @@ def get_display_scale():
 
 
 def parse_slurp_geom(geom_str: str) -> tuple | None:
-    """Parse slurp geometry string."""
+    """Parse slurp geometry string. Handles formats:
+    - 'x,y,w,h' (comma-separated)
+    - 'x,y wxh' (slurp default output)
+    - 'WxH+X+Y' (ImageMagick format)
+    """
     try:
-        if "," in geom_str:
-            return tuple(map(int, geom_str.split(",")))
+        geom_str = geom_str.strip()
+        # Format: 'x,y wxh' (slurp default)
+        if ',' in geom_str and ' ' in geom_str:
+            xy, wh = geom_str.split(' ', 1)
+            x, y = map(int, xy.split(','))
+            w, h = map(int, wh.split('x'))
+            return x, y, w, h
+        # Format: 'x,y,w,h' (comma-separated)
+        if ',' in geom_str:
+            return tuple(map(int, geom_str.split(',')))
+        # Format: 'WxH+X+Y' (ImageMagick)
         geom_str = geom_str.replace(" ", "")
         if "x" in geom_str and "+" in geom_str:
             wh, rest = geom_str.split("+", 1)
@@ -45,7 +58,7 @@ def capture_region(output_path: Path, geom: str = None) -> str | None:
         try:
             if not geom:
                 result = subprocess.run(
-                    ["slurp", "-d", "-b", "333333cc", "-c", "ff0000ff", "-s", "ff000044", "-w", "3"],
+                    ["slurp", "-b", "333333cc", "-c", "ff0000ff", "-s", "ff000044", "-w", "3"],
                     capture_output=True, text=True, timeout=30
                 )
                 if result.returncode != 0 or not result.stdout.strip():
@@ -59,9 +72,7 @@ def capture_region(output_path: Path, geom: str = None) -> str | None:
             if not parsed:
                 return None
             x, y, w, h = parsed
-            sx, sy = int(x * scale), int(y * scale)
-            sw, sh = int(w * scale), int(h * scale)
-            subprocess.run(["grim", "-g", f"{sx},{sy},{sw},{sh}", str(output_path)], check=True)
+            subprocess.run(["grim", "-g", f"{x},{y} {w}x{h}", str(output_path)], check=True)
             log.info(f"Captured region: {geom}")
             return geom
         except subprocess.CalledProcessError as e:
@@ -77,13 +88,10 @@ def capture_screenshot(output_path: Path, geom: str = None) -> bool:
     """Capture screenshot, optionally cropped."""
     try:
         if geom:
-            scale = get_display_scale()
             parsed = parse_slurp_geom(geom)
             if parsed:
                 x, y, w, h = parsed
-                sx, sy = int(x * scale), int(y * scale)
-                sw, sh = int(w * scale), int(h * scale)
-                subprocess.run(["grim", "-g", f"{sx},{sy},{sw},{sh}", str(output_path)],
+                subprocess.run(["grim", "-g", f"{x},{y} {w}x{h}", str(output_path)],
                     check=True, capture_output=True)
                 return True
         subprocess.run(["grim", str(output_path)], check=True, capture_output=True)

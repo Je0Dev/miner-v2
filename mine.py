@@ -1,4 +1,5 @@
 """Main mining logic - capture, OCR, translate, save, notify."""
+import json
 import time
 from datetime import datetime
 from pathlib import Path
@@ -6,6 +7,7 @@ from config import MINING_DIR, AUDIO_DIR, IMAGES_DIR, VIDEO_DIR
 from text import clean_text, is_valid_text, is_duplicate, load_history, format_with_pinyin
 from ocr import ocr_image
 from translate import translate_text, copy_to_clipboard, record_audio, notify
+from capture import capture_region
 from log import log
 
 
@@ -114,7 +116,3 @@ def mine_sentence(ocr_lang="zh", translate_to="en", audio_duration=5, source_nam
 
     log.info(f"Mining complete: {sd}")
     return entry
-
-
-# Import capture here to avoid circular imports
-from capture import capture_region
