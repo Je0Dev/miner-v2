@@ -19,7 +19,18 @@ case "$OCR_LANG" in
     *) LANG_CODE="zh" ;;
 esac
 
-pkill -f "yomitan-hover" 2>/dev/null || true
-sleep 0.2
+# Kill existing instance
+pkill -f "yomitan-hover.py" 2>/dev/null
+sleep 0.3
 
-exec $PYTHON "$SCRIPT_DIR/yomitan-hover.py" "$LANG_CODE"
+# Launch in background
+nohup $PYTHON "$SCRIPT_DIR/yomitan-hover.py" "$LANG_CODE" > /tmp/yomitan-hover.log 2>&1 &
+disown
+
+sleep 1
+if pgrep -f "yomitan-hover.py" > /dev/null; then
+    echo "Yomitan Hover started ($LANG_CODE)"
+else
+    echo "Failed to start. Check /tmp/yomitan-hover.log"
+    cat /tmp/yomitan-hover.log
+fi

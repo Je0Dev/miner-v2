@@ -1865,3 +1865,246 @@ Saved: 20260516_141452
 2026-05-16 14:15:44,249 [INFO] Zone deleted: zone_b
 2026-05-16 14:15:44,250 [INFO] Zone saved: test_zone (100,100 200x50)
 2026-05-16 14:15:44,250 [INFO] Zone deleted: test_zone
+2026-05-16 14:16:50,946 [INFO] Mining: zh->en
+2026-05-16 14:16:50,946 [INFO] Select text region...
+2026-05-16 14:16:52,688 [INFO] Captured region: 1203,296 643x514
+2026-05-16 14:16:53,178 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 14:17:05,182 [INFO] Notification: [Mining] No text detected
+2026-05-16 14:17:09,807 [INFO] Mining: ja->en
+2026-05-16 14:17:09,807 [INFO] Select text region...
+2026-05-16 14:17:11,393 [INFO] Captured region: 1165,276 730x527
+2026-05-16 14:17:11,866 [INFO] Tesseract pre-warmed (jpn)
+2026-05-16 14:17:22,962 [INFO] Notification: [Mining] No text detected
+2026-05-16 14:18:01,937 [INFO] Mining: de->en
+2026-05-16 14:18:01,937 [INFO] Select text region...
+2026-05-16 14:18:03,661 [INFO] Captured region: 963,240 697x563
+2026-05-16 14:18:03,919 [INFO] Tesseract pre-warmed (deu)
+2026-05-16 14:18:04,356 [INFO] OCR result: O F Resonatoren Synthese Trophäen Freunde %#% @ Galerie Kart
+2026-05-16 14:18:05,188 [INFO] Translation: O F Resonators Synthesis Trophies Friends Gallery Map Invent
+2026-05-16 14:18:05,196 [INFO] Notification: [Sentence Captured] Text: O F Resonatoren Synthese Trophäen Freunde %#% @ Galerie Karte Inventar Fee
+2026-05-16 14:18:05,239 [INFO] Copied to clipboard: O F Resonatoren Synthese Trophäen Freunde %#% @ Ga
+2026-05-16 14:18:05,239 [INFO] Recording 5s audio...
+2026-05-16 14:18:06,518 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 14:18:11,733 [INFO] Audio recording: success
+2026-05-16 14:18:11,751 [INFO] Notification: [Sentence Mined] Text: O F Resonatoren Synthese Trophäen Freunde %#% @ Galerie Kart
+Translation: 
+2026-05-16 14:18:11,751 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_141801
+2026-05-16 14:18:15,334 [INFO] Mining: de->en
+2026-05-16 14:18:15,334 [INFO] Select text region...
+2026-05-16 14:18:18,977 [INFO] Captured region: 489,587 303x178
+2026-05-16 14:18:19,240 [INFO] Tesseract pre-warmed (deu)
+2026-05-16 14:18:19,570 [INFO] OCR result: Geburtstag SOL-Phase Allianzstufe Allianz-EP
+2026-05-16 14:18:20,259 [INFO] Translation: Birthday SOL phase Alliance level Alliance XP
+2026-05-16 14:18:20,267 [INFO] Notification: [Sentence Captured] Text: Geburtstag SOL-Phase Allianzstufe Allianz-EP
+Translation: Birthday SOL pha
+2026-05-16 14:18:20,307 [INFO] Copied to clipboard: Geburtstag SOL-Phase Allianzstufe Allianz-EP
+2026-05-16 14:18:20,307 [INFO] Recording 5s audio...
+2026-05-16 14:18:21,506 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 14:18:26,721 [INFO] Audio recording: success
+2026-05-16 14:18:26,731 [INFO] Notification: [Sentence Mined] Text: Geburtstag SOL-Phase Allianzstufe Allianz-EP
+Translation: Birthday SOL pha
+2026-05-16 14:18:26,731 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_141815
+2026-05-16 14:18:32,791 [INFO] Mining: de->en
+2026-05-16 14:18:32,791 [INFO] Select text region...
+2026-05-16 14:18:35,482 [INFO] Captured region: 1009,624 5x4
+2026-05-16 14:18:35,748 [INFO] Tesseract pre-warmed (deu)
+2026-05-16 14:18:38,109 [INFO] Notification: [Mining] No text detected
+2026-05-16 14:18:41,785 [INFO] Mining: de->en
+2026-05-16 14:18:41,785 [INFO] Select text region...
+2026-05-16 14:18:43,864 [INFO] Captured region: 748,561 639x83
+2026-05-16 14:18:44,140 [INFO] Tesseract pre-warmed (deu)
+2026-05-16 14:18:44,526 [INFO] OCR result: Bitte halte dich bei der Bearbeitung von Textinhalten an die
+2026-05-16 14:18:45,196 [INFO] Translation: Please adhere to local laws and regulations when editing tex
+2026-05-16 14:18:45,205 [INFO] Notification: [Sentence Captured] Text: Bitte halte dich bei der Bearbeitung von Textinhalten an die örtlichen Ges
+2026-05-16 14:18:45,235 [INFO] Copied to clipboard: Bitte halte dich bei der Bearbeitung von Textinhal
+2026-05-16 14:18:45,235 [INFO] Recording 5s audio...
+2026-05-16 14:18:46,470 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 14:18:49,542 [INFO] Tesseract pre-warmed (eng)
+2026-05-16 14:18:51,685 [INFO] Audio recording: success
+2026-05-16 14:18:51,711 [INFO] Notification: [Sentence Mined] Text: Bitte halte dich bei der Bearbeitung von Textinhalten an die
+Translation: 
+2026-05-16 14:18:51,713 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_141841
+2026-05-16 14:19:08,442 [INFO] Mining: de->en
+2026-05-16 14:19:08,442 [INFO] Select text region...
+2026-05-16 14:19:12,291 [INFO] Captured region: 571,284 320x512
+2026-05-16 14:19:12,568 [INFO] Tesseract pre-warmed (deu)
+2026-05-16 14:19:13,446 [INFO] OCR result: * Hiyuki Glacio Waffe Schwert Geschlecht Weiblich Geburtsort
+2026-05-16 14:19:14,250 [INFO] Translation: Hiyuki Glacio Weapon Sword Gender Female Place of birth Ashi
+2026-05-16 14:19:14,259 [INFO] Notification: [Sentence Captured] Text: * Hiyuki Glacio Waffe Schwert Geschlecht Weiblich Geburtsort Ashinohara Zu
+2026-05-16 14:19:14,302 [INFO] Copied to clipboard: * Hiyuki Glacio Waffe Schwert Geschlecht Weiblich 
+2026-05-16 14:19:14,302 [INFO] Recording 5s audio...
+2026-05-16 14:19:15,577 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 14:19:20,843 [INFO] Audio recording: success
+2026-05-16 14:19:20,855 [INFO] Notification: [Sentence Mined] Text: * Hiyuki Glacio Waffe Schwert Geschlecht Weiblich Geburtsort
+Translation: 
+2026-05-16 14:19:20,855 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_141908
+2026-05-16 14:19:53,204 [INFO] Mining: de->en
+2026-05-16 14:19:53,204 [INFO] Select text region...
+2026-05-16 14:19:57,259 [INFO] Exported 2 entries to /home/mastroni/miner-v2/mining/test_anki_export.csv
+2026-05-16 14:19:57,872 [INFO] Tesseract pre-warmed (eng)
+2026-05-16 14:19:58,597 [INFO] Captured region: 542,117 1108x748
+2026-05-16 14:19:58,896 [INFO] Tesseract pre-warmed (deu)
+2026-05-16 14:20:00,492 [INFO] OCR result: E Y m e A, e FKundung: HuanglöNnd < g Han Erkundung: Huanglo
+2026-05-16 14:20:01,477 [INFO] Translation: E Y m e A, e FExploration: HuanglöNnd g Han Exploration: Hua
+2026-05-16 14:20:01,490 [INFO] Notification: [Sentence Captured] Text: E Y m e A, e FKundung: HuanglöNnd < g Han Erkundung: Huanglorng . Sr % P E
+2026-05-16 14:20:01,544 [INFO] Copied to clipboard: E Y m e A, e FKundung: HuanglöNnd < g Han Erkundun
+2026-05-16 14:20:01,544 [INFO] Recording 5s audio...
+2026-05-16 14:20:02,796 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 14:20:08,061 [INFO] Audio recording: success
+2026-05-16 14:20:08,076 [INFO] Notification: [Sentence Mined] Text: E Y m e A, e FKundung: HuanglöNnd < g Han Erkundung: Huanglo
+Translation: 
+2026-05-16 14:20:08,076 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_141953
+2026-05-16 14:20:15,524 [INFO] Mining: de->en
+2026-05-16 14:20:15,524 [INFO] Select text region...
+2026-05-16 14:20:18,418 [INFO] Captured region: 1064,290 234x202
+2026-05-16 14:20:18,695 [INFO] Tesseract pre-warmed (deu)
+2026-05-16 14:20:19,058 [INFO] OCR result: AVGIKIGSKUBDEN N SMETTS Dlatz
+2026-05-16 14:20:19,607 [INFO] Translation: AVGIKIGSKUBDEN N SMETTS Dlatz
+2026-05-16 14:20:19,614 [INFO] Notification: [Sentence Captured] Text: AVGIKIGSKUBDEN N SMETTS Dlatz
+Translation: AVGIKIGSKUBDEN N SMETTS Dlatz
+2026-05-16 14:20:19,655 [INFO] Copied to clipboard: AVGIKIGSKUBDEN N SMETTS Dlatz
+2026-05-16 14:20:19,655 [INFO] Recording 5s audio...
+2026-05-16 14:20:20,874 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 14:20:26,089 [INFO] Audio recording: success
+2026-05-16 14:20:26,102 [INFO] Notification: [Sentence Mined] Text: AVGIKIGSKUBDEN N SMETTS Dlatz
+Translation: AVGIKIGSKUBDEN N SMETTS Dlatz
+A
+2026-05-16 14:20:26,102 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_142015
+2026-05-16 14:20:39,652 [INFO] Backup created: /home/mastroni/miner-v2/mining/backups/backup_20260516_142039
+2026-05-16 14:20:43,064 [INFO] Copied to clipboard: test clipboard content
+2026-05-16 14:20:43,086 [INFO] Notification: [Test] Notification test
+2026-05-16 14:20:45,655 [INFO] Zone saved: zone_a (0,0 100x50)
+2026-05-16 14:20:45,656 [INFO] Zone saved: zone_b (100,100 200x50)
+2026-05-16 14:20:45,656 [INFO] Zone deleted: zone_a
+2026-05-16 14:20:45,656 [INFO] Zone deleted: zone_b
+2026-05-16 14:20:45,656 [INFO] Zone saved: test_zone (100,100 200x50)
+2026-05-16 14:20:45,656 [INFO] Zone deleted: test_zone
+2026-05-16 14:21:24,910 [INFO] Mining: ja->en
+2026-05-16 14:21:24,910 [INFO] Select text region...
+2026-05-16 14:21:26,874 [INFO] Captured region: 488,474 158x162
+2026-05-16 14:21:27,322 [INFO] Tesseract pre-warmed (jpn)
+2026-05-16 14:21:28,750 [INFO] OCR result: 三ンらヘぬ的ペヽト有一副ドーリ
+2026-05-16 14:21:29,748 [INFO] Translation: Three-dimensional target Yuichi Deputy Dori
+2026-05-16 14:21:29,755 [INFO] Notification: [Sentence Captured] Text: 三ンらヘぬ的ペヽト有一副ドーリ
+Translation: Three-dimensional target Yuichi Deputy Dori
+2026-05-16 14:21:29,787 [INFO] Copied to clipboard: 三ンらヘぬ的ペヽト有一副ドーリ
+2026-05-16 14:21:29,787 [INFO] Recording 5s audio...
+2026-05-16 14:21:31,025 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 14:21:36,240 [INFO] Audio recording: success
+2026-05-16 14:21:36,250 [INFO] Notification: [Sentence Mined] Text: 三ンらヘぬ的ペヽト有一副ドーリ
+Translation: Three-dimensional target Yuichi Deputy Dori
+A
+2026-05-16 14:21:36,250 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_142124
+2026-05-16 14:21:38,593 [INFO] Mining: ja->en
+2026-05-16 14:21:38,594 [INFO] Select text region...
+2026-05-16 14:21:40,053 [INFO] Captured region: 1092,178 626x539
+2026-05-16 14:21:40,484 [INFO] Tesseract pre-warmed (jpn)
+2026-05-16 14:21:41,455 [INFO] OCR result: ⑫ で哲共鳴者合成実績フレンド京喪万物図鑑マップバッグラ璽 ;クドに圏圏囲メク睾睾†墓ン任務青丿ュァフレ卜攻略サイト
+2026-05-16 14:21:42,274 [INFO] Translation: Philosophy Sympathizer Synthesis Achievement Friend Kyoto Mo
+2026-05-16 14:21:42,293 [INFO] Notification: [Sentence Captured] Text: ⑫ で哲共鳴者合成実績フレンド京喪万物図鑑マップバッグラ璽 ;クドに圏圏囲メク睾睾†墓ン任務青丿ュァフレ卜攻略サイト
+Translation: Ph
+2026-05-16 14:21:42,323 [INFO] Copied to clipboard: ⑫ で哲共鳴者合成実績フレンド京喪万物図鑑マップバッグラ璽 ;クドに圏圏囲メク睾睾†墓ン任務青丿ュァ
+2026-05-16 14:21:42,323 [INFO] Recording 5s audio...
+2026-05-16 14:21:43,515 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 14:21:48,730 [INFO] Audio recording: success
+2026-05-16 14:21:48,741 [INFO] Notification: [Sentence Mined] Text: ⑫ で哲共鳴者合成実績フレンド京喪万物図鑑マップバッグラ璽 ;クドに圏圏囲メク睾睾†墓ン任務青丿ュァフレ卜攻略サイト
+Translation: Ph
+2026-05-16 14:21:48,741 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_142138
+2026-05-16 14:21:51,316 [INFO] Mining: ja->en
+2026-05-16 14:21:51,316 [INFO] Select text region...
+2026-05-16 14:21:57,692 [INFO] Captured region: 627,329 191x244
+2026-05-16 14:21:58,133 [INFO] Tesseract pre-warmed (jpn)
+2026-05-16 14:21:59,908 [INFO] OCR result: 〝叡スっュ〟一ミミュ葉爪ミ蚕映葉ちーさミエ取管戒へへる父志木装霧
+2026-05-16 14:22:00,784 [INFO] Translation: Eishu, Mimyu, Hazume, Silkworm Eiha, Chisa, Mie, Toru Kankai
+2026-05-16 14:22:00,792 [INFO] Notification: [Sentence Captured] Text: 〝叡スっュ〟一ミミュ葉爪ミ蚕映葉ちーさミエ取管戒へへる父志木装霧
+Translation: Eishu, Mimyu, Hazume, Silkwo
+2026-05-16 14:22:00,821 [INFO] Copied to clipboard: 〝叡スっュ〟一ミミュ葉爪ミ蚕映葉ちーさミエ取管戒へへる父志木装霧
+2026-05-16 14:22:00,821 [INFO] Recording 5s audio...
+2026-05-16 14:22:02,023 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 14:22:07,238 [INFO] Audio recording: success
+2026-05-16 14:22:07,248 [INFO] Notification: [Sentence Mined] Text: 〝叡スっュ〟一ミミュ葉爪ミ蚕映葉ちーさミエ取管戒へへる父志木装霧
+Translation: Eishu, Mimyu, Hazume, Silkwo
+2026-05-16 14:22:07,248 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_142151
+2026-05-16 14:23:13,722 [INFO] Mining: ja->en
+2026-05-16 14:23:13,722 [INFO] Select text region...
+2026-05-16 14:23:15,460 [INFO] Captured region: 1295,336 186x184
+2026-05-16 14:23:15,916 [INFO] Tesseract pre-warmed (jpn)
+2026-05-16 14:23:21,229 [INFO] OCR result: 匿ーーで夜明峠の坂せし市鱒火とごさょ ⑳ り ⑧ うだいぃい玉龍台
+2026-05-16 14:23:22,645 [INFO] Translation: Sakaseshi Ichi Masubi and Gossori Udaii Gyokuryudai on the Y
+2026-05-16 14:23:22,658 [INFO] Notification: [Sentence Captured] Text: 匿ーーで夜明峠の坂せし市鱒火とごさょ ⑳ り ⑧ うだいぃい玉龍台
+Translation: Sakaseshi Ichi Masubi and G
+2026-05-16 14:23:22,719 [INFO] Copied to clipboard: 匿ーーで夜明峠の坂せし市鱒火とごさょ ⑳ り ⑧ うだいぃい玉龍台
+2026-05-16 14:23:22,719 [INFO] Recording 5s audio...
+2026-05-16 14:23:23,988 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 14:23:29,203 [INFO] Audio recording: success
+2026-05-16 14:23:29,214 [INFO] Notification: [Sentence Mined] Text: 匿ーーで夜明峠の坂せし市鱒火とごさょ ⑳ り ⑧ うだいぃい玉龍台
+Translation: Sakaseshi Ichi Masubi and G
+2026-05-16 14:23:29,214 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_142313
+2026-05-16 14:23:41,700 [INFO] Mining: ja->en
+2026-05-16 14:23:41,700 [INFO] Select text region...
+2026-05-16 14:23:44,831 [INFO] Captured region: 1503,513 73x34
+2026-05-16 14:23:45,331 [INFO] Tesseract pre-warmed (jpn)
+2026-05-16 14:23:47,403 [INFO] OCR result: るだー縄啓る道
+2026-05-16 14:23:49,144 [INFO] Translation: Ruda rope enlightenment path
+2026-05-16 14:23:49,154 [INFO] Notification: [Sentence Captured] Text: るだー縄啓る道
+Translation: Ruda rope enlightenment path
+2026-05-16 14:23:49,188 [INFO] Copied to clipboard: るだー縄啓る道
+2026-05-16 14:23:49,188 [INFO] Recording 5s audio...
+2026-05-16 14:23:50,450 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 14:23:55,665 [INFO] Audio recording: success
+2026-05-16 14:23:55,676 [INFO] Notification: [Sentence Mined] Text: るだー縄啓る道
+Translation: Ruda rope enlightenment path
+Audio: Yes
+Saved: 202605
+2026-05-16 14:23:55,676 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_142341
+2026-05-16 14:24:26,948 [INFO] Mining: ja->en
+2026-05-16 14:24:26,948 [INFO] Select text region...
+2026-05-16 14:24:27,087 [INFO] Exported 2 entries to /home/mastroni/miner-v2/mining/test_anki_export.csv
+2026-05-16 14:24:27,678 [INFO] Tesseract pre-warmed (eng)
+2026-05-16 14:24:29,285 [INFO] Captured region: 380,278 974x295
+2026-05-16 14:24:29,813 [INFO] Tesseract pre-warmed (jpn)
+2026-05-16 14:24:32,041 [INFO] OCR result: キャラ紹介簡略攻略髑 . ユーノは共鳴解放ダメージを主軸とするアタッカーでありながら回復やサポート能力も兼ね備えた全体的
+2026-05-16 14:24:33,317 [INFO] Translation: Character introduction brief walkthrough Yuno the Skull is a
+2026-05-16 14:24:33,327 [INFO] Notification: [Sentence Captured] Text: キャラ紹介簡略攻略髑 . ユーノは共鳴解放ダメージを主軸とするアタッカーでありながら回復やサポート能力も兼ね備えた全体的に非常に強力なキャラクターで
+2026-05-16 14:24:33,368 [INFO] Copied to clipboard: キャラ紹介簡略攻略髑 . ユーノは共鳴解放ダメージを主軸とするアタッカーでありながら回復やサポート能
+2026-05-16 14:24:33,369 [INFO] Recording 5s audio...
+2026-05-16 14:24:34,616 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 14:24:39,933 [INFO] Audio recording: success
+2026-05-16 14:24:39,953 [INFO] Notification: [Sentence Mined] Text: キャラ紹介簡略攻略髑 . ユーノは共鳴解放ダメージを主軸とするアタッカーでありながら回復やサポート能力も兼ね備えた全体的
+Translation: 
+2026-05-16 14:24:39,953 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_142426
+2026-05-16 14:26:18,246 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 14:26:18,303 [INFO] Notification: [Yomitan Hover] Active - Drag over text (ZH)
+2026-05-16 14:26:19,953 [INFO] Copied to clipboard: Yomitan Hover Drag pver Eext
+2026-05-16 14:26:19,953 [INFO] Hover #1: Yomitan Hover Drag pver Eext
+2026-05-16 14:26:22,838 [INFO] Copied to clipboard: Yonmitan Hover Drag pver Eext
+2026-05-16 14:26:22,838 [INFO] Hover #2: Yonmitan Hover Drag pver Eext
+2026-05-16 14:26:27,890 [INFO] Copied to clipboard: Yonmitan Hover sg Pver Eext
+2026-05-16 14:26:27,890 [INFO] Hover #3: Yonmitan Hover sg Pver Eext
+2026-05-16 14:26:40,783 [INFO] Copied to clipboard: Yonmitan Hover Pver Eext
+2026-05-16 14:26:40,783 [INFO] Hover #4: Yonmitan Hover Pver Eext
+2026-05-16 14:27:16,563 [INFO] Copied to clipboard: 生日索拉等级
+2026-05-16 14:27:16,563 [INFO] Hover #5: 生日索拉等级
+2026-05-16 14:27:29,935 [INFO] Copied to clipboard: NufNuexudxucxubNuea
+2026-05-16 14:27:29,935 [INFO] Hover #6: NufNuexudxucxubNuea
+2026-05-16 14:30:45,224 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 14:30:45,252 [INFO] Notification: [Yomitan Hover] Active (ZH) - Scanning below window
+2026-05-16 14:30:51,289 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 14:30:51,315 [INFO] Notification: [Yomitan Hover] Active (ZH) - Scanning below window
+2026-05-16 14:30:53,105 [INFO] Copied to clipboard: copytoctLipboandl
+2026-05-16 14:30:53,106 [INFO] Hover #1: copytoctLipboandl
+2026-05-16 14:31:07,808 [INFO] Exported 2 entries to /home/mastroni/miner-v2/mining/test_anki_export.csv
+2026-05-16 14:31:08,410 [INFO] Tesseract pre-warmed (eng)
+2026-05-16 14:31:17,729 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 14:31:17,757 [INFO] Notification: [Yomitan Hover] Active (ZH) - Scanning below window
+2026-05-16 14:31:23,016 [INFO] Copied to clipboard: targetocrLp, dagtonTrue .start Hover ,fActive CRLA
+2026-05-16 14:31:23,016 [INFO] Hover #1: targetocrLp, dagtonTrue .start Hover ,fActive CRLANSHORT.upp
+2026-05-16 14:31:50,504 [INFO] Backup created: /home/mastroni/miner-v2/mining/backups/backup_20260516_143150
+2026-05-16 14:31:53,954 [INFO] Copied to clipboard: test clipboard content
+2026-05-16 14:31:53,973 [INFO] Notification: [Test] Notification test
+2026-05-16 14:31:56,481 [INFO] Zone saved: zone_a (0,0 100x50)
+2026-05-16 14:31:56,481 [INFO] Zone saved: zone_b (100,100 200x50)
+2026-05-16 14:31:56,482 [INFO] Zone deleted: zone_a
+2026-05-16 14:31:56,482 [INFO] Zone deleted: zone_b
+2026-05-16 14:31:56,482 [INFO] Zone saved: test_zone (100,100 200x50)
+2026-05-16 14:31:56,483 [INFO] Zone deleted: test_zone

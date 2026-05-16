@@ -114,9 +114,18 @@ def _ensure_utf8(text: str) -> str:
 
 _CJK_RE = re.compile(r'[\u4e00-\u9fff\u3040-\u309f\u30a0-\u30ff\uac00-\ud7af]')
 _COPYRIGHT_RE = re.compile(r'[©®™℗℠]')
+_UI_SYMBOLS_RE = re.compile(r'[\u2460-\u24ff\u2600-\u26ff\u2700-\u27bf\u3000-\u303f\uff00-\uffef\u2000-\u206f\u20a0-\u20cf\u2100-\u214f\u2190-\u21ff\u2200-\u22ff\u2300-\u23ff\u25a0-\u25ff\u2e80-\u2eff\u3100-\u312f\u3200-\u32ff]')
+_CIRCLED_RE = re.compile(r'[\u2460-\u24ff\u3200-\u32ff]')
+_DINGBATS_RE = re.compile(r'[\u2700-\u27bf]')
+_MISC_SYMBOLS_RE = re.compile(r'[\u2600-\u26ff]')
 
 def _filter_garbage(text: str, lang: str = "zh") -> str:
     if not text: return ""
+    # Remove UI symbols: circled numbers, dingbats, misc symbols, arrows, math, etc.
+    text = _CIRCLED_RE.sub('', text)
+    text = _DINGBATS_RE.sub('', text)
+    text = _MISC_SYMBOLS_RE.sub('', text)
+    text = _UI_SYMBOLS_RE.sub('', text)
     text = _COPYRIGHT_RE.sub('', text)
     script = LANG_REGISTRY.get(lang, {}).get("script", "latin")
     if script == "cjk":
@@ -134,10 +143,10 @@ def _filter_garbage(text: str, lang: str = "zh") -> str:
         text = re.sub(r'\b([A-Za-z])\s+\1\b', '', text)
     elif script == "greek":
         text = re.sub(r'(?<!\d)\d{1,3}(?!\d)', '', text)
-        text = re.sub(r'[^\u0370-\u03FF\u0020-\u007F©®™]', '', text)
+        text = re.sub(r'[^\u0370-\u03FF\u0020-\u007F]', '', text)
     elif script == "cyrillic":
         text = re.sub(r'(?<!\d)\d{1,3}(?!\d)', '', text)
-        text = re.sub(r'[^\u0400-\u04FF\u0020-\u007F©®™]', '', text)
+        text = re.sub(r'[^\u0400-\u04FF\u0020-\u007F]', '', text)
     text = re.sub(r'\s+', ' ', text).strip()
     return text if text and not text.isspace() else ""
 
