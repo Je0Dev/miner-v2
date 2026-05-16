@@ -1334,3 +1334,121 @@ Saved: 20260516_134044
 2026-05-16 13:42:18,287 [INFO] Tesseract pre-warmed (chi_sim)
 2026-05-16 13:42:20,755 [INFO] Copied to clipboard: test clipboard content
 2026-05-16 13:42:20,771 [INFO] Notification: [Test] Notification test
+2026-05-16 13:43:04,530 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 13:43:06,352 [INFO] Copied to clipboard: 群星交错 ′ 百战锻形往昨留影
+2026-05-16 13:43:10,454 [INFO] Copied to clipboard: 群星交错 ′ 百战锻形往昨留影
+群星交错 - 百战锻形 - 往昨留影
+2026-05-16 13:43:13,874 [INFO] Copied to clipboard: 群星交错 ′ 百战锻形往昨留影
+群星交错 - 百战锻形 - 往昨留影
+群星交错 - 百战锻形 ′′ 
+2026-05-16 13:43:14,594 [INFO] Copied to clipboard: 群星交错 ′ 百战锻形往昨留影
+群星交错 - 百战锻形 - 往昨留影
+群星交错 - 百战锻形 ′′ 
+2026-05-16 13:43:16,795 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 13:43:17,548 [INFO] Copied to clipboard: 群星交错 ′ 百战锻形往昨留影
+群星交错 - 百战锻形 - 往昨留影
+群星交错 - 百战锻形 ′′ 
+2026-05-16 13:43:21,345 [INFO] Copied to clipboard: 群星交错 - 百战锻形 - 往昨留影
+群星交错 - 百战锻形 ′′ 往昨留影
+群星交错 ′ 百战锻形
+2026-05-16 13:43:22,045 [INFO] Audio recording: success
+2026-05-16 13:43:22,092 [INFO] Copied to clipboard: 群星交错 ′ 百战锻形往昨留影
+群星交错 - 百战锻形 - 往昨留影
+群星交错 - 百战锻形 ′′ 
+2026-05-16 13:43:22,106 [INFO] Notification: [Sentence Mined] Text: 群星交错 ′ 百战锻形往昨留影
+群星交错 - 百战锻形 - 往昨留影
+群星交错 - 百战锻形 ′′ 往昨留影
+群星交错 
+Translation: 
+2026-05-16 13:43:25,639 [INFO] Copied to clipboard: 群星交错百战锻形 - 往昨留影
+2026-05-16 13:43:29,286 [INFO] Copied to clipboard: 群星交错百战锻形 - 往昨留影
+群星交错百战锻形 , 往昨留影
+2026-05-16 13:43:32,764 [INFO] Copied to clipboard: 群星交错百战锻形 - 往昨留影
+群星交错百战锻形 , 往昨留影
+群星交错百战锻形往昔留影
+2026-05-16 13:45:23,219 [INFO] Mining: pl->en
+2026-05-16 13:45:23,219 [INFO] Select text region...
+2026-05-16 13:45:23,261 [INFO] Mining: zh->en
+2026-05-16 13:45:23,261 [INFO] Select text region...
+2026-05-16 13:45:24,310 [INFO] Captured region: 1711,415 111x90
+2026-05-16 13:45:24,316 [INFO] Notification: [Mining] Processing...
+2026-05-16 13:45:24,316 [INFO] OCRing region: 1711,415 111x90
+2026-05-16 13:45:24,767 [INFO] Captured region: 1769,437 96x70
+2026-05-16 13:45:24,777 [INFO] Notification: [Mining] Processing...
+2026-05-16 13:45:24,777 [INFO] OCRing region: 1769,437 96x70
+2026-05-16 13:45:24,866 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 13:45:25,101 [INFO] Tesseract pre-warmed (pol)
+2026-05-16 13:45:25,394 [INFO] Notification: [Mining] No text detected
+2026-05-16 13:45:25,408 [INFO] Notification: [Mining] No text detected
+2026-05-16 13:45:31,534 [INFO] Mining: pl->en
+2026-05-16 13:45:31,534 [INFO] Select text region...
+2026-05-16 13:45:31,559 [INFO] Mining: zh->en
+2026-05-16 13:45:31,559 [INFO] Select text region...
+2026-05-16 13:45:32,354 [INFO] Captured region: 1468,409 306x92
+2026-05-16 13:45:32,360 [INFO] Notification: [Mining] Processing...
+2026-05-16 13:45:32,360 [INFO] OCRing region: 1468,409 306x92
+2026-05-16 13:45:32,862 [INFO] Captured region: 1539,413 209x60
+2026-05-16 13:45:32,870 [INFO] Notification: [Mining] Processing...
+2026-05-16 13:45:32,871 [INFO] OCRing region: 1539,413 209x60
+2026-05-16 13:45:32,884 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 13:45:33,163 [INFO] Tesseract pre-warmed (pol)
+2026-05-16 13:45:33,434 [INFO] OCR result: 兰鸣者合成
+2026-05-16 13:45:33,532 [INFO] OCR result: E ś
+2026-05-16 13:45:34,210 [INFO] Translation: E wed
+2026-05-16 13:45:34,217 [INFO] Notification: [Sentence Captured] Text: E ś
+Translation: E wed
+2026-05-16 13:45:34,256 [INFO] Copied to clipboard: E ś
+2026-05-16 13:45:34,256 [INFO] Recording 5s audio...
+2026-05-16 13:45:34,266 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 13:45:34,273 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 13:45:35,263 [INFO] Translation: Lanmingzhe synthesis
+2026-05-16 13:45:35,563 [INFO] Notification: [Sentence Captured] Text: 兰鸣者合成
+pinyin: lan2 ming2 zhe3 he2 cheng2
+Translation: Lanmingzhe synthesis
+2026-05-16 13:45:35,600 [INFO] Copied to clipboard: 兰鸣者合成
+2026-05-16 13:45:35,600 [INFO] Recording 5s audio...
+2026-05-16 13:45:35,610 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 13:45:35,620 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 13:45:39,524 [INFO] Audio recording: success
+2026-05-16 13:45:39,537 [INFO] Notification: [Sentence Mined] Text: E ś
+Translation: E wed
+Audio: Yes
+Saved: 20260516_134531
+2026-05-16 13:45:39,537 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_134531
+2026-05-16 13:45:40,846 [INFO] Audio recording: success
+2026-05-16 13:45:40,857 [INFO] Notification: [Sentence Mined] Text: 兰鸣者合成
+Translation: Lanmingzhe synthesis
+Audio: Yes
+Saved: 20260516_134531
+2026-05-16 13:45:40,858 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_134531
+2026-05-16 13:46:42,738 [INFO] Mining: pl->en
+2026-05-16 13:46:42,739 [INFO] Select text region...
+2026-05-16 13:46:42,740 [INFO] Mining: zh->en
+2026-05-16 13:46:42,740 [INFO] Select text region...
+2026-05-16 13:46:43,887 [INFO] Captured region: 1213,397 657x59
+2026-05-16 13:46:43,895 [INFO] Notification: [Mining] Processing...
+2026-05-16 13:46:43,895 [INFO] OCRing region: 1213,397 657x59
+2026-05-16 13:46:44,372 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 13:46:44,893 [INFO] Notification: [Mining] No text detected
+2026-05-16 13:46:46,055 [INFO] Captured region: 1206,561 597x78
+2026-05-16 13:46:46,061 [INFO] Notification: [Mining] Processing...
+2026-05-16 13:46:46,061 [INFO] OCRing region: 1206,561 597x78
+2026-05-16 13:46:46,330 [INFO] Tesseract pre-warmed (pol)
+2026-05-16 13:46:46,631 [INFO] OCR result: > FWN EEE FA Bi
+2026-05-16 13:46:47,358 [INFO] Translation: > FWN EEE FA Bi
+2026-05-16 13:46:47,363 [INFO] Notification: [Sentence Captured] Text: > FWN EEE FA Bi
+Translation: > FWN EEE FA Bi
+2026-05-16 13:46:47,394 [INFO] Copied to clipboard: > FWN EEE FA Bi
+2026-05-16 13:46:47,395 [INFO] Recording 5s audio...
+2026-05-16 13:46:47,401 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 13:46:47,408 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 13:46:52,643 [INFO] Audio recording: success
+2026-05-16 13:46:52,658 [INFO] Notification: [Sentence Mined] Text: > FWN EEE FA Bi
+Translation: > FWN EEE FA Bi
+Audio: Yes
+Saved: 20260516_13
+2026-05-16 13:46:52,658 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_134642
+2026-05-16 13:46:56,473 [INFO] Exported 2 entries to /home/mastroni/miner-v2/mining/test_anki_export.csv
+2026-05-16 13:46:57,370 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 13:47:00,069 [INFO] Copied to clipboard: test clipboard content
+2026-05-16 13:47:00,085 [INFO] Notification: [Test] Notification test

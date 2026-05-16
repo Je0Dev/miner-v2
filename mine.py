@@ -24,11 +24,11 @@ def mine_sentence(ocr_lang="zh", translate_to="en", audio_duration=5, source_nam
     log.info(f"Mining: {ocr_lang}->{translate_to}")
     img_path = sd / IMAGES_DIR / "capture.png"
     log.info("Select text region...")
-    notify("Mining", "Select text region...", timeout=3000)
     geom = capture_region(img_path)
     if not geom:
         notify("Mining", "Capture cancelled", timeout=3000)
         return None
+    notify("Mining", "Processing...", timeout=2000)
     log.info(f"OCRing region: {geom}")
     if long_text:
         text = clean_text(ocr_long_text(img_path, ocr_lang))

@@ -15,7 +15,18 @@ def sanitize_unicode(text: str) -> str:
     if not text: return ""
     def _replace_escape(m): return chr(int(m.group(1), 16))
     text = UNICODE_ESCAPE_RE.sub(_replace_escape, text)
+    # Normalize to NFC (composed form)
     text = unicodedata.normalize('NFC', text)
+    # Remove replacement characters, zero-width spaces, and other invisible chars
+    text = text.replace('\ufffd', '')  # Replacement character
+    text = text.replace('\u200b', '')  # Zero-width space
+    text = text.replace('\u200c', '')  # Zero-width non-joiner
+    text = text.replace('\u200d', '')  # Zero-width joiner
+    text = text.replace('\ufeff', '')  # BOM
+    text = text.replace('\xa0', ' ')   # Non-breaking space
+    # Remove control characters except newlines and tabs
+    text = ''.join(c for c in text if unicodedata.category(c)[0] != 'C' or c in '\n\r\t')
+    # Fix mojibake (UTF-8 bytes decoded as Latin-1)
     if any(0x80 <= ord(c) <= 0xFF for c in text):
         try:
             fixed = text.encode('latin-1', errors='ignore').decode('utf-8', errors='replace')

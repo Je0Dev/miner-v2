@@ -409,5 +409,44 @@
     "source": "Game",
     "timestamp": "20260516_134044",
     "screenshot": "images/capture.png"
+  },
+  {
+    "sentence": "群星交错 ′ 百战锻形往昨留影\n群星交错 - 百战锻形 - 往昨留影\n群星交错 - 百战锻形 ′′ 往昨留影\n群星交错 ′ 百战锻形 “ 往昔留影",
+    "translation": "Stars intertwined - Forged by hundreds of battles - Pictures from yesterday\nStars intertwined - Forged by hundreds of battles '' Take pictures from yesterday\nStars intertwined ′ Forged by hundreds of battles \" Photos from the past\nStars intersect, forged through hundreds of battles, photos from the past remain",
+    "audio": "audio/audio_20260516_134316.mp3",
+    "pronunciation": "qun2 xing1 jiao1 cuo4  ′  bai3 zhan4 duan4 xing2 wang3 zuo2 liu2 ying3 \n qun2 xing1 jiao1 cuo4  -  bai3 zhan4 duan4 xing2  -  wang3 zuo2 liu2 ying3 \n qun2 xing1 jiao1 cuo4  -  bai3 zhan4 duan4 xing2  ′′  wang3 zuo2 liu2 ying3 \n qun2 xing1 jiao1 cuo4  ′  bai3 zhan4 duan4 xing2  “  wang3 xi1 liu2 ying3",
+    "lang": "zh",
+    "source": "Game",
+    "timestamp": "20260516_134316"
+  },
+  {
+    "sentence": "E ś",
+    "translation": "E wed",
+    "audio": "audio/audio_20260516_134531.mp3",
+    "pronunciation": "",
+    "lang": "pl",
+    "source": "Game",
+    "timestamp": "20260516_134531",
+    "screenshot": "images/capture.png"
+  },
+  {
+    "sentence": "兰鸣者合成",
+    "translation": "Lanmingzhe synthesis",
+    "audio": "audio/audio_20260516_134531.mp3",
+    "pronunciation": "lan2 ming2 zhe3 he2 cheng2",
+    "lang": "zh",
+    "source": "Game",
+    "timestamp": "20260516_134531",
+    "screenshot": "images/capture.png"
+  },
+  {
+    "sentence": "> FWN EEE FA Bi",
+    "translation": "> FWN EEE FA Bi",
+    "audio": "audio/audio_20260516_134642.mp3",
+    "pronunciation": "",
+    "lang": "pl",
+    "source": "Game",
+    "timestamp": "20260516_134642",
+    "screenshot": "images/capture.png"
   }
 ]

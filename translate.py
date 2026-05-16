@@ -1,5 +1,5 @@
 """Translation, audio recording, clipboard, and notifications."""
-import subprocess, threading, time, re
+import subprocess, threading, time, re, unicodedata
 from pathlib import Path
 from log import log
 from config import LANG_REGISTRY, GOOGLE_LANG_CODES
@@ -9,6 +9,14 @@ GREEK_RE = re.compile(r'[\u0370-\u03FF]')
 CYRILLIC_RE = re.compile(r'[\u0400-\u04FF]')
 HANGUL_RE = re.compile(r'[\uac00-\ud7af\u1100-\u11ff]')
 LATIN_ACCENT_RE = re.compile(r'[\u00c0-\u024f]')
+
+def _clean_translation(text: str) -> str:
+    """Clean translation output: normalize Unicode, remove weird chars."""
+    if not text: return ""
+    text = unicodedata.normalize('NFC', text)
+    text = text.replace('\ufffd', '').replace('\u200b', '').replace('\ufeff', '')
+    text = text.replace('\xa0', ' ').strip()
+    return text
 
 def _is_valid_for_translation(text: str, lang: str = "zh") -> bool:
     if not text or len(text.strip()) < 2: return False
@@ -34,7 +42,7 @@ def translate_text(text: str, src: str = "zh", dest: str = "en") -> str:
         t = GoogleTranslator(source=GOOGLE_LANG_CODES.get(src, src),
                              target=GOOGLE_LANG_CODES.get(dest, dest))
         result = t.translate(text)
-        return result.strip() if result else ""
+        return _clean_translation(result.strip()) if result else ""
     except Exception as e:
         log.error(f"Translation failed: {e}")
         return ""
