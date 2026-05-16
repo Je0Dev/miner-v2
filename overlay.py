@@ -41,7 +41,7 @@ class LiveOCROverlay:
         self.root.title("Live OCR Miner")
         self.root.geometry("850x700")
         self.root.minsize(850, 700)
-        self.root.attributes("-type", "splash")
+        # Don't use -type splash as it can make window non-interactive
         self.root.attributes("-topmost", True)
         self.root.attributes("-alpha", 0.95)
         self.root.configure(bg="#1a1a2e")
@@ -83,22 +83,20 @@ class LiveOCROverlay:
         btn_frame = tk.Frame(main, bg="#1a1a2e")
         btn_frame.pack(fill=tk.X, pady=5)
 
-        self.start_btn = tk.Button(btn_frame, text="Select Region", bg="#228B22", fg="white",
-                                    font=("Sans", 11, "bold"), command=self._select_region,
-                                    activebackground="#33AA33", bd=0, padx=15, pady=5)
-        self.start_btn.pack(side=tk.LEFT, padx=(0, 8))
+        self.select_btn = tk.Button(btn_frame, text="Select Region", bg="#228B22", fg="white",
+                                     font=("Sans", 11, "bold"), command=self._select_region,
+                                     activebackground="#33AA33", bd=0, padx=15, pady=5)
+        self.select_btn.pack(side=tk.LEFT, padx=(0, 8))
 
         self.live_btn = tk.Button(btn_frame, text="Start Live", bg="#4169E1", fg="white",
                                    font=("Sans", 11, "bold"), command=self._toggle_live,
                                    activebackground="#5577FF", bd=0, padx=15, pady=5)
         self.live_btn.pack(side=tk.LEFT, padx=8)
-        self.live_btn.config(state=tk.DISABLED)
 
         self.mine_btn = tk.Button(btn_frame, text="Mine", bg="#8B4513", fg="white",
                                    font=("Sans", 11, "bold"), command=self._mine,
                                    activebackground="#AA5522", bd=0, padx=15, pady=5)
         self.mine_btn.pack(side=tk.LEFT, padx=8)
-        self.mine_btn.config(state=tk.DISABLED)
 
         # Options
         opts_frame = tk.Frame(main, bg="#1a1a2e")
@@ -158,7 +156,6 @@ class LiveOCROverlay:
         if py:
             self.dict_frame.insert("1.0", py)
         self.dict_frame.config(state=tk.DISABLED)
-        self.mine_btn.config(state=tk.NORMAL if self.current_text else tk.DISABLED)
 
     def _update_lang(self):
         self.ocr_lang = self.ocr_lang_var.get()

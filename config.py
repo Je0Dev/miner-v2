@@ -1,7 +1,8 @@
 """Configuration constants for Game Sentence Miner v2."""
 from pathlib import Path
 
-MINING_DIR = Path.home() / "Downloads" / "Mining"
+# Save to miner-v2 folder instead of ~/Downloads/Mining
+MINING_DIR = Path(__file__).parent / "mining"
 ANKI_EXPORT_FILE = "anki_export.csv"
 SENTENCES_FILE = "sentences.json"
 AUDIO_DIR = "audio"

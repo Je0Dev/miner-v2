@@ -1,5 +1,13 @@
 #!/usr/bin/env python3
-"""Yomitan Hover Overlay - Small draggable window that OCRs continuously."""
+"""Yomitan Hover Overlay - Small draggable window that OCRs continuously.
+
+Creates a small transparent window that the user drags over game text.
+It OCRs every 2 seconds and copies results to clipboard for Yomitan.
+
+Usage:
+    ./yomitan-hover.sh chi_sim   # Chinese
+    ./yomitan-hover.sh jpn       # Japanese
+"""
 import sys, time, subprocess, os, threading
 from pathlib import Path
 
@@ -30,9 +38,9 @@ CAPTURE_COUNT = 0
 LAST_TEXT = ""
 
 def ocr_region(x, y, w, h, lang):
-    """Capture and OCR a region."""
+    """Capture and OCR a region at given coordinates."""
     img = f"{TEMP_DIR}/hover.png"
-    geom = f"{x},{y},{w},{h}"
+    geom = f"{x},{y} {w}x{h}"
     try:
         subprocess.run(["grim", "-g", geom, img], capture_output=True, check=True, timeout=3)
         result = subprocess.run(["tesseract", img, "-", "-l", lang],
@@ -59,12 +67,13 @@ def copy_to_clipboard(text):
 root = tk.Tk()
 root.title("Yomitan Hover")
 root.geometry("250x60+200+200")
-root.attributes("-type", "splash")
+# Don't use -type splash as it can make window non-interactive
 root.attributes("-topmost", True)
 root.attributes("-alpha", 0.85)
 root.configure(bg="#1a1a2e")
 root.overrideredirect(True)
 
+# UI elements
 label = tk.Label(root, text=f"Yomitan Hover ({OCR_LANG})\nDrag over text to OCR",
                  bg="#1a1a2e", fg="#ffdd57", font=("Sans", 9), justify=tk.CENTER)
 label.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
@@ -85,7 +94,7 @@ root.bind("<B1-Motion>", on_drag)
 def ocr_loop():
     """Continuously OCR the region beneath the window."""
     global CAPTURE_COUNT, LAST_TEXT
-    time.sleep(1)
+    time.sleep(1)  # Give window time to appear
     while True:
         try:
             x = root.winfo_x()
@@ -104,6 +113,7 @@ def ocr_loop():
         except Exception:
             time.sleep(2)
 
+# Start OCR loop in background
 threading.Thread(target=ocr_loop, daemon=True).start()
 
 notify("Yomitan Hover", f"Active - Drag window over text ({OCR_LANG})", timeout=3000)

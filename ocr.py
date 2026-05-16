@@ -1,12 +1,13 @@
 """OCR functions for Game Sentence Miner v2.
 
 Handles Tesseract OCR with preprocessing and caching.
+Optimized for game text including borderless window mode (smaller text).
 """
 import hashlib
 from pathlib import Path
 try:
     import pytesseract
-    from PIL import Image
+    from PIL import Image, ImageEnhance, ImageFilter
 except ImportError:
     print("ERROR: pip install pytesseract pillow"); import sys; sys.exit(1)
 from config import OCR_LANGS
@@ -35,9 +36,22 @@ def _image_hash(path: Path) -> str:
 
 
 def preprocess_image(image_path: Path) -> Image.Image:
-    """Preprocess image: grayscale + binarize at threshold 140."""
+    """Preprocess image for better OCR accuracy.
+
+    Optimized for game text including borderless window mode:
+    1. Convert to grayscale
+    2. Increase contrast (1.5x)
+    3. Sharpen to enhance small text
+    4. Binarize with lower threshold (128) for smaller text
+    """
     img = Image.open(image_path).convert("L")
-    return img.point(lambda p: 255 if p > 140 else 0)
+    # Increase contrast for better text visibility
+    enhancer = ImageEnhance.Contrast(img)
+    img = enhancer.enhance(1.5)
+    # Sharpen to enhance small text edges
+    img = img.filter(ImageFilter.SHARPEN)
+    # Binarize with lower threshold for smaller text
+    return img.point(lambda p: 255 if p > 128 else 0)
 
 
 def _ensure_utf8(text: str) -> str:
@@ -59,13 +73,23 @@ def _ensure_utf8(text: str) -> str:
 
 
 def ocr_image(image_path: Path, lang: str = "zh", use_confidence: bool = True) -> str:
-    """Extract text from image using Tesseract OCR."""
+    """Extract text from image using Tesseract OCR.
+
+    Uses PSM 6 (uniform block of text) for game text.
+    For borderless window mode with smaller text, PSM 3 (fully automatic)
+    is used as fallback if PSM 6 returns empty.
+    """
     prewarm_tesseract(OCR_LANGS.get(lang, lang))
     t_lang = OCR_LANGS.get(lang, lang)
     try:
         img = preprocess_image(image_path)
+        # Try PSM 6 first (uniform block of text)
         config = f"--oem 3 --psm 6 -l {t_lang}"
         text = pytesseract.image_to_string(img, config=config).strip()
+        # If empty, try PSM 3 (fully automatic) for smaller text
+        if not text:
+            config = f"--oem 3 --psm 3 -l {t_lang}"
+            text = pytesseract.image_to_string(img, config=config).strip()
         return _ensure_utf8(text)
     except Exception as e:
         log.error(f"OCR failed: {e}")
