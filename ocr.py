@@ -24,8 +24,18 @@ def prewarm_tesseract(lang: str = "chi_sim"):
     except Exception as e:
         log.warning(f"Tesseract pre-warm failed: {e}")
 
+def _upscale_for_small_text(img: Image.Image, lang: str) -> Image.Image:
+    """Upscale image 2x for better small text OCR (CJK needs this)."""
+    script = LANG_REGISTRY.get(lang, {}).get("script", "latin")
+    if script == "cjk":
+        w, h = img.size
+        if w < 800 or h < 200:
+            img = img.resize((w * 2, h * 2), Image.LANCZOS)
+    return img
+
 def preprocess_image(image_path: Path, lang: str = "zh") -> Image.Image:
     img = Image.open(image_path).convert("L")
+    img = _upscale_for_small_text(img, lang)
     arr = np.array(img)
     avg = np.mean(arr)
     if avg < 100: img = ImageOps.invert(img)
@@ -43,6 +53,7 @@ def preprocess_image(image_path: Path, lang: str = "zh") -> Image.Image:
 
 def preprocess_image_long(image_path: Path, lang: str = "zh") -> Image.Image:
     img = Image.open(image_path).convert("L")
+    img = _upscale_for_small_text(img, lang)
     enhancer = ImageEnhance.Contrast(img)
     img = enhancer.enhance(1.3)
     img = img.filter(ImageFilter.MedianFilter(size=3))
@@ -64,8 +75,13 @@ def _ensure_utf8(text: str) -> str:
     try: return text.encode('latin-1').decode('utf-8')
     except Exception: return text
 
+_CJK_RE = re.compile(r'[\u4e00-\u9fff\u3040-\u309f\u30a0-\u30ff\uac00-\ud7af]')
+_COPYRIGHT_RE = re.compile(r'[©®™℗℠]')
+
 def _filter_garbage(text: str, lang: str = "zh") -> str:
     if not text: return ""
+    # Remove copyright/trademark symbols
+    text = _COPYRIGHT_RE.sub('', text)
     script = LANG_REGISTRY.get(lang, {}).get("script", "latin")
     if script == "cjk":
         # Remove standalone digits and digit pairs
@@ -75,17 +91,21 @@ def _filter_garbage(text: str, lang: str = "zh") -> str:
         text = re.sub(r'\b([A-Za-z])\s+\1\b', '', text)
         # Remove common OCR artifacts and UI symbols
         text = re.sub(r'[「」【】〖〗《》〈〉\[\]{}()|\\/_~`@#$%^&*+=]', '', text)
-        # Remove repeated punctuation
         text = re.sub(r'([。，！？])\1+', r'\1', text)
+        # Validate: if text should be CJK but has too many non-CJK chars, reject
+        cjk_chars = _CJK_RE.findall(text)
+        non_cjk = len(text.replace(' ', '')) - len(cjk_chars)
+        if len(cjk_chars) > 0 and non_cjk > len(cjk_chars) * 0.4:
+            return ""
     elif script == "latin":
         text = re.sub(r'(?<!\d)\d{1,2}(?!\d)', '', text)
         text = re.sub(r'\b([A-Za-z])\s+\1\b', '', text)
     elif script == "greek":
         text = re.sub(r'(?<!\d)\d{1,3}(?!\d)', '', text)
-        text = re.sub(r'[^\u0370-\u03FF\u0020-\u007F]', '', text)
+        text = re.sub(r'[^\u0370-\u03FF\u0020-\u007F©®™]', '', text)
     elif script == "cyrillic":
         text = re.sub(r'(?<!\d)\d{1,3}(?!\d)', '', text)
-        text = re.sub(r'[^\u0400-\u04FF\u0020-\u007F]', '', text)
+        text = re.sub(r'[^\u0400-\u04FF\u0020-\u007F©®™]', '', text)
     text = re.sub(r'\s+', ' ', text).strip()
     return text if text and not text.isspace() else ""
 
@@ -103,6 +123,7 @@ def ocr_image(image_path: Path, lang: str = "zh") -> str:
             log.warning(f"OCR PSM {psm} failed: {e}")
     try:
         img = Image.open(image_path).convert("L")
+        img = _upscale_for_small_text(img, lang)
         for psm in [6, 3, 5]:
             text = pytesseract.image_to_string(img, config=f"--oem 3 --psm {psm} -l {t_lang}").strip()
             if text:
@@ -126,6 +147,7 @@ def ocr_long_text(image_path: Path, lang: str = "zh") -> str:
             log.warning(f"OCR long PSM {psm} failed: {e}")
     try:
         img = Image.open(image_path).convert("L")
+        img = _upscale_for_small_text(img, lang)
         for psm in [3, 5]:
             text = pytesseract.image_to_string(img, config=f"--oem 3 --psm {psm} -l {t_lang}").strip()
             if text:
@@ -148,6 +170,7 @@ def ocr_vertical_text(image_path: Path, lang: str = "zh") -> str:
     for rot in [90, 270, 180]:
         try:
             img = Image.open(image_path).convert("L").rotate(rot, expand=True)
+            img = _upscale_for_small_text(img, lang)
             arr = np.array(img)
             if np.mean(arr) < 100: img = ImageOps.invert(img)
             enhancer = ImageEnhance.Contrast(img)

@@ -45,6 +45,9 @@ def is_valid_text(text: str) -> bool:
     digit_count = len(re.findall(r'\d', text))
     if cjk_count > 0 and digit_count > cjk_count * 0.3:
         return False
+    # Reject text with copyright/trademark symbols as primary content
+    if re.match(r'^[©®™℗℠\s]+$', text):
+        return False
     return True
 
 def split_sentences(text: str) -> list[str]:

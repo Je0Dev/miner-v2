@@ -359,5 +359,55 @@
     "source": "Game",
     "timestamp": "20260516_133741",
     "screenshot": "images/capture.png"
+  },
+  {
+    "sentence": "> - 医口心 “ 界",
+    "translation": "> - Medical Oral and Heart “ World",
+    "audio": "audio/audio_20260516_133851.mp3",
+    "pronunciation": "> -  yi1 kou3 xin1  “  jie4",
+    "lang": "zh",
+    "source": "Game",
+    "timestamp": "20260516_133851",
+    "screenshot": "images/capture.png"
+  },
+  {
+    "sentence": "© © \" ż w a . L SE JA BRŁ wi FE JE sA Gi KEIEŻDE E BE AR",
+    "translation": "© © \" zżwa . L SE JA BrŁ wi FE JE sA Gi KEIEŻDE E BE AR",
+    "audio": "audio/audio_20260516_133851.mp3",
+    "pronunciation": "",
+    "lang": "pl",
+    "source": "Game",
+    "timestamp": "20260516_133851",
+    "screenshot": "images/capture.png"
+  },
+  {
+    "sentence": "宏租宇团",
+    "translation": "Hongzhuyu Group",
+    "audio": "audio/audio_20260516_134024.mp3",
+    "pronunciation": "hong2 zu1 yu3 tuan2",
+    "lang": "zh",
+    "source": "Game",
+    "timestamp": "20260516_134024",
+    "screenshot": "images/capture.png"
+  },
+  {
+    "sentence": "BE",
+    "translation": "",
+    "audio": "audio/audio_20260516_134044.mp3",
+    "pronunciation": "",
+    "lang": "pl",
+    "source": "Game",
+    "timestamp": "20260516_134044",
+    "screenshot": "images/capture.png"
+  },
+  {
+    "sentence": "拒栗姬",
+    "translation": "Juli Ji",
+    "audio": "audio/audio_20260516_134044.mp3",
+    "pronunciation": "ju4 li4 ji1",
+    "lang": "zh",
+    "source": "Game",
+    "timestamp": "20260516_134044",
+    "screenshot": "images/capture.png"
   }
 ]

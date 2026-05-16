@@ -3,7 +3,7 @@ import subprocess, json, time
 from pathlib import Path
 from log import log
 
-MAX_RETRIES = 3
+MAX_RETRIES = 1
 
 
 def get_display_scale():
