@@ -22,3 +22,5 @@ Egg Box Bind E E Attack Governor Station
 [20260516_112941] 生 日 : 索 拉 等 级 : 联 觉 等 级 : | Birthday: Sora Level: Synesthesia Level:
 [20260516_113032] 智 未 展 示 共 鸢 者 | Those who share the kite without wisdom
 [20260516_113117] 牢 月 宣 拉 等 级 : 联 觉 等 红 : | Lao Yue Xuan La Level: Lianjue, etc. Red:
+[20260516_113350] 郎 箱 绑 定 任 务 教 程 百 科 | Langxiang Binding Task Tutorial Encyclopedia
+[20260516_113531] 共 鸣 者 合 成 成 就 | Resonators synthesize achievements

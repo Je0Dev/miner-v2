@@ -8,6 +8,7 @@ Workflow:
 5. Auto-copies to clipboard for Yomitan
 6. User clicks "Mine" to save with audio recording
 7. Multi-line buffer combines consecutive dialogue lines
+8. All content saved to universal log
 """
 import sys, time, tempfile, subprocess, os, threading
 from pathlib import Path
@@ -22,8 +23,9 @@ sys.path.insert(0, str(Path(__file__).parent))
 from config import OCR_LANGS, TRANSLATION_LANGS
 from ocr import ocr_image, ocr_long_text
 from translate import translate_text, copy_to_clipboard, record_audio, notify
-from text import clean_text, format_with_pinyin, sanitize_unicode
+from text import clean_text, format_with_pinyin, sanitize_unicode, get_pinyin
 from multiline import MultiLineBuffer
+from universal_log import log_capture
 from log import log
 
 
@@ -36,6 +38,7 @@ class LiveOCROverlay:
         self._live_geom = None
         self.current_text = ""
         self.current_translation = ""
+        self.current_pinyin = ""
         self._multiline = MultiLineBuffer(max_lines=20, window_sec=30)
         self._build_ui()
 
@@ -157,14 +160,27 @@ class LiveOCROverlay:
         f.insert(tk.END, f"[{datetime.now().strftime('%H:%M:%S')}] {sanitize_unicode(msg)}\n")
         f.see(tk.END); f.config(state=tk.DISABLED)
 
-    def _update_text(self, text, tr):
+    def _update_text(self, text, tr, py=""):
+        """Update UI with proper unicode support."""
         self.current_text = sanitize_unicode(text)
         self.current_translation = sanitize_unicode(tr)
-        for fr, v in [(self.text_frame, self.current_text), (self.trans_frame, self.current_translation)]:
-            fr.config(state=tk.NORMAL); fr.delete("1.0", tk.END); fr.insert("1.0", v)
-            fr.config(state=tk.DISABLED)
-        py = format_with_pinyin(text) if self.ocr_lang == "zh" else ""
-        self.dict_frame.config(state=tk.NORMAL); self.dict_frame.delete("1.0", tk.END)
+        self.current_pinyin = py
+        
+        # Update captured text
+        self.text_frame.config(state=tk.NORMAL)
+        self.text_frame.delete("1.0", tk.END)
+        self.text_frame.insert("1.0", self.current_text)
+        self.text_frame.config(state=tk.DISABLED)
+        
+        # Update translation
+        self.trans_frame.config(state=tk.NORMAL)
+        self.trans_frame.delete("1.0", tk.END)
+        self.trans_frame.insert("1.0", self.current_translation)
+        self.trans_frame.config(state=tk.DISABLED)
+        
+        # Update pinyin
+        self.dict_frame.config(state=tk.NORMAL)
+        self.dict_frame.delete("1.0", tk.END)
         if py:
             self.dict_frame.insert("1.0", py)
         self.dict_frame.config(state=tk.DISABLED)
@@ -239,10 +255,20 @@ class LiveOCROverlay:
                         combined = self._multiline.get_combined()
                         display_text = combined if combined else text
                         tr = translate_text(display_text, src=self.ocr_lang, dest=self.translate_to)
-                        self.root.after(0, lambda t=display_text, tr=tr: self._update_text(t, tr))
-                        self._log(f"New: {text[:50]}")
+                        # Generate pinyin for Chinese
+                        py = get_pinyin(display_text) if self.ocr_lang == "zh" else ""
+                        # Update UI with proper unicode
+                        self.root.after(0, lambda t=display_text, tr=tr, p=py: self._update_text(t, tr, p))
+                        self._log(f"Text: {text[:60]}")
+                        if tr:
+                            self._log(f"Translation: {tr[:60]}")
+                        if py:
+                            self._log(f"Pinyin: {py[:60]}")
                         # Auto-copy to clipboard for Yomitan
                         copy_to_clipboard(display_text)
+                        # Log to universal log
+                        log_capture(sentence=display_text, translation=tr, pinyin=py,
+                                    source=self.source_name, lang=self.ocr_lang)
                     time.sleep(2)
                 except Exception as e:
                     self._log(f"Error: {e}")
@@ -250,13 +276,17 @@ class LiveOCROverlay:
         threading.Thread(target=_loop, daemon=True).start()
 
     def _combine(self):
-        """Show combined multi-line text."""
+        """Show combined multi-line text with pinyin."""
         combined = self._multiline.get_all_text()
         if combined:
             tr = translate_text(combined, src=self.ocr_lang, dest=self.translate_to)
-            self._update_text(combined, tr)
+            py = get_pinyin(combined) if self.ocr_lang == "zh" else ""
+            self._update_text(combined, tr, py)
             self._log(f"Combined {len(self._multiline.get_recent())} lines")
             copy_to_clipboard(combined)
+            # Log to universal log
+            log_capture(sentence=combined, translation=tr, pinyin=py,
+                        source=self.source_name, lang=self.ocr_lang)
         else:
             self._log("No lines to combine")
 
@@ -280,17 +310,21 @@ class LiveOCROverlay:
             af_path = sd / f"audio/audio_{ts}.mp3"
             ok = record_audio(af_path, dur)
             af = f"audio/audio_{ts}.mp3" if ok else ""
-            py = format_with_pinyin(text_to_mine) if self.ocr_lang == "zh" else ""
+            py = get_pinyin(text_to_mine) if self.ocr_lang == "zh" else ""
             tr = self.current_translation or translate_text(text_to_mine, src=self.ocr_lang, dest=self.translate_to)
 
             entry = {
                 "sentence": text_to_mine,
                 "translation": tr,
                 "audio": af,
-                "pinyin": py if py != text_to_mine else "",
+                "pinyin": py,
                 "source": self.source_name,
                 "timestamp": ts,
             }
+
+            # Log to universal log
+            log_capture(sentence=text_to_mine, translation=tr, pinyin=py,
+                        source=self.source_name, lang=self.ocr_lang, audio=af)
 
             import json
             with open(sd / "entry.json", "w", encoding="utf-8") as f:

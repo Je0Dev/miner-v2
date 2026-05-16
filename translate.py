@@ -11,6 +11,9 @@ def _is_valid_for_translation(text: str) -> bool:
     """Check if text is worth translating (not garbage/UI elements)."""
     if not text or len(text.strip()) < 2:
         return False
+    # Accept if it has CJK characters (primary indicator of valid text)
+    if CJK_RE.search(text):
+        return True
     # Reject text that's mostly single Latin letters (OCR garbage)
     latin_only = re.sub(r'[^A-Za-z\s]', '', text)
     if len(latin_only) > len(text) * 0.7:

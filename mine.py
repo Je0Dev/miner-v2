@@ -4,10 +4,11 @@ import time
 from datetime import datetime
 from pathlib import Path
 from config import MINING_DIR, AUDIO_DIR, IMAGES_DIR, VIDEO_DIR, ANKI_EXPORT_FILE
-from text import clean_text, is_valid_text, is_duplicate, load_history, format_with_pinyin
+from text import clean_text, is_valid_text, is_duplicate, load_history, format_with_pinyin, get_pinyin
 from ocr import ocr_image, ocr_long_text
 from translate import translate_text, copy_to_clipboard, record_audio, notify
 from capture import capture_region
+from universal_log import log_capture
 from log import log
 
 ANKI_CSV = MINING_DIR / ANKI_EXPORT_FILE
@@ -65,11 +66,12 @@ def mine_sentence(ocr_lang="zh", translate_to="en", audio_duration=5, source_nam
     log.info(f"Translation: {tr[:60]}")
 
     # Step 4: Pinyin (for Chinese)
-    py = format_with_pinyin(text) if ocr_lang == "zh" else text
+    py = get_pinyin(text) if ocr_lang == "zh" else ""
+    py_display = f"{text}\n{py}" if py else text
 
     # Step 5: IMMEDIATE notification with text + translation + pinyin
     body = f"Text: {text[:100]}"
-    if py != text:
+    if py:
         body += f"\nPinyin: {py[:100]}"
     if tr:
         body += f"\nTranslation: {tr[:100]}"
@@ -91,11 +93,15 @@ def mine_sentence(ocr_lang="zh", translate_to="en", audio_duration=5, source_nam
         "sentence": text,
         "translation": tr,
         "audio": af,
-        "pinyin": py if py != text else "",
+        "pinyin": py,
         "source": source_name,
         "timestamp": ts,
         "screenshot": f"{IMAGES_DIR}/capture.png",
     }
+
+    # Log to universal log
+    log_capture(sentence=text, translation=tr, pinyin=py,
+                source=source_name, lang=ocr_lang, audio=af)
 
     # Save to session JSON
     with open(sd / "entry.json", "w", encoding="utf-8") as f:

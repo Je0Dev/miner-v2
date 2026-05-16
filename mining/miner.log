@@ -404,3 +404,69 @@ Translation: Lao Yue Xuan La Level: Lianjue, etc.
 2026-05-16 11:31:43,812 [INFO] Notification: [Miner Test] Notifications are working!
 2026-05-16 11:31:43,848 [INFO] Copied to clipboard: Test from miner-v2
 2026-05-16 11:31:44,372 [INFO] Tesseract pre-warmed (eng)
+2026-05-16 11:33:21,196 [INFO] Mining: ja->en
+2026-05-16 11:33:21,197 [INFO] Select text region...
+2026-05-16 11:33:21,204 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:33:23,203 [INFO] Captured region: 1075,931 135x36
+2026-05-16 11:33:23,203 [INFO] OCRing region: 1075,931 135x36
+2026-05-16 11:33:23,227 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:33:23,241 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:33:23,248 [INFO] Notification: [Mining] No text detected
+2026-05-16 11:33:29,644 [INFO] Mining: ja->en
+2026-05-16 11:33:29,644 [INFO] Select text region...
+2026-05-16 11:33:29,652 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:33:31,233 [INFO] Captured region: 1082,922 134x50
+2026-05-16 11:33:31,233 [INFO] OCRing region: 1082,922 134x50
+2026-05-16 11:33:31,255 [WARNING] Tesseract pre-warm failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:33:31,282 [ERROR] OCR failed: (1, 'Error opening data file /usr/share/tessdata/jpn.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'jpn\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2026-05-16 11:33:31,289 [INFO] Notification: [Mining] No text detected
+2026-05-16 11:33:37,833 [INFO] Mining: zh->en
+2026-05-16 11:33:37,833 [INFO] Select text region...
+2026-05-16 11:33:37,840 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:33:40,008 [INFO] Captured region: 1688,531 158x44
+2026-05-16 11:33:40,008 [INFO] OCRing region: 1688,531 158x44
+2026-05-16 11:33:40,513 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:33:41,531 [INFO] Notification: [Mining] No text detected
+2026-05-16 11:33:50,325 [INFO] Mining: zh->en
+2026-05-16 11:33:50,325 [INFO] Select text region...
+2026-05-16 11:33:50,332 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:33:53,263 [INFO] Captured region: 1344,700 437x50
+2026-05-16 11:33:53,263 [INFO] OCRing region: 1344,700 437x50
+2026-05-16 11:33:53,820 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:33:54,327 [INFO] OCR result: 郎 箱 绑 定 任 务 教 程 百 科
+2026-05-16 11:33:55,521 [INFO] Translation: Langxiang Binding Task Tutorial Encyclopedia
+2026-05-16 11:33:55,699 [INFO] Notification: [Sentence Captured] Text: 郎 箱 绑 定 任 务 教 程 百 科
+Pinyin: 郎 箱 绑 定 任 务 教 程 百 科
+lang2   xiang1   bang3   d
+2026-05-16 11:33:55,734 [INFO] Copied to clipboard: 郎 箱 绑 定 任 务 教 程 百 科
+2026-05-16 11:33:55,734 [INFO] Recording 5s audio...
+2026-05-16 11:33:55,741 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 11:33:55,750 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 11:34:01,026 [INFO] Audio recording: success
+2026-05-16 11:34:01,034 [INFO] Notification: [Sentence Mined] Text: 郎 箱 绑 定 任 务 教 程 百 科
+Translation: Langxiang Binding Task Tutorial Encyclope
+2026-05-16 11:34:01,035 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_113350
+2026-05-16 11:35:31,091 [INFO] Mining: zh->en
+2026-05-16 11:35:31,099 [INFO] Select text region...
+2026-05-16 11:35:31,106 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:35:33,402 [INFO] Captured region: 1346,710 428x35
+2026-05-16 11:35:33,402 [INFO] OCRing region: 1346,710 428x35
+2026-05-16 11:35:33,984 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:35:34,504 [INFO] OCR result: 共 鸣 者 合 成 成 就
+2026-05-16 11:35:34,882 [INFO] Translation: Resonators synthesize achievements
+2026-05-16 11:35:35,076 [INFO] Notification: [Sentence Captured] Text: 共 鸣 者 合 成 成 就
+Pinyin: gong4   ming2   zhe3   he2   cheng2   cheng2   jiu4
+
+2026-05-16 11:35:35,132 [INFO] Copied to clipboard: 共 鸣 者 合 成 成 就
+2026-05-16 11:35:35,132 [INFO] Recording 15s audio...
+2026-05-16 11:35:35,146 [INFO] Notification: [Mining] Recording 15s audio...
+2026-05-16 11:35:35,160 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 11:35:50,494 [INFO] Audio recording: success
+2026-05-16 11:35:50,503 [INFO] Notification: [Sentence Mined] Text: 共 鸣 者 合 成 成 就
+Translation: Resonators synthesize achievements
+Audio: Yes
+S
+2026-05-16 11:35:50,503 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_113531
+2026-05-16 11:36:05,958 [INFO] Notification: [Miner Test] Notifications are working!
+2026-05-16 11:36:05,991 [INFO] Copied to clipboard: Test from miner-v2
+2026-05-16 11:36:06,594 [INFO] Tesseract pre-warmed (eng)

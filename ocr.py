@@ -8,8 +8,9 @@ from pathlib import Path
 try:
     import pytesseract
     from PIL import Image, ImageEnhance, ImageFilter, ImageOps
+    import numpy as np
 except ImportError:
-    print("ERROR: pip install pytesseract pillow"); import sys; sys.exit(1)
+    print("ERROR: pip install pytesseract pillow numpy"); import sys; sys.exit(1)
 from config import OCR_LANGS
 from log import log
 
@@ -35,15 +36,45 @@ def _image_hash(path: Path) -> str:
         return hashlib.md5(f.read()).hexdigest()
 
 
+def _detect_and_mask_images(img: Image.Image) -> Image.Image:
+    """Detect and mask non-text regions (images/icons) in the capture.
+    
+    Uses edge density and color variance to find image regions,
+    then masks them with white to prevent OCR interference.
+    """
+    import numpy as np
+    arr = np.array(img)
+    h, w = arr.shape
+    
+    # Split into horizontal strips to find image regions
+    strip_h = max(h // 10, 10)
+    masked_arr = arr.copy()
+    
+    for y in range(0, h, strip_h):
+        strip = arr[y:y+strip_h, :]
+        # High variance = likely image region
+        variance = np.var(strip)
+        # High edge density = likely image
+        edges = np.abs(np.diff(strip, axis=1))
+        edge_density = np.mean(edges > 30)
+        
+        if variance > 800 and edge_density > 0.3:
+            # Mask this strip as white (ignore for OCR)
+            masked_arr[y:y+strip_h, :] = 255
+    
+    return Image.fromarray(masked_arr)
+
+
 def preprocess_image(image_path: Path) -> Image.Image:
     """Preprocess image for better OCR accuracy.
 
     Optimized for game text including borderless window mode:
     1. Convert to grayscale
-    2. Increase contrast (1.5x)
-    3. Sharpen to enhance small text
-    4. Binarize with lower threshold (128) for smaller text
-    5. Invert if text is light on dark background
+    2. Detect and mask image regions (icons, portraits)
+    3. Increase contrast (1.5x)
+    4. Sharpen to enhance small text
+    5. Binarize with lower threshold (128) for smaller text
+    6. Invert if text is light on dark background
     """
     img = Image.open(image_path).convert("L")
     # Auto-invert if dark background (common in games)
@@ -51,6 +82,8 @@ def preprocess_image(image_path: Path) -> Image.Image:
     avg_brightness = sum(pixels) / len(pixels)
     if avg_brightness < 100:
         img = ImageOps.invert(img)
+    # Detect and mask image regions
+    img = _detect_and_mask_images(img)
     # Increase contrast for better text visibility
     enhancer = ImageEnhance.Contrast(img)
     img = enhancer.enhance(1.5)
@@ -65,11 +98,14 @@ def preprocess_image_long(image_path: Path) -> Image.Image:
 
     For larger regions with multiple lines of text:
     1. Convert to grayscale
-    2. Moderate contrast (1.3x) to preserve text gradients
-    3. Denoise to reduce background artifacts
-    4. Binarize with adaptive threshold
+    2. Detect and mask image regions
+    3. Moderate contrast (1.3x) to preserve text gradients
+    4. Denoise to reduce background artifacts
+    5. Binarize with adaptive threshold
     """
     img = Image.open(image_path).convert("L")
+    # Detect and mask image regions
+    img = _detect_and_mask_images(img)
     # Moderate contrast for long text
     enhancer = ImageEnhance.Contrast(img)
     img = enhancer.enhance(1.3)
