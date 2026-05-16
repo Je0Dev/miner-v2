@@ -807,3 +807,68 @@ Saved: 20260516_114804
 2026-05-16 11:48:14,993 [INFO] Tesseract pre-warmed (eng)
 2026-05-16 11:48:16,994 [INFO] Copied to clipboard: test clipboard content
 2026-05-16 11:48:17,010 [INFO] Notification: [Test] Notification test
+2026-05-16 11:48:57,712 [INFO] Mining: zh->en
+2026-05-16 11:48:57,712 [INFO] Select text region...
+2026-05-16 11:48:57,720 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:48:58,823 [INFO] Captured region: 681,566 116x170
+2026-05-16 11:48:58,823 [INFO] OCRing region: 681,566 116x170
+2026-05-16 11:48:59,334 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:48:59,853 [INFO] OCR result: 生 日 、 , 08 纠 商
+2026-05-16 11:49:00,817 [INFO] Translation: Birthday , , 08 rectification discussion
+2026-05-16 11:49:00,987 [INFO] Notification: [Sentence Captured] Text: 生 日 、 , 08 纠 商
+Pinyin: sheng1   ri4  、 , 08  jiu1   shang1
+Translation: Bi
+2026-05-16 11:49:01,020 [INFO] Copied to clipboard: 生 日 、 , 08 纠 商
+2026-05-16 11:49:01,021 [INFO] Recording 5s audio...
+2026-05-16 11:49:01,029 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 11:49:01,037 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 11:49:06,280 [INFO] Audio recording: success
+2026-05-16 11:49:06,289 [INFO] Notification: [Sentence Mined] Text: 生 日 、 , 08 纠 商
+Translation: Birthday , , 08 rectification discussion
+Audio
+2026-05-16 11:49:06,289 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_114857
+2026-05-16 11:50:22,734 [INFO] Mining: zh->en
+2026-05-16 11:50:22,734 [INFO] Select text region...
+2026-05-16 11:50:22,741 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:50:24,117 [INFO] Captured region: 1193,225 633x526
+2026-05-16 11:50:24,117 [INFO] OCRing region: 1193,225 633x526
+2026-05-16 11:50:24,654 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:50:25,432 [INFO] OCR result: 人 吴 共 鸣 者 合 成 成 就 好 友 容 “ 然 “ 真 画 万 物 国 銮 地 图 背 包 反 谊 出 团 团 
+2026-05-16 11:50:26,664 [INFO] Translation: People Wu Gongzhi Synthetic Achievements Good Friend Appeara
+2026-05-16 11:50:26,838 [INFO] Notification: [Sentence Captured] Text: 人 吴 共 鸣 者 合 成 成 就 好 友 容 “ 然 “ 真 画 万 物 国 銮 地 图 背 包 反 谊 出 团 团 眼 卵 箱 绑 定 任 务 
+2026-05-16 11:50:26,875 [INFO] Copied to clipboard: 人 吴 共 鸣 者 合 成 成 就 好 友 容 “ 然 “ 真 画 万 物 国 銮 地 图 背 包 
+2026-05-16 11:50:26,875 [INFO] Recording 5s audio...
+2026-05-16 11:50:26,882 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 11:50:26,892 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 11:50:32,142 [INFO] Audio recording: success
+2026-05-16 11:50:32,154 [INFO] Notification: [Sentence Mined] Text: 人 吴 共 鸣 者 合 成 成 就 好 友 容 “ 然 “ 真 画 万 物 国 銮 地 图 背 包 反 谊 出 团 团 
+Translation: 
+2026-05-16 11:50:32,154 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_115022
+2026-05-16 11:50:39,684 [INFO] Mining: zh->en
+2026-05-16 11:50:39,684 [INFO] Select text region...
+2026-05-16 11:50:39,696 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:50:41,740 [INFO] Captured region: 1746,993 60x53
+2026-05-16 11:50:41,741 [INFO] OCRing region: 1746,993 60x53
+2026-05-16 11:50:42,309 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:50:42,864 [INFO] Notification: [Mining] No text detected
+2026-05-16 11:51:03,540 [INFO] Mining: zh->en
+2026-05-16 11:51:03,540 [INFO] Select text region...
+2026-05-16 11:51:03,548 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:51:05,614 [INFO] Captured region: 1478,295 433x556
+2026-05-16 11:51:05,614 [INFO] OCRing region: 1478,295 433x556
+2026-05-16 11:51:06,135 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:51:06,816 [INFO] OCR result: 教 学 巡 刀 ; 迥 刀 夺/ 等 级 1/20 〈/ ′ 、 / 心 - 史 攻 击 20 九 攻 击 2.596 
+2026-05-16 11:51:08,081 [INFO] Translation: Teaching Patrol Sword; Jiong Sword Seizing/Level 1/20 〈/′ 、/
+2026-05-16 11:51:08,253 [INFO] Notification: [Sentence Captured] Text: 教 学 巡 刀 ; 迥 刀 夺/ 等 级 1/20 〈/ ′ 、 / 心 - 史 攻 击 20 九 攻 击 2.596 1 阶 刻 若 攻 击 提 
+2026-05-16 11:51:08,281 [INFO] Copied to clipboard: 教 学 巡 刀 ; 迥 刀 夺/ 等 级 1/20 〈/ ′ 、 / 心 - 史 攻 击 20 九 
+2026-05-16 11:51:08,282 [INFO] Recording 5s audio...
+2026-05-16 11:51:08,287 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 11:51:08,294 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 11:51:13,532 [INFO] Audio recording: success
+2026-05-16 11:51:13,540 [INFO] Notification: [Sentence Mined] Text: 教 学 巡 刀 ; 迥 刀 夺/ 等 级 1/20 〈/ ′ 、 / 心 - 史 攻 击 20 九 攻 击 2.596 
+Translation: 
+2026-05-16 11:51:13,540 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_115103
+2026-05-16 11:51:25,281 [INFO] Exported 2 entries to /home/mastroni/miner-v2/mining/test_anki_export.csv
+2026-05-16 11:51:25,933 [INFO] Tesseract pre-warmed (eng)
+2026-05-16 11:51:27,267 [INFO] Copied to clipboard: test clipboard content
+2026-05-16 11:51:27,286 [INFO] Notification: [Test] Notification test

@@ -9,8 +9,9 @@ try:
     import pytesseract
     from PIL import Image, ImageEnhance, ImageFilter, ImageOps
     import numpy as np
+    from scipy.ndimage import grey_closing
 except ImportError:
-    print("ERROR: pip install pytesseract pillow numpy"); import sys; sys.exit(1)
+    print("ERROR: pip install pytesseract pillow numpy scipy"); import sys; sys.exit(1)
 from config import OCR_LANGS
 from log import log
 
@@ -42,7 +43,6 @@ def _detect_and_mask_images(img: Image.Image) -> Image.Image:
     Uses edge density and color variance to find image regions,
     then masks them with white to prevent OCR interference.
     """
-    import numpy as np
     arr = np.array(img)
     h, w = arr.shape
     
@@ -73,7 +73,7 @@ def preprocess_image(image_path: Path) -> Image.Image:
     2. Auto-invert if text is light on dark background
     3. Increase contrast (1.5x)
     4. Sharpen to enhance small text
-    5. Adaptive binarization for both light and dark backgrounds
+    5. Adaptive binarization using morphological operations
     """
     img = Image.open(image_path).convert("L")
     # Auto-invert if dark background (common in games)
@@ -86,11 +86,23 @@ def preprocess_image(image_path: Path) -> Image.Image:
     img = enhancer.enhance(1.5)
     # Sharpen to enhance small text edges
     img = img.filter(ImageFilter.SHARPEN)
-    # Adaptive binarization: use Otsu-like threshold
+    # Adaptive binarization using morphological top-hat transform
+    # This removes background variations while preserving text
     arr = np.array(img)
-    # Use median-based threshold (more robust than percentile)
-    threshold = np.median(arr)
-    return img.point(lambda p: 255 if p > threshold else 0)
+    # Create structuring element (larger than text, smaller than background changes)
+    h, w = arr.shape
+    kernel_size = max(5, min(h, w) // 10)
+    if kernel_size % 2 == 0:
+        kernel_size += 1
+    # Apply morphological closing to get background estimate
+    background = grey_closing(arr, size=(kernel_size, kernel_size))
+    # Subtract background from original (top-hat transform)
+    result = background - arr
+    # Invert so text is white on black (for Tesseract)
+    result = 255 - result
+    # Threshold
+    result = (result > 128).astype(np.uint8) * 255
+    return Image.fromarray(result)
 
 
 def preprocess_image_long(image_path: Path) -> Image.Image:
@@ -100,7 +112,7 @@ def preprocess_image_long(image_path: Path) -> Image.Image:
     1. Convert to grayscale
     2. Moderate contrast (1.3x) to preserve text gradients
     3. Denoise to reduce background artifacts
-    4. Adaptive binarization with median threshold
+    4. Adaptive binarization with morphological operations
     """
     img = Image.open(image_path).convert("L")
     # Moderate contrast for long text
@@ -108,10 +120,17 @@ def preprocess_image_long(image_path: Path) -> Image.Image:
     img = enhancer.enhance(1.3)
     # Reduce noise
     img = img.filter(ImageFilter.MedianFilter(size=3))
-    # Adaptive binarization using median
+    # Adaptive binarization using morphological operations
     arr = np.array(img)
-    threshold = np.median(arr)
-    return img.point(lambda p: 255 if p > threshold else 0)
+    h, w = arr.shape
+    kernel_size = max(7, min(h, w) // 8)
+    if kernel_size % 2 == 0:
+        kernel_size += 1
+    background = grey_closing(arr, size=(kernel_size, kernel_size))
+    result = background - arr
+    result = 255 - result
+    result = (result > 128).astype(np.uint8) * 255
+    return Image.fromarray(result)
 
 
 def _ensure_utf8(text: str) -> str:
