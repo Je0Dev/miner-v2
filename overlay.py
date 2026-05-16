@@ -179,13 +179,32 @@ class LiveOCROverlay:
             self._log("Live mode stopped")
 
     def _start_loop(self):
+        self._last_resolution = None
         def _loop():
+            consecutive_errors = 0
             while self.is_running:
                 try:
+                    # Check for resolution changes
+                    current_res = (self.root.winfo_screenwidth(), self.root.winfo_screenheight())
+                    if self._last_resolution and current_res != self._last_resolution:
+                        self._log(f"Resolution changed, reselecting region...")
+                        self.root.after(0, lambda: self.status_var.set("Resolution changed - reselect region"))
+                        self.is_running = False
+                        self.live_btn.config(text="Start Live", bg="#4169E1", activebackground="#5577FF")
+                        break
+                    self._last_resolution = current_res
                     with tempfile.NamedTemporaryFile(suffix=".png", delete=False) as tmp:
                         tmp_path = tmp.name
-                    subprocess.run(["grim", "-g", self._live_geom, tmp_path],
-                                   check=True, capture_output=True, timeout=5)
+                    result = subprocess.run(["grim", "-g", self._live_geom, tmp_path],
+                                   capture_output=True, timeout=5)
+                    if result.returncode != 0:
+                        consecutive_errors += 1
+                        if consecutive_errors > 3:
+                            self._log("Too many capture errors, stopping")
+                            self.root.after(0, lambda: self._toggle_live())
+                        time.sleep(2)
+                        continue
+                    consecutive_errors = 0
                     if self.long_text_var.get():
                         text = clean_text(ocr_long_text(Path(tmp_path), self.ocr_lang))
                     else:
@@ -206,8 +225,16 @@ class LiveOCROverlay:
                         log_capture(sentence=display_text, translation=tr, pronunciation=pron,
                                     source=self.source_name, lang=self.ocr_lang)
                     time.sleep(2)
+                except subprocess.TimeoutExpired:
+                    self._log("Capture timeout")
+                    consecutive_errors += 1
+                    time.sleep(2)
                 except Exception as e:
                     self._log(f"Error: {e}")
+                    consecutive_errors += 1
+                    if consecutive_errors > 5:
+                        self._log("Too many errors, stopping")
+                        self.root.after(0, lambda: self._toggle_live())
                     time.sleep(2)
         threading.Thread(target=_loop, daemon=True).start()
 

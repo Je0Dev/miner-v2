@@ -1561,3 +1561,215 @@ Saved: 20260516_135042
 2026-05-16 13:53:28,406 [INFO] Tesseract pre-warmed (chi_sim)
 2026-05-16 13:53:31,164 [INFO] Copied to clipboard: test clipboard content
 2026-05-16 13:53:31,180 [INFO] Notification: [Test] Notification test
+2026-05-16 13:54:07,163 [INFO] Mining: zh->en
+2026-05-16 13:54:07,164 [INFO] Select text region...
+2026-05-16 13:54:07,212 [INFO] Mining: pl->en
+2026-05-16 13:54:07,212 [INFO] Select text region...
+2026-05-16 13:54:07,623 [INFO] Notification: [Mining] Capture cancelled
+2026-05-16 13:54:08,002 [INFO] Notification: [Mining] Capture cancelled
+2026-05-16 13:55:54,491 [INFO] Exported 2 entries to /home/mastroni/miner-v2/mining/test_anki_export.csv
+2026-05-16 13:55:55,433 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 13:55:58,282 [INFO] Copied to clipboard: test clipboard content
+2026-05-16 13:55:58,297 [INFO] Notification: [Test] Notification test
+2026-05-16 13:57:28,781 [INFO] Mining: pl->en
+2026-05-16 13:57:28,782 [INFO] Select text region...
+2026-05-16 13:57:28,782 [INFO] Mining: zh->en
+2026-05-16 13:57:28,782 [INFO] Select text region...
+2026-05-16 13:57:30,422 [INFO] Captured region: 1201,365 605x73
+2026-05-16 13:57:30,422 [INFO] OCRing region: 1201,365 605x73
+2026-05-16 13:57:30,700 [INFO] Tesseract pre-warmed (pol)
+2026-05-16 13:57:31,010 [INFO] Notification: [Mining] No text detected
+2026-05-16 13:57:31,529 [INFO] Captured region: 1199,367 607x71
+2026-05-16 13:57:31,529 [INFO] OCRing region: 1199,367 607x71
+2026-05-16 13:57:32,030 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 13:57:32,585 [INFO] OCR result: “ 共肽合成成就好友
+2026-05-16 13:57:33,723 [INFO] Translation: Co-peptide synthesis makes friends
+2026-05-16 13:57:33,883 [INFO] Notification: [Sentence Captured] Text: “ 共肽合成成就好友
+pinyin: “  gong4 tai4 he2 cheng2 cheng2 jiu4 hao3 you3
+Translat
+2026-05-16 13:57:33,913 [INFO] Copied to clipboard: “ 共肽合成成就好友
+2026-05-16 13:57:33,913 [INFO] Recording 5s audio...
+2026-05-16 13:57:33,922 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 13:57:33,929 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 13:57:39,170 [INFO] Audio recording: success
+2026-05-16 13:57:39,179 [INFO] Notification: [Sentence Mined] Text: “ 共肽合成成就好友
+Translation: Co-peptide synthesis makes friends
+Audio: Yes
+Save
+2026-05-16 13:57:39,179 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_135728
+2026-05-16 13:57:46,815 [INFO] Mining: zh->en
+2026-05-16 13:57:46,815 [INFO] Select text region...
+2026-05-16 13:57:48,134 [INFO] Captured region: 1596,404 269x69
+2026-05-16 13:57:48,135 [INFO] OCRing region: 1596,404 269x69
+2026-05-16 13:57:48,641 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 13:57:49,183 [INFO] OCR result: 共鸣者合成
+2026-05-16 13:57:49,605 [INFO] Translation: Resonator Synthesis
+2026-05-16 13:57:49,786 [INFO] Notification: [Sentence Captured] Text: 共鸣者合成
+pinyin: gong4 ming2 zhe3 he2 cheng2
+Translation: Resonator Synthesis
+2026-05-16 13:57:49,817 [INFO] Copied to clipboard: 共鸣者合成
+2026-05-16 13:57:49,817 [INFO] Recording 5s audio...
+2026-05-16 13:57:49,825 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 13:57:49,831 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 13:57:55,041 [INFO] Audio recording: success
+2026-05-16 13:57:55,049 [INFO] Notification: [Sentence Mined] Text: 共鸣者合成
+Translation: Resonator Synthesis
+Audio: Yes
+Saved: 20260516_135746
+2026-05-16 13:57:55,050 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_135746
+2026-05-16 13:57:58,561 [INFO] Mining: zh->en
+2026-05-16 13:57:58,562 [INFO] Select text region...
+2026-05-16 13:57:59,662 [INFO] Captured region: 1600,409 107x50
+2026-05-16 13:57:59,662 [INFO] OCRing region: 1600,409 107x50
+2026-05-16 13:58:00,134 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 13:58:00,621 [INFO] OCR result: 共鸣者
+2026-05-16 13:58:01,853 [INFO] Translation: Sympathizer
+2026-05-16 13:58:02,010 [INFO] Notification: [Sentence Captured] Text: 共鸣者
+pinyin: gong4 ming2 zhe3
+Translation: Sympathizer
+2026-05-16 13:58:02,042 [INFO] Copied to clipboard: 共鸣者
+2026-05-16 13:58:02,042 [INFO] Recording 5s audio...
+2026-05-16 13:58:02,047 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 13:58:02,055 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 13:58:07,256 [INFO] Audio recording: success
+2026-05-16 13:58:07,270 [INFO] Notification: [Sentence Mined] Text: 共鸣者
+Translation: Sympathizer
+Audio: Yes
+Saved: 20260516_135758
+2026-05-16 13:58:07,270 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_135758
+2026-05-16 13:59:41,588 [INFO] Mining: zh->en
+2026-05-16 13:59:41,588 [INFO] Select text region...
+2026-05-16 13:59:43,223 [INFO] Captured region: 1317,307 470x421
+2026-05-16 13:59:43,223 [INFO] OCRing region: 1317,307 470x421
+2026-05-16 13:59:43,719 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 13:59:44,514 [INFO] OCR result: 共鸣者合成成就倡 “ 地 “ 督万物图鉴地图背包巳 “ 国 “ 相邮箱绑定任务教程百科
+2026-05-16 13:59:45,525 [INFO] Translation: Sympathizer Synthesis Achievements Advocating the Governor’s
+2026-05-16 13:59:45,708 [INFO] Notification: [Sentence Captured] Text: 共鸣者合成成就倡 “ 地 “ 督万物图鉴地图背包巳 “ 国 “ 相邮箱绑定任务教程百科
+pinyin: gong4 ming2 zhe3 he2 c
+2026-05-16 13:59:45,743 [INFO] Copied to clipboard: 共鸣者合成成就倡 “ 地 “ 督万物图鉴地图背包巳 “ 国 “ 相邮箱绑定任务教程百科
+2026-05-16 13:59:45,743 [INFO] Recording 5s audio...
+2026-05-16 13:59:45,753 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 13:59:45,761 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 13:59:51,001 [INFO] Audio recording: success
+2026-05-16 13:59:51,011 [INFO] Notification: [Sentence Mined] Text: 共鸣者合成成就倡 “ 地 “ 督万物图鉴地图背包巳 “ 国 “ 相邮箱绑定任务教程百科
+Translation: Sympathizer Synth
+2026-05-16 13:59:51,011 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_135941
+2026-05-16 14:00:08,902 [INFO] Mining: zh->en
+2026-05-16 14:00:08,902 [INFO] Select text region...
+2026-05-16 14:00:10,926 [INFO] Captured region: 1683,649 68x26
+2026-05-16 14:00:10,926 [INFO] OCRing region: 1683,649 68x26
+2026-05-16 14:00:11,477 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 14:00:12,083 [INFO] OCR result: 芸芬荣
+2026-05-16 14:00:13,023 [ERROR] Translation failed: 芸芬荣 --> No translation was found using the current translator. Try another translator?
+2026-05-16 14:00:13,024 [INFO] Translation: 
+2026-05-16 14:00:13,204 [INFO] Notification: [Sentence Captured] Text: 芸芬荣
+pinyin: yun2 fen1 rong2
+2026-05-16 14:00:13,241 [INFO] Copied to clipboard: 芸芬荣
+2026-05-16 14:00:13,241 [INFO] Recording 5s audio...
+2026-05-16 14:00:13,251 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 14:00:13,262 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 14:00:18,512 [INFO] Audio recording: success
+2026-05-16 14:00:18,524 [INFO] Notification: [Sentence Mined] Text: 芸芬荣
+Translation: 
+Audio: Yes
+Saved: 20260516_140008
+2026-05-16 14:00:18,524 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_140008
+2026-05-16 14:01:11,033 [INFO] Mining: ja->en
+2026-05-16 14:01:11,033 [INFO] Select text region...
+2026-05-16 14:01:12,805 [INFO] Captured region: 459,624 119x140
+2026-05-16 14:01:12,805 [INFO] OCRing region: 459,624 119x140
+2026-05-16 14:01:13,373 [INFO] Tesseract pre-warmed (jpn)
+2026-05-16 14:01:14,157 [INFO] OCR result: 生日索拉等鋒聚覚等妙聚党栄強
+2026-05-16 14:01:15,464 [INFO] Translation: Shengli Sola To Feng Ju Jue To Miao Ju Party Rong Qiang
+2026-05-16 14:01:15,486 [INFO] Notification: [Sentence Captured] Text: 生日索拉等鋒聚覚等妙聚党栄強
+Translation: Shengli Sola To Feng Ju Jue To Miao Ju Party R
+2026-05-16 14:01:15,532 [INFO] Copied to clipboard: 生日索拉等鋒聚覚等妙聚党栄強
+2026-05-16 14:01:15,533 [INFO] Recording 5s audio...
+2026-05-16 14:01:15,542 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 14:01:16,828 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 14:01:22,043 [INFO] Audio recording: success
+2026-05-16 14:01:22,054 [INFO] Notification: [Sentence Mined] Text: 生日索拉等鋒聚覚等妙聚党栄強
+Translation: Shengli Sola To Feng Ju Jue To Miao Ju Party R
+2026-05-16 14:01:22,054 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_140111
+2026-05-16 14:02:02,836 [INFO] Mining: zh->en
+2026-05-16 14:02:02,836 [INFO] Select text region...
+2026-05-16 14:02:04,677 [INFO] Captured region: 601,415 965x176
+2026-05-16 14:02:04,677 [INFO] OCRing region: 601,415 965x176
+2026-05-16 14:02:05,170 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 14:02:06,322 [INFO] OCR result: 角色简介攻略简介 ′鲈奈.一谕女尤诺 , 在七丘拥有着一言一决的权利。灵活穿梭于战场 , 既可以轻松躲避敌人的攻击 , 
+2026-05-16 14:02:07,922 [INFO] Translation: Character introduction, strategy introduction, Yuno, the gir
+2026-05-16 14:02:08,133 [INFO] Notification: [Sentence Captured] Text: 角色简介攻略简介 ′鲈奈.一谕女尤诺 , 在七丘拥有着一言一决的权利。灵活穿梭于战场 , 既可以轻松躲避敌人的攻击 , 又能抓住时机迅速发起反击 ,
+2026-05-16 14:02:08,173 [INFO] Copied to clipboard: 角色简介攻略简介 ′鲈奈.一谕女尤诺 , 在七丘拥有着一言一决的权利。灵活穿梭于战场 , 既可以轻松
+2026-05-16 14:02:08,173 [INFO] Recording 5s audio...
+2026-05-16 14:02:08,180 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 14:02:09,418 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 14:02:14,633 [INFO] Audio recording: success
+2026-05-16 14:02:14,645 [INFO] Notification: [Sentence Mined] Text: 角色简介攻略简介 ′鲈奈.一谕女尤诺 , 在七丘拥有着一言一决的权利。灵活穿梭于战场 , 既可以轻松躲避敌人的攻击 , 
+Translation: 
+2026-05-16 14:02:14,645 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_140202
+2026-05-16 14:02:55,442 [INFO] Mining: zh->en
+2026-05-16 14:02:55,442 [INFO] Select text region...
+2026-05-16 14:02:57,189 [INFO] Captured region: 1512,579 76x40
+2026-05-16 14:02:57,726 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 14:02:58,363 [INFO] Notification: [Mining] No text detected
+2026-05-16 14:03:03,088 [INFO] Mining: zh->en
+2026-05-16 14:03:03,088 [INFO] Select text region...
+2026-05-16 14:03:05,576 [INFO] Captured region: 1519,583 54x23
+2026-05-16 14:03:06,111 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 14:03:06,660 [INFO] OCR result: 洁芬草
+2026-05-16 14:03:07,534 [INFO] Translation: jeffen grass
+2026-05-16 14:03:07,727 [INFO] Notification: [Sentence Captured] Text: 洁芬草
+pinyin: jie2 fen1 cao3
+Translation: jeffen grass
+2026-05-16 14:03:07,763 [INFO] Copied to clipboard: 洁芬草
+2026-05-16 14:03:07,764 [INFO] Recording 5s audio...
+2026-05-16 14:03:09,016 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 14:03:14,332 [INFO] Audio recording: success
+2026-05-16 14:03:14,343 [INFO] Notification: [Sentence Mined] Text: 洁芬草
+Translation: jeffen grass
+Audio: Yes
+Saved: 20260516_140303
+2026-05-16 14:03:14,343 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_140303
+2026-05-16 14:03:56,223 [INFO] Mining: zh->en
+2026-05-16 14:03:56,223 [INFO] Select text region...
+2026-05-16 14:04:00,205 [INFO] Captured region: 1484,160 396x414
+2026-05-16 14:04:00,669 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 14:04:01,423 [INFO] OCR result: 筛选人、状态已弃置 “ “ 已锁定未标记品质星三星四星五星合鸣孙 “ 合鸣筛选全部一主音属性添加主属性筛选十下
+2026-05-16 14:04:02,941 [INFO] Translation: Filter status Abandoned Locked Unmarked Quality Star Three S
+2026-05-16 14:04:03,107 [INFO] Notification: [Sentence Captured] Text: 筛选人、状态已弃置 “ “ 已锁定未标记品质星三星四星五星合鸣孙 “ 合鸣筛选全部一主音属性添加主属性筛选十下
+pinyin: shai1 xuan
+2026-05-16 14:04:03,139 [INFO] Copied to clipboard: 筛选人、状态已弃置 “ “ 已锁定未标记品质星三星四星五星合鸣孙 “ 合鸣筛选全部一主音属性添加主属
+2026-05-16 14:04:03,139 [INFO] Recording 5s audio...
+2026-05-16 14:04:04,373 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 14:04:09,588 [INFO] Audio recording: success
+2026-05-16 14:04:09,599 [INFO] Notification: [Sentence Mined] Text: 筛选人、状态已弃置 “ “ 已锁定未标记品质星三星四星五星合鸣孙 “ 合鸣筛选全部一主音属性添加主属性筛选十下
+Translation: Filte
+2026-05-16 14:04:09,599 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_140356
+2026-05-16 14:04:18,504 [INFO] Exported 2 entries to /home/mastroni/miner-v2/mining/test_anki_export.csv
+2026-05-16 14:04:19,606 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 14:04:23,112 [INFO] Copied to clipboard: test clipboard content
+2026-05-16 14:04:23,136 [INFO] Notification: [Test] Notification test
+2026-05-16 14:04:26,056 [INFO] Mining: zh->en
+2026-05-16 14:04:26,057 [INFO] Select text region...
+2026-05-16 14:04:28,863 [INFO] Captured region: 1222,249 269x609
+2026-05-16 14:04:29,340 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 14:04:30,202 [INFO] OCR result: 合鸣寸 “ 合鸣筛选全部孙 “ 合鸣筛选全部团剪辑梦之影念雪蒋无声之厨乡吴话义之厨画琏张粉饰之沫畹 “ 长路启航之星界 
+2026-05-16 14:04:31,402 [INFO] Translation: He Ming Cun He Ming Screen All Sun He Ming Screen All Group 
+2026-05-16 14:04:31,586 [INFO] Notification: [Sentence Captured] Text: 合鸣寸 “ 合鸣筛选全部孙 “ 合鸣筛选全部团剪辑梦之影念雪蒋无声之厨乡吴话义之厨画琏张粉饰之沫畹 “ 长路启航之星界 “ 流全溯真之式 “ 昌构寻
+2026-05-16 14:04:31,627 [INFO] Copied to clipboard: 合鸣寸 “ 合鸣筛选全部孙 “ 合鸣筛选全部团剪辑梦之影念雪蒋无声之厨乡吴话义之厨画琏张粉饰之沫畹 
+2026-05-16 14:04:31,627 [INFO] Recording 5s audio...
+2026-05-16 14:04:32,871 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 14:04:38,086 [INFO] Audio recording: success
+2026-05-16 14:04:38,095 [INFO] Notification: [Sentence Mined] Text: 合鸣寸 “ 合鸣筛选全部孙 “ 合鸣筛选全部团剪辑梦之影念雪蒋无声之厨乡吴话义之厨画琏张粉饰之沫畹 “ 长路启航之星界 
+Translation: 
+2026-05-16 14:04:38,095 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_140426
+2026-05-16 14:04:44,967 [INFO] Exported 2 entries to /home/mastroni/miner-v2/mining/test_anki_export.csv
+2026-05-16 14:04:46,056 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 14:04:49,744 [INFO] Copied to clipboard: test clipboard content
+2026-05-16 14:04:49,766 [INFO] Notification: [Test] Notification test
+2026-05-16 14:04:52,327 [INFO] Zone saved: zone_a (0,0 100x50)
+2026-05-16 14:04:52,327 [INFO] Zone saved: zone_b (100,100 200x50)
+2026-05-16 14:04:52,327 [INFO] Zone deleted: zone_a
+2026-05-16 14:04:52,328 [INFO] Zone deleted: zone_b
+2026-05-16 14:04:52,328 [INFO] Zone saved: test_zone (100,100 200x50)
+2026-05-16 14:04:52,328 [INFO] Zone deleted: test_zone

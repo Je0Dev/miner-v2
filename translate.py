@@ -105,10 +105,10 @@ def translate_text(text: str, src: str = "zh", dest: str = "en") -> str:
         log.error(f"Translation failed: {e}")
         return ""
 
-def _find_best_audio_source() -> str:
+def _find_best_audio_source() -> str | None:
     try:
         result = subprocess.run(["pactl", "list", "short", "sources"],
-                                capture_output=True, text=True)
+                                capture_output=True, text=True, timeout=5)
         sources = result.stdout.splitlines()
         monitors = [s for s in sources if "monitor" in s]
         if monitors:
@@ -117,28 +117,38 @@ def _find_best_audio_source() -> str:
                 if len(parts) > 1 and "null" not in parts[1].lower():
                     return parts[1]
             return monitors[0].split("\t")[1]
-        return "alsa_output.pci-0000_00_1b.0.analog-stereo.monitor"
+        return None
     except Exception:
-        return "alsa_output.pci-0000_00_1b.0.analog-stereo.monitor"
+        return None
+
+def _test_audio_source(source: str) -> bool:
+    """Test if audio source is actually working."""
+    try:
+        result = subprocess.run(["ffmpeg", "-y", "-f", "pulse", "-i", source,
+                                 "-t", "1", "-acodec", "pcm_s16le", "-f", "null", "-"],
+                                capture_output=True, timeout=3)
+        return result.returncode == 0
+    except Exception:
+        return False
 
 def record_audio(output_path: Path, duration: int = 5, source: str = None) -> bool:
-    if source is None: source = _find_best_audio_source()
+    """Record audio from desktop/game. Returns False gracefully if no audio available."""
+    if source is None:
+        source = _find_best_audio_source()
+    if source is None:
+        log.warning("No audio source found, skipping recording")
+        return False
+    if not _test_audio_source(source):
+        log.warning(f"Audio source {source} not working, skipping recording")
+        return False
     log.info(f"Recording audio from: {source}")
     cmd = ["ffmpeg", "-y", "-f", "pulse", "-i", source, "-t", str(duration),
            "-acodec", "libmp3lame", "-q:a", "2", "-loglevel", "error", str(output_path)]
     try:
         proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         for i in range(duration, 0, -1): time.sleep(1)
-        proc.wait()
+        proc.wait(timeout=duration + 5)
         exists = output_path.exists()
-        if not exists:
-            log.warning("Pulse recording failed, trying PipeWire fallback...")
-            cmd_pw = ["ffmpeg", "-y", "-f", "pulse", "-i", "default", "-t", str(duration),
-                      "-acodec", "libmp3lame", "-q:a", "2", "-loglevel", "error", str(output_path)]
-            proc = subprocess.Popen(cmd_pw, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-            for i in range(duration, 0, -1): time.sleep(1)
-            proc.wait()
-            exists = output_path.exists()
         log.info(f"Audio recording: {'success' if exists else 'failed'}")
         return exists
     except Exception as e:
