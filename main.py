@@ -1,0 +1,34 @@
+#!/usr/bin/env python3
+"""Game Sentence Miner v2 - CLI entry point."""
+import sys, argparse
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+from config import OCR_LANGS, TRANSLATION_LANGS
+from log import log
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Game Sentence Miner v2")
+    parser.add_argument("-l", "--lang", choices=OCR_LANGS.keys(), default="zh", help="OCR language")
+    parser.add_argument("-t", "--translate-to", choices=TRANSLATION_LANGS.keys(), default="en", help="Translate to")
+    parser.add_argument("-a", "--audio-duration", type=int, default=5, help="Audio duration (seconds)")
+    parser.add_argument("-s", "--source", default="Game", help="Source name")
+    parser.add_argument("--live", action="store_true", help="Launch live OCR overlay")
+    parser.add_argument("--no-clipboard", action="store_true", help="Don't copy to clipboard")
+    parser.add_argument("--no-vad", action="store_true", help="Disable VAD audio trimming")
+    args = parser.parse_args()
+
+    if args.live:
+        from overlay import LiveOCROverlay
+        LiveOCROverlay(ocr_lang=args.lang, translate_to=args.translate_to,
+                       source_name=args.source).run()
+    else:
+        from mine import mine_sentence
+        mine_sentence(ocr_lang=args.lang, translate_to=args.translate_to,
+                      audio_duration=args.audio_duration, source_name=args.source,
+                      auto_clipboard=not args.no_clipboard, use_vad=not args.no_vad)
+
+
+if __name__ == "__main__":
+    main()
