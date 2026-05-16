@@ -279,5 +279,15 @@
     "source": "Game",
     "timestamp": "20260516_115349",
     "screenshot": "images/capture.png"
+  },
+  {
+    "sentence": "LIBRARY",
+    "translation": "LIBRARY",
+    "audio": "audio/audio_20260516_133124.mp3",
+    "pronunciation": "LIBRARY",
+    "lang": "zh",
+    "source": "Game",
+    "timestamp": "20260516_133124",
+    "screenshot": "images/capture.png"
   }
 ]

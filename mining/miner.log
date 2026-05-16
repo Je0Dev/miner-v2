@@ -991,3 +991,28 @@ Translation: Birthday Dolphin La Level Lianjue
 2026-05-16 13:23:41,182 [INFO] Tesseract pre-warmed (chi_sim)
 2026-05-16 13:23:44,044 [INFO] Copied to clipboard: test clipboard content
 2026-05-16 13:23:44,072 [INFO] Notification: [Test] Notification test
+2026-05-16 13:31:05,907 [INFO] Exported 2 entries to /home/mastroni/miner-v2/mining/test_anki_export.csv
+2026-05-16 13:31:07,715 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 13:31:11,168 [INFO] Copied to clipboard: test clipboard content
+2026-05-16 13:31:11,244 [INFO] Notification: [Test] Notification test
+2026-05-16 13:31:24,596 [INFO] Mining: zh->en
+2026-05-16 13:31:24,596 [INFO] Select text region...
+2026-05-16 13:31:24,612 [INFO] Notification: [Mining] Select text region...
+2026-05-16 13:31:30,657 [INFO] Captured region: 1583,632 170x75
+2026-05-16 13:31:30,657 [INFO] OCRing region: 1583,632 170x75
+2026-05-16 13:31:31,148 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 13:31:31,692 [INFO] OCR result: LIBRARY
+2026-05-16 13:31:32,839 [INFO] Translation: LIBRARY
+2026-05-16 13:31:33,020 [INFO] Notification: [Sentence Captured] Text: LIBRARY
+pinyin: LIBRARY
+Translation: LIBRARY
+2026-05-16 13:31:33,055 [INFO] Copied to clipboard: LIBRARY
+2026-05-16 13:31:33,055 [INFO] Recording 5s audio...
+2026-05-16 13:31:33,062 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 13:31:33,072 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 13:31:38,449 [INFO] Audio recording: success
+2026-05-16 13:31:38,459 [INFO] Notification: [Sentence Mined] Text: LIBRARY
+Translation: LIBRARY
+Audio: Yes
+Saved: 20260516_133124
+2026-05-16 13:31:38,459 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_133124

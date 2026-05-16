@@ -63,6 +63,14 @@ def record_audio(output_path: Path, duration: int = 5, source: str = None) -> bo
         for i in range(duration, 0, -1): time.sleep(1)
         proc.wait()
         exists = output_path.exists()
+        if not exists:
+            log.warning("Pulse recording failed, trying PipeWire fallback...")
+            cmd_pw = ["ffmpeg", "-y", "-f", "pulse", "-i", "default", "-t", str(duration),
+                      "-acodec", "libmp3lame", "-q:a", "2", "-loglevel", "error", str(output_path)]
+            proc = subprocess.Popen(cmd_pw, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            for i in range(duration, 0, -1): time.sleep(1)
+            proc.wait()
+            exists = output_path.exists()
         log.info(f"Audio recording: {'success' if exists else 'failed'}")
         return exists
     except Exception as e:
