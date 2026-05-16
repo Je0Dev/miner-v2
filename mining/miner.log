@@ -2108,3 +2108,81 @@ Translation:
 2026-05-16 14:31:56,482 [INFO] Zone deleted: zone_b
 2026-05-16 14:31:56,482 [INFO] Zone saved: test_zone (100,100 200x50)
 2026-05-16 14:31:56,483 [INFO] Zone deleted: test_zone
+2026-05-16 14:33:03,877 [INFO] Copied to clipboard: 余驯
+2026-05-16 14:33:03,877 [INFO] Hover #2: 余驯
+2026-05-16 14:33:29,889 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 14:33:29,920 [INFO] Notification: [Yomitan Hover] Active (ZH) - scanning below
+2026-05-16 14:33:49,318 [INFO] Copied to clipboard: 一公芸
+2026-05-16 14:33:49,318 [INFO] Hover #1: 一公芸 -> A male Yun
+2026-05-16 14:33:55,368 [INFO] Copied to clipboard: 一切芸
+2026-05-16 14:33:55,369 [INFO] Hover #2: 一切芸 -> All Yun
+2026-05-16 14:34:07,211 [INFO] Copied to clipboard: ."
+2026-05-16 14:34:07,211 [INFO] Hover #3: ." -> 
+2026-05-16 14:34:11,508 [INFO] Copied to clipboard: 国园园相医一
+2026-05-16 14:34:11,508 [INFO] Hover #4: 国园园相医一 -> Guoyuanyuan Xiangyiyi
+2026-05-16 14:34:26,838 [INFO] Copied to clipboard: 索拉等级联觉等级
+2026-05-16 14:34:26,838 [INFO] Hover #5: 索拉等级联觉等级 -> Sola level synesthesia level
+2026-05-16 14:34:29,490 [INFO] Copied to clipboard: 素拉等级联觉等级
+2026-05-16 14:34:29,490 [INFO] Hover #6: 素拉等级联觉等级 -> Sura level synesthesia level
+2026-05-16 14:35:10,753 [INFO] Copied to clipboard: 口一一寸
+2026-05-16 14:35:10,753 [INFO] Hover #7: 口一一寸 -> mouth inch by inch
+2026-05-16 14:35:20,304 [INFO] Copied to clipboard: 国国
+2026-05-16 14:35:20,305 [INFO] Hover #8: 国国 -> country country
+2026-05-16 14:35:42,210 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 14:35:42,253 [INFO] Notification: [Yomitan Hover] Active (ZH)
+2026-05-16 14:35:56,805 [INFO] Copied to clipboard: 步日马吴一
+2026-05-16 14:35:56,805 [INFO] Hover #1: 步日马吴一 -> Bu Rima Wu Yi
+2026-05-16 14:36:07,504 [INFO] Copied to clipboard: 步日冬吴一
+2026-05-16 14:36:07,504 [INFO] Hover #2: 步日冬吴一 -> Bu Ridong Wu Yi
+2026-05-16 14:36:13,541 [INFO] Copied to clipboard: 生日冬一
+2026-05-16 14:36:13,541 [INFO] Hover #3: 生日冬一 -> Birthday winter first
+2026-05-16 14:36:18,190 [INFO] Copied to clipboard: 生日
+2026-05-16 14:36:18,190 [INFO] Hover #4: 生日 -> Birthday
+2026-05-16 14:36:23,766 [INFO] Copied to clipboard: 步日马吴一
+2026-05-16 14:36:23,766 [INFO] Hover #5: 步日马吴一 -> Bu Rima Wu Yi
+2026-05-16 14:36:26,781 [INFO] Copied to clipboard: 人网个逊
+2026-05-16 14:36:26,781 [INFO] Hover #6: 人网个逊 -> Rennet is inferior
+2026-05-16 14:36:48,623 [INFO] Copied to clipboard: 即治
+2026-05-16 14:36:48,623 [INFO] Hover #7: 即治 -> Instant cure
+2026-05-16 14:36:57,925 [INFO] Copied to clipboard: 初治
+2026-05-16 14:36:57,925 [INFO] Hover #8: 初治 -> First treatment
+2026-05-16 14:36:59,427 [WARNING] Hover error: Command '['grim', '-g', '-591,-102 400x80', '/run/user/1000/yomitan-hover/hover.png']' returned non-zero exit status 1.
+2026-05-16 14:37:01,432 [WARNING] Hover error: Command '['grim', '-g', '-591,-102 400x80', '/run/user/1000/yomitan-hover/hover.png']' returned non-zero exit status 1.
+2026-05-16 14:37:03,435 [WARNING] Hover error: Command '['grim', '-g', '-591,-102 400x80', '/run/user/1000/yomitan-hover/hover.png']' returned non-zero exit status 1.
+2026-05-16 14:37:59,208 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 14:37:59,253 [INFO] Notification: [Yomitan Hover] Active (ZH)
+2026-05-16 14:38:12,403 [INFO] Copied to clipboard: 祖口串
+2026-05-16 14:38:12,403 [INFO] Hover #1: 祖口串 -> Zukou Chuan
+2026-05-16 14:38:14,774 [INFO] Copied to clipboard: 祖口串
+2026-05-16 14:38:14,774 [INFO] Hover #2: 祖口串 -> Zukou Chuan
+2026-05-16 14:38:17,130 [INFO] Copied to clipboard: 祖口串
+2026-05-16 14:38:17,130 [INFO] Hover #3: 祖口串 -> Zukou Chuan
+2026-05-16 14:38:19,517 [INFO] Copied to clipboard: 祖口串
+2026-05-16 14:38:19,517 [INFO] Hover #4: 祖口串 -> Zukou Chuan
+2026-05-16 14:38:21,868 [INFO] Copied to clipboard: 祖口串
+2026-05-16 14:38:21,868 [INFO] Hover #5: 祖口串 -> Zukou Chuan
+2026-05-16 14:38:24,312 [INFO] Copied to clipboard: 祖口串
+2026-05-16 14:38:24,312 [INFO] Hover #6: 祖口串 -> Zukou Chuan
+2026-05-16 14:39:12,741 [INFO] Exported 2 entries to /home/mastroni/miner-v2/mining/test_anki_export.csv
+2026-05-16 14:39:13,341 [INFO] Tesseract pre-warmed (eng)
+2026-05-16 14:39:25,798 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 14:39:25,828 [INFO] Notification: [Yomitan Hover] Active (ZH)
+2026-05-16 14:39:36,372 [INFO] Copied to clipboard: 有窟
+2026-05-16 14:39:36,372 [INFO] Hover #1: 有窟 -> There is a cave
+2026-05-16 14:39:50,461 [INFO] Copied to clipboard: 吊匹
+2026-05-16 14:39:50,461 [INFO] Hover #2: 吊匹 -> hanging horse
+2026-05-16 14:39:54,387 [INFO] Backup created: /home/mastroni/miner-v2/mining/backups/backup_20260516_143954
+2026-05-16 14:39:54,606 [INFO] Copied to clipboard: 吊匹
+2026-05-16 14:39:54,606 [INFO] Hover #3: 吊匹 -> hanging horse
+2026-05-16 14:39:57,806 [INFO] Copied to clipboard: test clipboard content
+2026-05-16 14:39:57,824 [INFO] Notification: [Test] Notification test
+2026-05-16 14:40:00,199 [INFO] Zone saved: zone_a (0,0 100x50)
+2026-05-16 14:40:00,200 [INFO] Zone saved: zone_b (100,100 200x50)
+2026-05-16 14:40:00,200 [INFO] Zone deleted: zone_a
+2026-05-16 14:40:00,200 [INFO] Zone deleted: zone_b
+2026-05-16 14:40:00,201 [INFO] Zone saved: test_zone (100,100 200x50)
+2026-05-16 14:40:00,201 [INFO] Zone deleted: test_zone
+2026-05-16 14:40:10,437 [INFO] Copied to clipboard: 吊匹
+2026-05-16 14:40:10,437 [INFO] Hover #4: 吊匹 -> hanging horse
+2026-05-16 14:40:14,582 [INFO] Copied to clipboard: 吊匹
+2026-05-16 14:40:14,582 [INFO] Hover #5: 吊匹 -> hanging horse
