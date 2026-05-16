@@ -54,6 +54,25 @@ def preprocess_image(image_path: Path) -> Image.Image:
     return img.point(lambda p: 255 if p > 128 else 0)
 
 
+def preprocess_image_long(image_path: Path) -> Image.Image:
+    """Preprocess image optimized for long text/dialogue.
+
+    For larger regions with multiple lines of text:
+    1. Convert to grayscale
+    2. Moderate contrast (1.3x) to preserve text gradients
+    3. Denoise to reduce background artifacts
+    4. Binarize with adaptive threshold
+    """
+    img = Image.open(image_path).convert("L")
+    # Moderate contrast for long text
+    enhancer = ImageEnhance.Contrast(img)
+    img = enhancer.enhance(1.3)
+    # Reduce noise
+    img = img.filter(ImageFilter.MedianFilter(size=3))
+    # Binarize
+    return img.point(lambda p: 255 if p > 135 else 0)
+
+
 def _ensure_utf8(text: str) -> str:
     """Ensure text is properly decoded UTF-8."""
     if not text:
@@ -93,6 +112,25 @@ def ocr_image(image_path: Path, lang: str = "zh", use_confidence: bool = True) -
         return _ensure_utf8(text)
     except Exception as e:
         log.error(f"OCR failed: {e}")
+        return ""
+
+
+def ocr_long_text(image_path: Path, lang: str = "zh") -> str:
+    """Extract text from image optimized for long dialogue/story text.
+
+    Uses PSM 3 (fully automatic) for multi-line text.
+    Uses specialized preprocessing for longer text regions.
+    """
+    prewarm_tesseract(OCR_LANGS.get(lang, lang))
+    t_lang = OCR_LANGS.get(lang, lang)
+    try:
+        img = preprocess_image_long(image_path)
+        # PSM 3 for fully automatic page segmentation (best for multi-line)
+        config = f"--oem 3 --psm 3 -l {t_lang}"
+        text = pytesseract.image_to_string(img, config=config).strip()
+        return _ensure_utf8(text)
+    except Exception as e:
+        log.error(f"OCR long text failed: {e}")
         return ""
 
 

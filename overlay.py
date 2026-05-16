@@ -7,6 +7,7 @@ Workflow:
 4. Shows captured text + translation + pinyin
 5. Auto-copies to clipboard for Yomitan
 6. User clicks "Mine" to save with audio recording
+7. Multi-line buffer combines consecutive dialogue lines
 """
 import sys, time, tempfile, subprocess, os, threading
 from pathlib import Path
@@ -19,9 +20,10 @@ except ImportError:
 
 sys.path.insert(0, str(Path(__file__).parent))
 from config import OCR_LANGS, TRANSLATION_LANGS
-from ocr import ocr_image
+from ocr import ocr_image, ocr_long_text
 from translate import translate_text, copy_to_clipboard, record_audio, notify
 from text import clean_text, format_with_pinyin, sanitize_unicode
+from multiline import MultiLineBuffer
 from log import log
 
 
@@ -34,6 +36,7 @@ class LiveOCROverlay:
         self._live_geom = None
         self.current_text = ""
         self.current_translation = ""
+        self._multiline = MultiLineBuffer(max_lines=20, window_sec=30)
         self._build_ui()
 
     def _build_ui(self):
@@ -41,7 +44,6 @@ class LiveOCROverlay:
         self.root.title("Live OCR Miner")
         self.root.geometry("850x700")
         self.root.minsize(850, 700)
-        # Don't use -type splash as it can make window non-interactive
         self.root.attributes("-topmost", True)
         self.root.attributes("-alpha", 0.95)
         self.root.configure(bg="#1a1a2e")
@@ -98,6 +100,11 @@ class LiveOCROverlay:
                                    activebackground="#AA5522", bd=0, padx=15, pady=5)
         self.mine_btn.pack(side=tk.LEFT, padx=8)
 
+        self.combine_btn = tk.Button(btn_frame, text="Combine Lines", bg="#6A5ACD", fg="white",
+                                      font=("Sans", 11, "bold"), command=self._combine,
+                                      activebackground="#7B68EE", bd=0, padx=15, pady=5)
+        self.combine_btn.pack(side=tk.LEFT, padx=8)
+
         # Options
         opts_frame = tk.Frame(main, bg="#1a1a2e")
         opts_frame.pack(fill=tk.X, pady=(10, 5))
@@ -106,6 +113,11 @@ class LiveOCROverlay:
         tk.Checkbutton(opts_frame, text="VAD Trim", variable=self.vad_var,
                        bg="#1a1a2e", fg="white", selectcolor="#1a1a2e",
                        activebackground="#1a1a2e").pack(side=tk.LEFT)
+
+        self.long_text_var = tk.BooleanVar(value=False)
+        tk.Checkbutton(opts_frame, text="Long Text Mode", variable=self.long_text_var,
+                       bg="#1a1a2e", fg="white", selectcolor="#1a1a2e",
+                       activebackground="#1a1a2e").pack(side=tk.LEFT, padx=10)
 
         tk.Label(opts_frame, text="Audio(s):", bg="#1a1a2e", fg="white").pack(side=tk.LEFT, padx=(15, 3))
         self.audio_var = tk.IntVar(value=5)
@@ -192,6 +204,7 @@ class LiveOCROverlay:
                 if not self._select_region():
                     return
             self.is_running = True
+            self._multiline.clear()
             self.live_btn.config(text="Stop Live", bg="#CC3333", activebackground="#EE4444")
             self.status_var.set("Live ON - OCRing every 2s")
             self._log("Live mode started")
@@ -210,48 +223,71 @@ class LiveOCROverlay:
                         tmp_path = tmp.name
                     subprocess.run(["grim", "-g", self._live_geom, tmp_path],
                                    check=True, capture_output=True, timeout=5)
-                    text = clean_text(ocr_image(Path(tmp_path), self.ocr_lang))
+                    # Use long text mode if enabled
+                    if self.long_text_var.get():
+                        text = clean_text(ocr_long_text(Path(tmp_path), self.ocr_lang))
+                    else:
+                        text = clean_text(ocr_image(Path(tmp_path), self.ocr_lang))
                     try:
                         os.unlink(tmp_path)
                     except Exception:
                         pass
                     if text and len(text) > 1:
-                        tr = translate_text(text, src=self.ocr_lang, dest=self.translate_to)
-                        self.root.after(0, lambda t=text, tr=tr: self._update_text(t, tr))
+                        # Add to multi-line buffer
+                        self._multiline.add(text)
+                        # Get combined text
+                        combined = self._multiline.get_combined()
+                        display_text = combined if combined else text
+                        tr = translate_text(display_text, src=self.ocr_lang, dest=self.translate_to)
+                        self.root.after(0, lambda t=display_text, tr=tr: self._update_text(t, tr))
                         self._log(f"New: {text[:50]}")
                         # Auto-copy to clipboard for Yomitan
-                        copy_to_clipboard(text)
+                        copy_to_clipboard(display_text)
                     time.sleep(2)
                 except Exception as e:
                     self._log(f"Error: {e}")
                     time.sleep(2)
         threading.Thread(target=_loop, daemon=True).start()
 
+    def _combine(self):
+        """Show combined multi-line text."""
+        combined = self._multiline.get_all_text()
+        if combined:
+            tr = translate_text(combined, src=self.ocr_lang, dest=self.translate_to)
+            self._update_text(combined, tr)
+            self._log(f"Combined {len(self._multiline.get_recent())} lines")
+            copy_to_clipboard(combined)
+        else:
+            self._log("No lines to combine")
+
     def _mine(self):
-        if not self.current_text:
+        # Use combined text if available, otherwise current text
+        text_to_mine = self._multiline.get_all_text() or self.current_text
+        if not text_to_mine:
             messagebox.showwarning("Warning", "No text detected. Capture text first.")
             return
         ts = time.strftime("%Y%m%d_%H%M%S")
-        sd = Path.home() / "Downloads" / "Mining" / ts
+        sd = Path(__file__).parent / "mining" / ts
         sd.mkdir(parents=True, exist_ok=True)
         for d in ["audio", "images", "video"]:
             (sd / d).mkdir(exist_ok=True)
 
         dur = self.audio_var.get()
         self.status_var.set(f"Recording {dur}s audio...")
-        self._log(f"Mining: {self.current_text[:50]}")
+        self._log(f"Mining: {text_to_mine[:50]}")
 
         def _save():
             af_path = sd / f"audio/audio_{ts}.mp3"
             ok = record_audio(af_path, dur)
             af = f"audio/audio_{ts}.mp3" if ok else ""
-            py = format_with_pinyin(self.current_text) if self.ocr_lang == "zh" else ""
+            py = format_with_pinyin(text_to_mine) if self.ocr_lang == "zh" else ""
+            tr = self.current_translation or translate_text(text_to_mine, src=self.ocr_lang, dest=self.translate_to)
 
             entry = {
-                "sentence": self.current_text,
-                "translation": self.current_translation,
+                "sentence": text_to_mine,
+                "translation": tr,
                 "audio": af,
-                "pinyin": py if py != self.current_text else "",
+                "pinyin": py if py != text_to_mine else "",
                 "source": self.source_name,
                 "timestamp": ts,
             }
@@ -261,7 +297,8 @@ class LiveOCROverlay:
                 json.dump(entry, f, ensure_ascii=False, indent=2)
 
             # Append to master
-            sentences_json = Path.home() / "Downloads" / "Mining" / "sentences.json"
+            mining_dir = Path(__file__).parent / "mining"
+            sentences_json = mining_dir / "sentences.json"
             all_entries = []
             if sentences_json.exists():
                 try:
@@ -273,12 +310,18 @@ class LiveOCROverlay:
             with open(sentences_json, "w", encoding="utf-8") as f:
                 json.dump(all_entries, f, ensure_ascii=False, indent=2)
 
-            copy_to_clipboard(self.current_text)
-            self.root.after(0, lambda: self._log(f"Mined: {self.current_text[:60]}"))
+            # Append to history
+            with open(mining_dir / "history_sentences.txt", "a", encoding="utf-8") as f:
+                f.write(f"[{ts}] {text_to_mine[:100]} | {tr[:100]}\n")
+
+            copy_to_clipboard(text_to_mine)
+            self.root.after(0, lambda: self._log(f"Mined: {text_to_mine[:60]}"))
             self.root.after(0, lambda: self.status_var.set(f"Mined! Saved to {sd.name}"))
             self.root.after(0, lambda: notify("Sentence Mined",
-                f"Text: {self.current_text[:60]}\nTranslation: {self.current_translation[:60]}\nSaved: {sd.name}",
+                f"Text: {text_to_mine[:60]}\nTranslation: {tr[:60]}\nSaved: {sd.name}",
                 timeout=10000))
+            # Clear buffer after mining
+            self._multiline.clear()
         threading.Thread(target=_save, daemon=True).start()
 
     def _on_close(self):
@@ -289,5 +332,6 @@ class LiveOCROverlay:
         self._log(f"OCR: {self.ocr_lang.upper()} -> {self.translate_to.upper()}")
         self._log("Step 1: Click 'Select Region' to choose text area")
         self._log("Step 2: Click 'Start Live' to auto-OCR every 2s")
-        self._log("Step 3: Click 'Mine' to save with audio")
+        self._log("Step 3: Click 'Combine Lines' to merge dialogue")
+        self._log("Step 4: Click 'Mine' to save with audio")
         self.root.mainloop()

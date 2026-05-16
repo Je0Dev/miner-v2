@@ -1,0 +1,38 @@
+[
+  {
+    "sentence": "E 招 国 E E",
+    "translation": "E Zhao Guo E E",
+    "audio": "audio/audio_20260516_111253.mp3",
+    "pinyin": "E 招 国 E E (E  zhao1   guo2  E E)",
+    "source": "Game",
+    "timestamp": "20260516_111253",
+    "screenshot": "images/capture.png"
+  },
+  {
+    "sentence": "E 招",
+    "translation": "E move",
+    "audio": "audio/audio_20260516_111318.mp3",
+    "pinyin": "E 招 (E  zhao1)",
+    "source": "Game",
+    "timestamp": "20260516_111318",
+    "screenshot": "images/capture.png"
+  },
+  {
+    "sentence": "共 鸣 者 合 成 成 就",
+    "translation": "Resonators synthesize achievements",
+    "audio": "audio/audio_20260516_111910.mp3",
+    "pinyin": "共 鸣 者 合 成 成 就 (gong4   ming2   zhe3   he2   cheng2   cheng2   jiu4)",
+    "source": "Game",
+    "timestamp": "20260516_111910",
+    "screenshot": "images/capture.png"
+  },
+  {
+    "sentence": "邸 箱 绑 定 任 务 教 程 百 科 攻 陷 站",
+    "translation": "Di Box Binding Task Tutorial Encyclopedia Capture Station",
+    "audio": "audio/audio_20260516_112017.mp3",
+    "pinyin": "邸 箱 绑 定 任 务 教 程 百 科 攻 陷 站 (di3   xiang1   bang3   ding4   ren4   wu4   jiao4   cheng2   bai3   ke1   gong1   xian4   zhan4)",
+    "source": "Game",
+    "timestamp": "20260516_112017",
+    "screenshot": "images/capture.png"
+  }
+]

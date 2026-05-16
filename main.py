@@ -17,6 +17,7 @@ def main():
     parser.add_argument("--live", action="store_true", help="Launch live OCR overlay")
     parser.add_argument("--no-clipboard", action="store_true", help="Don't copy to clipboard")
     parser.add_argument("--no-vad", action="store_true", help="Disable VAD audio trimming")
+    parser.add_argument("--long-text", action="store_true", help="Use OCR optimized for long dialogue/story text")
     args = parser.parse_args()
 
     if args.live:
@@ -27,7 +28,8 @@ def main():
         from mine import mine_sentence
         mine_sentence(ocr_lang=args.lang, translate_to=args.translate_to,
                       audio_duration=args.audio_duration, source_name=args.source,
-                      auto_clipboard=not args.no_clipboard, use_vad=not args.no_vad)
+                      auto_clipboard=not args.no_clipboard, use_vad=not args.no_vad,
+                      long_text=args.long_text)
 
 
 if __name__ == "__main__":

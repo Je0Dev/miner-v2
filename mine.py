@@ -5,14 +5,14 @@ from datetime import datetime
 from pathlib import Path
 from config import MINING_DIR, AUDIO_DIR, IMAGES_DIR, VIDEO_DIR
 from text import clean_text, is_valid_text, is_duplicate, load_history, format_with_pinyin
-from ocr import ocr_image
+from ocr import ocr_image, ocr_long_text
 from translate import translate_text, copy_to_clipboard, record_audio, notify
 from capture import capture_region
 from log import log
 
 
 def mine_sentence(ocr_lang="zh", translate_to="en", audio_duration=5, source_name="Game",
-                  auto_clipboard=True, use_vad=True, push_anki=True) -> dict | None:
+                  auto_clipboard=True, use_vad=True, push_anki=True, long_text=False) -> dict | None:
     """Execute one complete mining cycle.
 
     Workflow:
@@ -24,6 +24,9 @@ def mine_sentence(ocr_lang="zh", translate_to="en", audio_duration=5, source_nam
     6. Record audio
     7. Save to session folder + Anki
     8. Confirmation notification
+
+    Args:
+        long_text: If True, use OCR optimized for multi-line dialogue/story text
     """
     ts = datetime.now().strftime("%Y%m%d_%H%M%S")
     sd = MINING_DIR / ts
@@ -44,7 +47,10 @@ def mine_sentence(ocr_lang="zh", translate_to="en", audio_duration=5, source_nam
 
     # Step 2: OCR
     log.info(f"OCRing region: {geom}")
-    text = clean_text(ocr_image(img_path, ocr_lang))
+    if long_text:
+        text = clean_text(ocr_long_text(img_path, ocr_lang))
+    else:
+        text = clean_text(ocr_image(img_path, ocr_lang))
     if not text or len(text) < 2:
         notify("Mining", "No text detected", timeout=3000)
         return None

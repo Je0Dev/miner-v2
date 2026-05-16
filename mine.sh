@@ -5,7 +5,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PYTHON="${PYTHON:-python3}"
 
 OCR_LANG="zh"; TRANSLATE_TO="en"; AUDIO_DURATION=5
-LIVE=false
+LIVE=false; LONG_TEXT=false
 
 while [[ $# -gt 0 ]]; do
     case $1 in
@@ -13,7 +13,8 @@ while [[ $# -gt 0 ]]; do
         -t) TRANSLATE_TO="$2"; shift 2 ;;
         -a) AUDIO_DURATION="$2"; shift 2 ;;
         --live) LIVE=true; shift ;;
-        -h) echo "Usage: $0 [-l LANG] [-t LANG] [-a SEC] [--live]"; exit 0 ;;
+        --long-text) LONG_TEXT=true; shift ;;
+        -h) echo "Usage: $0 [-l LANG] [-t LANG] [-a SEC] [--live] [--long-text]"; exit 0 ;;
         *) echo "Unknown: $1"; exit 1 ;;
     esac
 done
@@ -24,4 +25,5 @@ done
 
 CMD="$PYTHON \"$SCRIPT_DIR/main.py\" -l $OCR_LANG -t $TRANSLATE_TO -a $AUDIO_DURATION"
 [ "$LIVE" = true ] && CMD="$CMD --live"
+[ "$LONG_TEXT" = true ] && CMD="$CMD --long-text"
 eval $CMD

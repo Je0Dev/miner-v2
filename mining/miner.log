@@ -1,3 +1,154 @@
 2026-05-16 11:12:09,271 [INFO] Notification: [Miner Test] Notifications are working!
 2026-05-16 11:12:09,308 [INFO] Copied to clipboard: Test from miner-v2
 2026-05-16 11:12:09,797 [INFO] Tesseract pre-warmed (eng)
+2026-05-16 11:12:53,777 [INFO] Mining: zh->en
+2026-05-16 11:12:53,777 [INFO] Select text region...
+2026-05-16 11:12:53,784 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:12:55,422 [INFO] Captured region: 1204,373 422x51
+2026-05-16 11:12:55,422 [INFO] OCRing region: 1204,373 422x51
+2026-05-16 11:12:55,922 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:12:56,423 [INFO] OCR result: E 招 国 E E
+2026-05-16 11:12:57,675 [INFO] Translation: E Zhao Guo E E
+2026-05-16 11:12:57,861 [INFO] Notification: [Sentence Captured] Text: E 招 国 E E
+Pinyin: E 招 国 E E (E  zhao1   guo2  E E)
+Translation: E Zhao Guo
+2026-05-16 11:12:57,899 [INFO] Copied to clipboard: E 招 国 E E
+2026-05-16 11:12:57,899 [INFO] Recording 5s audio...
+2026-05-16 11:12:57,907 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 11:12:57,920 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 11:13:03,284 [INFO] Audio recording: success
+2026-05-16 11:13:03,292 [INFO] Notification: [Sentence Mined] Text: E 招 国 E E
+Translation: E Zhao Guo E E
+Audio: Yes
+Saved: 20260516_111253
+2026-05-16 11:13:03,292 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_111253
+2026-05-16 11:13:18,263 [INFO] Mining: zh->en
+2026-05-16 11:13:18,263 [INFO] Select text region...
+2026-05-16 11:13:18,269 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:13:19,201 [INFO] Captured region: 1206,503 83x28
+2026-05-16 11:13:19,201 [INFO] OCRing region: 1206,503 83x28
+2026-05-16 11:13:19,724 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:13:20,261 [INFO] OCR result: E 招
+2026-05-16 11:13:21,635 [INFO] Translation: E move
+2026-05-16 11:13:21,845 [INFO] Notification: [Sentence Captured] Text: E 招
+Pinyin: E 招 (E  zhao1)
+Translation: E move
+2026-05-16 11:13:21,885 [INFO] Copied to clipboard: E 招
+2026-05-16 11:13:21,885 [INFO] Recording 5s audio...
+2026-05-16 11:13:21,896 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 11:13:21,906 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 11:13:27,162 [INFO] Audio recording: success
+2026-05-16 11:13:27,173 [INFO] Notification: [Sentence Mined] Text: E 招
+Translation: E move
+Audio: Yes
+Saved: 20260516_111318
+2026-05-16 11:13:27,174 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_111318
+2026-05-16 11:14:14,021 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:15:20,682 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:15:22,831 [INFO] Copied to clipboard: 团 “ 画 “ 响
+E 合 成 成 就 E
+倩 煌 恩 曲
+万 物 图 鉴 地 图 背 包 E
+出 
+2026-05-16 11:15:25,943 [INFO] Copied to clipboard: 团 “ 画 “ 响
+E 合 成 成 就 E
+倩 煌 恩 曲
+万 物 图 鉴 地 图 背 包 E
+出 
+2026-05-16 11:15:28,977 [INFO] Copied to clipboard: 团 “ 画 “ 响
+E 合 成 成 就 E
+倩 煌 恩 曲
+万 物 图 鉴 地 图 背 包 E
+出 
+2026-05-16 11:15:32,011 [INFO] Copied to clipboard: 团 “ 画 “ 响
+E 合 成 成 就 E
+倩 煌 恩 曲
+万 物 图 鉴 地 图 背 包 E
+出 
+2026-05-16 11:15:35,001 [INFO] Copied to clipboard: 团 “ 画 “ 响
+E 合 成 成 就 E
+倩 煌 恩 曲
+万 物 图 鉴 地 图 背 包 E
+出 
+2026-05-16 11:15:38,008 [INFO] Copied to clipboard: 团 “ 画 “ 响
+E 合 成 成 就 E
+倩 煌 恩 曲
+万 物 图 鉴 地 图 背 包 E
+出 
+2026-05-16 11:15:41,001 [INFO] Copied to clipboard: 团 “ 画 “ 响
+E 合 成 成 就 E
+倩 煌 恩 曲
+万 物 图 鉴 地 图 背 包 E
+出 
+2026-05-16 11:15:41,013 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 11:15:43,965 [INFO] Copied to clipboard: 团 “ 画 “ 响
+E 合 成 成 就 E
+倩 煌 恩 曲
+万 物 图 鉴 地 图 背 包 E
+出 
+2026-05-16 11:15:46,264 [INFO] Audio recording: success
+2026-05-16 11:15:46,319 [INFO] Copied to clipboard: 团 “ 画 “ 响
+E 合 成 成 就 E
+倩 煌 恩 曲
+万 物 图 鉴 地 图 背 包 E
+出 
+2026-05-16 11:15:46,332 [INFO] Notification: [Sentence Mined] Text: 团 “ 画 “ 响
+E 合 成 成 就 E
+倩 煌 恩 曲
+万 物 图 鉴 地 图 背 包 E
+出 创 盯 园
+卵 箱 
+Translation: 
+2026-05-16 11:15:47,322 [INFO] Copied to clipboard: 团 “ 画 “ 响
+E 合 成 成 就 E
+倩 煌 恩 曲
+万 物 图 鉴 地 图 背 包 E
+出 
+2026-05-16 11:15:51,352 [INFO] Copied to clipboard: 园 “ 里 “ 响
+共 鸣 者 合 成 成 就 E
+自 “ 焦 “ 国 。 画
+万 物 国 銮 地 
+2026-05-16 11:15:54,381 [INFO] Copied to clipboard: 团 “ 画 “ 响
+E 合 成 成 就 E
+倩 煌 恩 曲
+万 物 图 鉴 地 图 背 包 E
+出 
+2026-05-16 11:19:10,250 [INFO] Mining: zh->en
+2026-05-16 11:19:10,250 [INFO] Select text region...
+2026-05-16 11:19:10,256 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:19:11,643 [INFO] Captured region: 1515,283 404x64
+2026-05-16 11:19:11,644 [INFO] OCRing region: 1515,283 404x64
+2026-05-16 11:19:12,171 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:19:12,732 [INFO] OCR result: 共 鸣 者 合 成 成 就
+2026-05-16 11:19:14,103 [INFO] Translation: Resonators synthesize achievements
+2026-05-16 11:19:14,304 [INFO] Notification: [Sentence Captured] Text: 共 鸣 者 合 成 成 就
+Pinyin: 共 鸣 者 合 成 成 就 (gong4   ming2   zhe3   he2   cheng2  
+2026-05-16 11:19:14,352 [INFO] Copied to clipboard: 共 鸣 者 合 成 成 就
+2026-05-16 11:19:14,353 [INFO] Recording 5s audio...
+2026-05-16 11:19:14,361 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 11:19:14,371 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 11:19:19,657 [INFO] Audio recording: success
+2026-05-16 11:19:19,665 [INFO] Notification: [Sentence Mined] Text: 共 鸣 者 合 成 成 就
+Translation: Resonators synthesize achievements
+Audio: Yes
+S
+2026-05-16 11:19:19,666 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_111910
+2026-05-16 11:20:17,068 [INFO] Mining: zh->en
+2026-05-16 11:20:17,068 [INFO] Select text region...
+2026-05-16 11:20:17,076 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:20:18,350 [INFO] Captured region: 1130,657 613x61
+2026-05-16 11:20:18,350 [INFO] OCRing region: 1130,657 613x61
+2026-05-16 11:20:18,846 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:20:19,459 [INFO] OCR result: 邸 箱 绑 定 任 务 教 程 百 科 攻 陷 站
+2026-05-16 11:20:20,428 [INFO] Translation: Di Box Binding Task Tutorial Encyclopedia Capture Station
+2026-05-16 11:20:20,622 [INFO] Notification: [Sentence Captured] Text: 邸 箱 绑 定 任 务 教 程 百 科 攻 陷 站
+Pinyin: 邸 箱 绑 定 任 务 教 程 百 科 攻 陷 站 (di3   xiang1 
+2026-05-16 11:20:20,672 [INFO] Copied to clipboard: 邸 箱 绑 定 任 务 教 程 百 科 攻 陷 站
+2026-05-16 11:20:20,672 [INFO] Recording 5s audio...
+2026-05-16 11:20:20,685 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 11:20:20,697 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 11:20:26,019 [INFO] Audio recording: success
+2026-05-16 11:20:26,029 [INFO] Notification: [Sentence Mined] Text: 邸 箱 绑 定 任 务 教 程 百 科 攻 陷 站
+Translation: Di Box Binding Task Tutorial Encycl
+2026-05-16 11:20:26,029 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_112017
+2026-05-16 11:21:04,031 [INFO] Tesseract pre-warmed (chi_sim)
