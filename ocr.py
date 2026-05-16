@@ -152,17 +152,22 @@ def _ensure_utf8(text: str) -> str:
 
 
 def _filter_garbage(text: str, lang: str = "zh") -> str:
-    """Filter out OCR garbage like lone 'E' symbols and non-CJK noise."""
+    """Filter out OCR garbage like lone digits, 'E' symbols, and non-CJK noise."""
     if not text:
         return ""
-    # Remove lone Latin characters that are likely OCR errors for CJK
+    # Remove standalone digits and digit pairs (common OCR artifacts like "08", "12")
     if lang in ("zh", "ja", "ko"):
+        # Remove lone digits (1-3 digits not part of larger context)
+        text = re.sub(r'(?<!\d)\d{1,3}(?!\d)', '', text)
         # Remove standalone Latin letters not part of valid words
         text = re.sub(r'(?<![A-Za-z])[A-Za-z](?![A-Za-z])', '', text)
         # Remove repeated single letters like "E E E"
         text = re.sub(r'\b([A-Za-z])\s+\1\b', '', text)
-    # Clean up multiple spaces
+    # Clean up multiple spaces and empty lines
     text = re.sub(r'\s+', ' ', text).strip()
+    # If text is now empty or just whitespace, return empty
+    if not text or text.isspace():
+        return ""
     return text
 
 
@@ -198,7 +203,9 @@ def ocr_image(image_path: Path, lang: str = "zh", use_confidence: bool = True) -
         
         if text:
             text = _ensure_utf8(text)
-            return _filter_garbage(text, lang)
+            filtered = _filter_garbage(text, lang)
+            if filtered:
+                return filtered
     except Exception as e:
         log.warning(f"OCR with preprocessing failed: {e}")
     
@@ -222,7 +229,9 @@ def ocr_image(image_path: Path, lang: str = "zh", use_confidence: bool = True) -
         
         if text:
             text = _ensure_utf8(text)
-            return _filter_garbage(text, lang)
+            filtered = _filter_garbage(text, lang)
+            if filtered:
+                return filtered
     except Exception as e:
         log.error(f"OCR failed completely: {e}")
     
@@ -255,7 +264,9 @@ def ocr_long_text(image_path: Path, lang: str = "zh") -> str:
         
         if text:
             text = _ensure_utf8(text)
-            return _filter_garbage(text, lang)
+            filtered = _filter_garbage(text, lang)
+            if filtered:
+                return filtered
     except Exception as e:
         log.warning(f"OCR long text with preprocessing failed: {e}")
     
@@ -274,7 +285,9 @@ def ocr_long_text(image_path: Path, lang: str = "zh") -> str:
         
         if text:
             text = _ensure_utf8(text)
-            return _filter_garbage(text, lang)
+            filtered = _filter_garbage(text, lang)
+            if filtered:
+                return filtered
     except Exception as e:
         log.error(f"OCR long text failed completely: {e}")
     
@@ -300,31 +313,64 @@ def ocr_image_with_boxes(image_path: Path, lang: str = "zh") -> dict:
 def ocr_vertical_text(image_path: Path, lang: str = "zh") -> str:
     """Extract vertical (Y-axis) text from image.
     
-    Uses PSM 5 (assume a single uniform block of vertically aligned text).
-    Also tries rotating the image 90 degrees as a fallback.
+    Uses multiple approaches:
+    1. PSM 5 (vertical text mode)
+    2. Rotate 90° clockwise + horizontal OCR
+    3. Rotate 270° counter-clockwise + horizontal OCR
+    4. Rotate 180° + horizontal OCR
+    Returns the longest valid result.
     """
     prewarm_tesseract(OCR_LANGS.get(lang, lang))
     t_lang = OCR_LANGS.get(lang, lang)
+    results = []
     
-    # Try PSM 5 (vertical text)
+    # Approach 1: PSM 5 (vertical text)
     try:
         img = preprocess_image(image_path)
         config = f"--oem 3 --psm 5 -l {t_lang}"
         text = pytesseract.image_to_string(img, config=config).strip()
         if text:
-            text = _ensure_utf8(text)
-            return _filter_garbage(text, lang)
+            results.append(_filter_garbage(_ensure_utf8(text), lang))
     except Exception as e:
-        log.warning(f"Vertical OCR failed: {e}")
+        log.warning(f"Vertical PSM 5 failed: {e}")
     
-    # Fallback: rotate 90 degrees and try horizontal OCR
-    try:
-        img = Image.open(image_path).convert("L").rotate(90, expand=True)
-        img.save('/tmp/rotated_ocr.png')
-        text = ocr_image(Path('/tmp/rotated_ocr.png'), lang)
-        if text:
-            return text
-    except Exception as e:
-        log.warning(f"Rotated OCR fallback failed: {e}")
+    # Approach 2-4: Rotate and try horizontal OCR
+    for rotation in [90, 270, 180]:
+        try:
+            img = Image.open(image_path).convert("L").rotate(rotation, expand=True)
+            # Apply preprocessing to rotated image
+            arr = np.array(img)
+            avg_brightness = np.mean(arr)
+            if avg_brightness < 100:
+                img = ImageOps.invert(img)
+            enhancer = ImageEnhance.Contrast(img)
+            img = enhancer.enhance(1.5)
+            img = img.filter(ImageFilter.SHARPEN)
+            # Adaptive threshold
+            arr = np.array(img)
+            h, w = arr.shape
+            kernel_size = max(5, min(h, w) // 10)
+            if kernel_size % 2 == 0:
+                kernel_size += 1
+            background = grey_closing(arr, size=(kernel_size, kernel_size))
+            result = background - arr
+            result = 255 - result
+            result = (result > 128).astype(np.uint8) * 255
+            img = Image.fromarray(result)
+            
+            # Try horizontal OCR on rotated image
+            config = f"--oem 3 --psm 6 -l {t_lang}"
+            text = pytesseract.image_to_string(img, config=config).strip()
+            if not text:
+                config = f"--oem 3 --psm 3 -l {t_lang}"
+                text = pytesseract.image_to_string(img, config=config).strip()
+            if text:
+                results.append(_filter_garbage(_ensure_utf8(text), lang))
+        except Exception as e:
+            log.warning(f"Rotation {rotation}° failed: {e}")
     
+    # Return the longest valid result
+    valid_results = [r for r in results if r and len(r) > 1]
+    if valid_results:
+        return max(valid_results, key=len)
     return ""

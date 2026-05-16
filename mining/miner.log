@@ -872,3 +872,26 @@ Translation:
 2026-05-16 11:51:25,933 [INFO] Tesseract pre-warmed (eng)
 2026-05-16 11:51:27,267 [INFO] Copied to clipboard: test clipboard content
 2026-05-16 11:51:27,286 [INFO] Notification: [Test] Notification test
+2026-05-16 11:53:49,060 [INFO] Mining: zh->en
+2026-05-16 11:53:49,060 [INFO] Select text region...
+2026-05-16 11:53:49,066 [INFO] Notification: [Mining] Select text region...
+2026-05-16 11:53:49,950 [INFO] Captured region: 1011,608 101x186
+2026-05-16 11:53:49,950 [INFO] OCRing region: 1011,608 101x186
+2026-05-16 11:53:50,450 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 11:53:51,000 [INFO] OCR result: 生 日 豚 拉 等 级 联 觉 筱 纵 联 觉 经 睑
+2026-05-16 11:53:52,493 [INFO] Translation: Birthday Dolphin La Level Lianjue Xiao Zong Lianjue Meridian
+2026-05-16 11:53:52,654 [INFO] Notification: [Sentence Captured] Text: 生 日 豚 拉 等 级 联 觉 筱 纵 联 觉 经 睑
+Pinyin: sheng1   ri4   tun2   la1   deng3   ji
+2026-05-16 11:53:52,684 [INFO] Copied to clipboard: 生 日 豚 拉 等 级 联 觉 筱 纵 联 觉 经 睑
+2026-05-16 11:53:52,685 [INFO] Recording 5s audio...
+2026-05-16 11:53:52,692 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 11:53:52,698 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 11:53:57,950 [INFO] Audio recording: success
+2026-05-16 11:53:57,961 [INFO] Notification: [Sentence Mined] Text: 生 日 豚 拉 等 级 联 觉 筱 纵 联 觉 经 睑
+Translation: Birthday Dolphin La Level Lianjue
+2026-05-16 11:53:57,961 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_115349
+2026-05-16 11:54:19,744 [INFO] Exported 2 entries to /home/mastroni/miner-v2/mining/test_anki_export.csv
+2026-05-16 11:54:20,455 [INFO] Tesseract pre-warmed (eng)
+2026-05-16 11:54:22,109 [INFO] Copied to clipboard: test clipboard content
+2026-05-16 11:54:22,142 [INFO] Notification: [Test] Notification test
+2026-05-16 11:54:24,239 [INFO] 127.0.0.1 - - [16/May/2026 11:54:24] "GET /api/export/csv HTTP/1.1" 200 -
