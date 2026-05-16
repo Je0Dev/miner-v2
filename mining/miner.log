@@ -1511,3 +1511,53 @@ Saved: 20260516_134855
 2026-05-16 13:49:40,509 [INFO] Tesseract pre-warmed (chi_sim)
 2026-05-16 13:49:43,302 [INFO] Copied to clipboard: test clipboard content
 2026-05-16 13:49:43,318 [INFO] Notification: [Test] Notification test
+2026-05-16 13:50:07,681 [INFO] Mining: pl->en
+2026-05-16 13:50:07,682 [INFO] Select text region...
+2026-05-16 13:50:07,714 [INFO] Mining: zh->en
+2026-05-16 13:50:07,714 [INFO] Select text region...
+2026-05-16 13:50:08,397 [INFO] Notification: [Mining] Capture cancelled
+2026-05-16 13:50:08,797 [INFO] Notification: [Mining] Capture cancelled
+2026-05-16 13:50:42,572 [INFO] Mining: zh->en
+2026-05-16 13:50:42,573 [INFO] Select text region...
+2026-05-16 13:50:45,195 [INFO] Captured region: 1506,411 314x40
+2026-05-16 13:50:45,195 [INFO] OCRing region: 1506,411 314x40
+2026-05-16 13:50:45,672 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 13:50:46,173 [INFO] OCR result: 合成共鸣者
+2026-05-16 13:50:47,619 [INFO] Translation: Synthetic Resonator
+2026-05-16 13:50:47,780 [INFO] Notification: [Sentence Captured] Text: 合成共鸣者
+pinyin: he2 cheng2 gong4 ming2 zhe3
+Translation: Synthetic Resonator
+2026-05-16 13:50:47,811 [INFO] Copied to clipboard: 合成共鸣者
+2026-05-16 13:50:47,811 [INFO] Recording 5s audio...
+2026-05-16 13:50:47,817 [INFO] Notification: [Mining] Recording 5s audio...
+2026-05-16 13:50:47,825 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 13:50:53,063 [INFO] Audio recording: success
+2026-05-16 13:50:53,072 [INFO] Notification: [Sentence Mined] Text: 合成共鸣者
+Translation: Synthetic Resonator
+Audio: Yes
+Saved: 20260516_135042
+2026-05-16 13:50:53,072 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_135042
+2026-05-16 13:51:29,235 [ERROR] Translation failed: name '_clean_translation' is not defined
+2026-05-16 13:51:29,509 [ERROR] Translation failed: name '_clean_translation' is not defined
+2026-05-16 13:51:29,803 [ERROR] Translation failed: name '_clean_translation' is not defined
+2026-05-16 13:51:30,746 [ERROR] Translation failed: name '_clean_translation' is not defined
+2026-05-16 13:51:31,027 [ERROR] Translation failed: name '_clean_translation' is not defined
+2026-05-16 13:51:31,749 [ERROR] Translation failed: name '_clean_translation' is not defined
+2026-05-16 13:52:19,844 [INFO] Exported 2 entries to /home/mastroni/miner-v2/mining/test_anki_export.csv
+2026-05-16 13:52:20,880 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 13:52:24,789 [INFO] Copied to clipboard: test clipboard content
+2026-05-16 13:52:24,830 [INFO] Notification: [Test] Notification test
+2026-05-16 13:52:34,892 [INFO] Exported 2 entries to /home/mastroni/miner-v2/mining/test_anki_export.csv
+2026-05-16 13:52:35,873 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 13:52:38,666 [INFO] Copied to clipboard: test clipboard content
+2026-05-16 13:52:38,682 [INFO] Notification: [Test] Notification test
+2026-05-16 13:53:14,438 [INFO] Mining: zh->en
+2026-05-16 13:53:14,438 [INFO] Select text region...
+2026-05-16 13:53:14,439 [INFO] Mining: pl->en
+2026-05-16 13:53:14,439 [INFO] Select text region...
+2026-05-16 13:53:15,613 [INFO] Notification: [Mining] Capture cancelled
+2026-05-16 13:53:16,395 [INFO] Notification: [Mining] Capture cancelled
+2026-05-16 13:53:27,441 [INFO] Exported 2 entries to /home/mastroni/miner-v2/mining/test_anki_export.csv
+2026-05-16 13:53:28,406 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 13:53:31,164 [INFO] Copied to clipboard: test clipboard content
+2026-05-16 13:53:31,180 [INFO] Notification: [Test] Notification test

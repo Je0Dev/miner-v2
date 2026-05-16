@@ -9,6 +9,8 @@ GREEK_RE = re.compile(r'[\u0370-\u03FF]')
 CYRILLIC_RE = re.compile(r'[\u0400-\u04FF]')
 HANGUL_RE = re.compile(r'[\uac00-\ud7af\u1100-\u11ff]')
 LATIN_ACCENT_RE = re.compile(r'[\u00c0-\u024f]')
+CJK_PUNCT = re.compile(r'[。！？、；：""''（）【】《》〈〉]')
+COMMON_PUNCT = re.compile(r'[.,!?;:\'"()\[\]{}\-—–]')
 
 def _clean_translation(text: str) -> str:
     """Clean translation output: normalize Unicode, remove weird chars."""
@@ -18,32 +20,86 @@ def _clean_translation(text: str) -> str:
     text = text.replace('\xa0', ' ').strip()
     return text
 
+def _clean_for_translation(text: str, lang: str) -> str:
+    """Clean text BEFORE translation: remove garbage, keep only valid content."""
+    if not text: return ""
+    script = LANG_REGISTRY.get(lang, {}).get("script", "latin")
+    if script == "cjk":
+        if lang == "ko":
+            # Korean: keep Hangul characters and punctuation
+            valid = HANGUL_RE.findall(text) + COMMON_PUNCT.findall(text)
+            cleaned = ''.join(valid)
+            if len(cleaned) < len(text) * 0.5:
+                return ""
+            return cleaned
+        # Chinese/Japanese: keep CJK characters and CJK punctuation
+        valid = CJK_RE.findall(text) + CJK_PUNCT.findall(text)
+        cleaned = ''.join(valid)
+        if len(cleaned) < len(text) * 0.5:
+            return ""
+        return cleaned
+    elif script == "greek":
+        valid = GREEK_RE.findall(text) + COMMON_PUNCT.findall(text)
+        cleaned = ''.join(valid)
+        if len(cleaned) < len(text) * 0.5:
+            return ""
+        return cleaned
+    elif script == "cyrillic":
+        valid = CYRILLIC_RE.findall(text) + COMMON_PUNCT.findall(text)
+        cleaned = ''.join(valid)
+        if len(cleaned) < len(text) * 0.5:
+            return ""
+        return cleaned
+    else:
+        # Latin: keep letters, accents, and punctuation
+        valid = re.findall(r'[\w\u00c0-\u024f.,!?;:\'"()\[\]{}\-—–\s]', text)
+        return ''.join(valid).strip()
+
 def _is_valid_for_translation(text: str, lang: str = "zh") -> bool:
     if not text or len(text.strip()) < 2: return False
     script = LANG_REGISTRY.get(lang, {}).get("script", "latin")
     if script == "cjk":
-        if lang == "ko" and HANGUL_RE.search(text): return True
-        if CJK_RE.search(text): return True
-    elif script == "greek" and GREEK_RE.search(text): return True
-    elif script == "cyrillic" and CYRILLIC_RE.search(text): return True
+        if lang == "ko":
+            hangul = HANGUL_RE.findall(text)
+            if len(hangul) < 2: return False
+            total = len(text.replace(' ', ''))
+            if total > 0 and len(hangul) / total < 0.6: return False
+            return True
+        cjk_chars = CJK_RE.findall(text)
+        if len(cjk_chars) < 2: return False
+        total = len(text.replace(' ', ''))
+        if total > 0 and len(cjk_chars) / total < 0.6: return False
+        return True
+    elif script == "greek":
+        greek = GREEK_RE.findall(text)
+        if len(greek) < 2: return False
+        total = len(text.replace(' ', ''))
+        if total > 0 and len(greek) / total < 0.6: return False
+        return True
+    elif script == "cyrillic":
+        cyr = CYRILLIC_RE.findall(text)
+        if len(cyr) < 2: return False
+        total = len(text.replace(' ', ''))
+        if total > 0 and len(cyr) / total < 0.6: return False
+        return True
     elif script == "latin":
         if LATIN_ACCENT_RE.search(text) or len(text.split()) >= 2: return True
-    # Reject UI-like patterns (many short words)
-    words = text.split()
-    if len(words) > 8 and all(len(w) <= 2 for w in words): return False
-    if all(len(w) == 1 and w.isalpha() for w in words): return False
-    if len(words) >= 2 and all(len(w) >= 2 for w in words): return True
-    # For CJK, require at least 2 CJK characters
-    if script == "cjk" and len(CJK_RE.findall(text)) >= 2: return True
-    return len(text.strip()) >= 3
+        words = text.split()
+        if len(words) > 8 and all(len(w) <= 2 for w in words): return False
+        if all(len(w) == 1 and w.isalpha() for w in words): return False
+        if len(words) >= 2 and all(len(w) >= 2 for w in words): return True
+        return len(text.strip()) >= 3
+    return False
 
 def translate_text(text: str, src: str = "zh", dest: str = "en") -> str:
-    if not _is_valid_for_translation(text, src): return ""
+    # Clean text first to remove garbage
+    cleaned = _clean_for_translation(text, src)
+    if not _is_valid_for_translation(cleaned, src): return ""
     try:
         from deep_translator import GoogleTranslator
         t = GoogleTranslator(source=GOOGLE_LANG_CODES.get(src, src),
                              target=GOOGLE_LANG_CODES.get(dest, dest))
-        result = t.translate(text)
+        result = t.translate(cleaned)
         return _clean_translation(result.strip()) if result else ""
     except Exception as e:
         log.error(f"Translation failed: {e}")

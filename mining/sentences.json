@@ -468,5 +468,15 @@
     "source": "Game",
     "timestamp": "20260516_134855",
     "screenshot": "images/capture.png"
+  },
+  {
+    "sentence": "合成共鸣者",
+    "translation": "Synthetic Resonator",
+    "audio": "audio/audio_20260516_135042.mp3",
+    "pronunciation": "he2 cheng2 gong4 ming2 zhe3",
+    "lang": "zh",
+    "source": "Game",
+    "timestamp": "20260516_135042",
+    "screenshot": "images/capture.png"
   }
 ]
