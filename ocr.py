@@ -68,9 +68,15 @@ def _filter_garbage(text: str, lang: str = "zh") -> str:
     if not text: return ""
     script = LANG_REGISTRY.get(lang, {}).get("script", "latin")
     if script == "cjk":
+        # Remove standalone digits and digit pairs
         text = re.sub(r'(?<!\d)\d{1,3}(?!\d)', '', text)
+        # Remove standalone Latin letters not part of valid words
         text = re.sub(r'(?<![A-Za-z])[A-Za-z](?![A-Za-z])', '', text)
         text = re.sub(r'\b([A-Za-z])\s+\1\b', '', text)
+        # Remove common OCR artifacts and UI symbols
+        text = re.sub(r'[「」【】〖〗《》〈〉\[\]{}()|\\/_~`@#$%^&*+=]', '', text)
+        # Remove repeated punctuation
+        text = re.sub(r'([。，！？])\1+', r'\1', text)
     elif script == "latin":
         text = re.sub(r'(?<!\d)\d{1,2}(?!\d)', '', text)
         text = re.sub(r'\b([A-Za-z])\s+\1\b', '', text)

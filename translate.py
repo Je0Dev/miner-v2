@@ -20,7 +20,9 @@ def _is_valid_for_translation(text: str, lang: str = "zh") -> bool:
     elif script == "cyrillic" and CYRILLIC_RE.search(text): return True
     elif script == "latin":
         if LATIN_ACCENT_RE.search(text) or len(text.split()) >= 2: return True
+    # Reject UI-like patterns (many short words)
     words = text.split()
+    if len(words) > 8 and all(len(w) <= 2 for w in words): return False
     if all(len(w) == 1 and w.isalpha() for w in words): return False
     if len(words) >= 2 and all(len(w) >= 2 for w in words): return True
     return len(text.strip()) >= 3

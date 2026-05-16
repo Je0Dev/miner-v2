@@ -26,12 +26,26 @@ def sanitize_unicode(text: str) -> str:
 
 def clean_text(text: str) -> str:
     text = sanitize_unicode(text)
+    # Remove ALL spaces between CJK characters (Tesseract artifact)
+    cjk_re = r'[\u4e00-\u9fff\u3040-\u309f\u30a0-\u30ff\uac00-\ud7af\u3000-\u303f\uff00-\uffef]'
+    while re.search(f'({cjk_re})\\s+({cjk_re})', text):
+        text = re.sub(f'({cjk_re})\\s+({cjk_re})', r'\1\2', text)
     text = re.sub(r'[^\S\n]+', ' ', text)
     return text.strip()
 
 def is_valid_text(text: str) -> bool:
     if not text or len(text) < MIN_TEXT_LENGTH or len(text) > MAX_TEXT_LENGTH: return False
-    return text not in ("[No text detected]", "OCR failed", "")
+    if text in ("[No text detected]", "OCR failed", ""): return False
+    # Reject text that looks like UI menu (too many short fragments)
+    words = text.split()
+    if len(words) > 10 and all(len(w) <= 2 for w in words):
+        return False
+    # Reject text with too many numbers/symbols mixed with CJK
+    cjk_count = len(CJK_CHARS.findall(text))
+    digit_count = len(re.findall(r'\d', text))
+    if cjk_count > 0 and digit_count > cjk_count * 0.3:
+        return False
+    return True
 
 def split_sentences(text: str) -> list[str]:
     parts = SENTENCE_BREAKS.split(text)
