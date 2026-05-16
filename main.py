@@ -6,52 +6,69 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from config import LANG_REGISTRY
 from zones import list_zones, save_zone, delete_zone
+from health import run_health_check, format_health_report
+from stats import load_stats, format_stats_report
+from backup import create_backup, recover_from_backup, list_backups
 from log import log
 
 def main():
     parser = argparse.ArgumentParser(description="Game Sentence Miner v2")
     parser.add_argument("-l", "--lang", choices=LANG_REGISTRY.keys(), default="zh",
-                        help="OCR language (zh, ja, ko, de, es, el, fr, pl, ru, en)")
-    parser.add_argument("-t", "--translate-to", default="en", help="Translate to (default: en)")
-    parser.add_argument("-a", "--audio-duration", type=int, default=5, help="Audio duration (seconds)")
+                        help="OCR language")
+    parser.add_argument("-t", "--translate-to", default="en", help="Translate to")
+    parser.add_argument("-a", "--audio-duration", type=int, default=5, help="Audio duration")
     parser.add_argument("-s", "--source", default="Game", help="Source name")
-    parser.add_argument("--live", action="store_true", help="Launch live OCR overlay")
-    parser.add_argument("--no-clipboard", action="store_true", help="Don't copy to clipboard")
-    parser.add_argument("--no-vad", action="store_true", help="Disable VAD audio trimming")
-    parser.add_argument("--long-text", action="store_true", help="Use OCR optimized for long dialogue")
-    parser.add_argument("--zone", help="Use saved zone for capture")
-    parser.add_argument("--save-zone", metavar="NAME", help="Save current selection as zone")
-    parser.add_argument("--list-zones", action="store_true", help="List saved zones")
-    parser.add_argument("--delete-zone", metavar="NAME", help="Delete a saved zone")
-    parser.add_argument("--multi-region", nargs="+", metavar="ZONE", help="Capture multiple zones")
+    parser.add_argument("--live", action="store_true", help="Live OCR overlay")
+    parser.add_argument("--no-clipboard", action="store_true", help="No clipboard")
+    parser.add_argument("--long-text", action="store_true", help="Long text mode")
+    parser.add_argument("--zone", help="Use saved zone")
+    parser.add_argument("--save-zone", metavar="NAME", help="Save zone")
+    parser.add_argument("--list-zones", action="store_true", help="List zones")
+    parser.add_argument("--delete-zone", metavar="NAME", help="Delete zone")
+    parser.add_argument("--multi-region", nargs="+", metavar="ZONE", help="Multi-zone capture")
+    parser.add_argument("--health", action="store_true", help="Run health check")
+    parser.add_argument("--stats", action="store_true", help="Show statistics")
+    parser.add_argument("--backup", action="store_true", help="Create backup")
+    parser.add_argument("--recover", action="store_true", help="Recover from backup")
+    parser.add_argument("--list-backups", action="store_true", help="List backups")
+    parser.add_argument("--batch", metavar="DIR", help="Batch process directory")
+    parser.add_argument("--export-json", action="store_true", help="Export JSON")
+    parser.add_argument("--export-excel", action="store_true", help="Export Excel CSV")
+    parser.add_argument("--dashboard", action="store_true", help="Start stats dashboard")
     args = parser.parse_args()
 
-    if args.list_zones:
-        zones = list_zones()
-        if zones:
-            print("Saved zones:")
-            for z in zones: print(f"  {z}")
-        else:
-            print("No zones saved")
+    if args.health:
+        checks = run_health_check()
+        print(format_health_report(checks))
         return
-
-    if args.save_zone:
-        from capture import capture_region
-        from pathlib import Path
-        import tempfile
-        with tempfile.NamedTemporaryFile(suffix=".png", delete=False) as tmp:
-            tmp_path = tmp.name
-        geom = capture_region(Path(tmp_path))
-        if geom:
-            save_zone(args.save_zone, geom, args.lang)
-            print(f"Zone '{args.save_zone}' saved")
+    if args.stats:
+        print(format_stats_report())
         return
-
-    if args.delete_zone:
-        if delete_zone(args.delete_zone):
-            print(f"Zone '{args.delete_zone}' deleted")
-        else:
-            print(f"Zone '{args.delete_zone}' not found")
+    if args.backup:
+        create_backup()
+        return
+    if args.recover:
+        recover_from_backup()
+        return
+    if args.list_backups:
+        for b in list_backups(): print(b)
+        return
+    if args.batch:
+        from batch import batch_process
+        results = batch_process(Path(args.batch), args.lang, args.translate_to)
+        print(f"Processed {len(results)} images")
+        return
+    if args.export_json:
+        from export import export_json
+        export_json(); print("JSON exported")
+        return
+    if args.export_excel:
+        from export import export_excel
+        export_excel(); print("Excel CSV exported")
+        return
+    if args.dashboard:
+        from dashboard import run_dashboard
+        run_dashboard()
         return
 
     if args.live:
@@ -68,8 +85,8 @@ def main():
         from mine import mine_sentence
         mine_sentence(ocr_lang=args.lang, translate_to=args.translate_to,
                       audio_duration=args.audio_duration, source_name=args.source,
-                      auto_clipboard=not args.no_clipboard, use_vad=not args.no_vad,
-                      long_text=args.long_text, zone_name=args.zone)
+                      auto_clipboard=not args.no_clipboard, long_text=args.long_text,
+                      zone_name=args.zone)
 
 if __name__ == "__main__":
     main()

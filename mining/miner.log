@@ -1773,3 +1773,95 @@ Translation:
 2026-05-16 14:04:52,328 [INFO] Zone deleted: zone_b
 2026-05-16 14:04:52,328 [INFO] Zone saved: test_zone (100,100 200x50)
 2026-05-16 14:04:52,328 [INFO] Zone deleted: test_zone
+2026-05-16 14:12:27,952 [INFO] Exported 2 entries to /home/mastroni/miner-v2/mining/test_anki_export.csv
+2026-05-16 14:12:28,900 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 14:12:32,204 [INFO] Copied to clipboard: test clipboard content
+2026-05-16 14:12:32,222 [INFO] Notification: [Test] Notification test
+2026-05-16 14:12:35,066 [INFO] Zone saved: zone_a (0,0 100x50)
+2026-05-16 14:12:35,067 [INFO] Zone saved: zone_b (100,100 200x50)
+2026-05-16 14:12:35,067 [INFO] Zone deleted: zone_a
+2026-05-16 14:12:35,067 [INFO] Zone deleted: zone_b
+2026-05-16 14:12:35,067 [INFO] Zone saved: test_zone (100,100 200x50)
+2026-05-16 14:12:35,067 [INFO] Zone deleted: test_zone
+2026-05-16 14:13:01,469 [INFO] Exported 2 entries to /home/mastroni/miner-v2/mining/test_anki_export.csv
+2026-05-16 14:13:01,499 [INFO] Backup created: /home/mastroni/miner-v2/mining/backups/backup_20260516_141301
+2026-05-16 14:13:01,504 [INFO] Glossary added: 共鸣者 -> Resonator
+2026-05-16 14:13:02,442 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 14:13:05,663 [INFO] Copied to clipboard: test clipboard content
+2026-05-16 14:13:05,683 [INFO] Notification: [Test] Notification test
+2026-05-16 14:13:08,282 [INFO] Zone saved: zone_a (0,0 100x50)
+2026-05-16 14:13:08,282 [INFO] Zone saved: zone_b (100,100 200x50)
+2026-05-16 14:13:08,282 [INFO] Zone deleted: zone_a
+2026-05-16 14:13:08,282 [INFO] Zone deleted: zone_b
+2026-05-16 14:13:08,282 [INFO] Zone saved: test_zone (100,100 200x50)
+2026-05-16 14:13:08,283 [INFO] Zone deleted: test_zone
+2026-05-16 14:13:19,685 [INFO] Mining: zh->en
+2026-05-16 14:13:19,685 [INFO] Select text region...
+2026-05-16 14:13:19,698 [INFO] Mining: pl->en
+2026-05-16 14:13:19,698 [INFO] Select text region...
+2026-05-16 14:13:21,372 [INFO] Captured region: 1318,405 588x58
+2026-05-16 14:13:21,657 [INFO] Tesseract pre-warmed (pol)
+2026-05-16 14:13:21,957 [INFO] Notification: [Mining] No text detected
+2026-05-16 14:13:22,625 [INFO] Captured region: 1310,412 596x51
+2026-05-16 14:13:23,119 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 14:13:23,653 [INFO] OCR result: “ 鸣者合成成就好友
+2026-05-16 14:13:25,147 [INFO] Translation: The song synthesizer becomes a friend
+2026-05-16 14:13:25,302 [INFO] Notification: [Sentence Captured] Text: “ 鸣者合成成就好友
+pinyin: “  ming2 zhe3 he2 cheng2 cheng2 jiu4 hao3 you3
+Translat
+2026-05-16 14:13:25,333 [INFO] Copied to clipboard: “ 鸣者合成成就好友
+2026-05-16 14:13:25,334 [INFO] Recording 5s audio...
+2026-05-16 14:13:26,571 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 14:13:31,836 [INFO] Audio recording: success
+2026-05-16 14:13:31,862 [INFO] Notification: [Sentence Mined] Text: “ 鸣者合成成就好友
+Translation: The song synthesizer becomes a friend
+Audio: Yes
+S
+2026-05-16 14:13:31,862 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_141319
+2026-05-16 14:14:34,151 [INFO] Mining: zh->en
+2026-05-16 14:14:34,151 [INFO] Select text region...
+2026-05-16 14:14:34,673 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 14:14:35,852 [INFO] Captured region: 1312,552 149x367
+2026-05-16 14:14:36,423 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 14:14:48,666 [INFO] Notification: [Mining] No text detected
+2026-05-16 14:14:52,523 [INFO] Mining: zh->en
+2026-05-16 14:14:52,524 [INFO] Select text region...
+2026-05-16 14:14:54,639 [INFO] Captured region: 1598,658 90x28
+2026-05-16 14:14:55,179 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 14:14:55,701 [INFO] OCR result: 清芬草
+2026-05-16 14:14:57,082 [INFO] Translation: Qingfencao
+2026-05-16 14:14:57,277 [INFO] Notification: [Sentence Captured] Text: 清芬草
+pinyin: qing1 fen1 cao3
+Translation: Qingfencao
+2026-05-16 14:14:57,316 [INFO] Copied to clipboard: 清芬草
+2026-05-16 14:14:57,316 [INFO] Recording 5s audio...
+2026-05-16 14:14:58,565 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 14:15:02,073 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 14:15:03,830 [INFO] Audio recording: success
+2026-05-16 14:15:03,862 [INFO] Notification: [Sentence Mined] Text: 清芬草
+Translation: Qingfencao
+Audio: Yes
+Saved: 20260516_141452
+2026-05-16 14:15:03,862 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_141452
+2026-05-16 14:15:12,640 [INFO] Exported 2 entries to /home/mastroni/miner-v2/mining/test_anki_export.csv
+2026-05-16 14:15:12,678 [INFO] Backup created: /home/mastroni/miner-v2/mining/backups/backup_20260516_141512
+2026-05-16 14:15:13,796 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 14:15:17,860 [INFO] Copied to clipboard: test clipboard content
+2026-05-16 14:15:17,884 [INFO] Notification: [Test] Notification test
+2026-05-16 14:15:20,566 [INFO] Zone saved: zone_a (0,0 100x50)
+2026-05-16 14:15:20,566 [INFO] Zone saved: zone_b (100,100 200x50)
+2026-05-16 14:15:20,567 [INFO] Zone deleted: zone_a
+2026-05-16 14:15:20,567 [INFO] Zone deleted: zone_b
+2026-05-16 14:15:20,567 [INFO] Zone saved: test_zone (100,100 200x50)
+2026-05-16 14:15:20,567 [INFO] Zone deleted: test_zone
+2026-05-16 14:15:36,412 [INFO] Exported 2 entries to /home/mastroni/miner-v2/mining/test_anki_export.csv
+2026-05-16 14:15:36,448 [INFO] Backup created: /home/mastroni/miner-v2/mining/backups/backup_20260516_141536
+2026-05-16 14:15:37,548 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 14:15:41,521 [INFO] Copied to clipboard: test clipboard content
+2026-05-16 14:15:41,542 [INFO] Notification: [Test] Notification test
+2026-05-16 14:15:44,249 [INFO] Zone saved: zone_a (0,0 100x50)
+2026-05-16 14:15:44,249 [INFO] Zone saved: zone_b (100,100 200x50)
+2026-05-16 14:15:44,249 [INFO] Zone deleted: zone_a
+2026-05-16 14:15:44,249 [INFO] Zone deleted: zone_b
+2026-05-16 14:15:44,250 [INFO] Zone saved: test_zone (100,100 200x50)
+2026-05-16 14:15:44,250 [INFO] Zone deleted: test_zone

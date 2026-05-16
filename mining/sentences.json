@@ -578,5 +578,25 @@
     "source": "Game",
     "timestamp": "20260516_140426",
     "screenshot": "images/capture.png"
+  },
+  {
+    "sentence": "“ 鸣者合成成就好友",
+    "translation": "The song synthesizer becomes a friend",
+    "audio": "audio/audio_20260516_141319.mp3",
+    "pronunciation": "“  ming2 zhe3 he2 cheng2 cheng2 jiu4 hao3 you3",
+    "lang": "zh",
+    "source": "Game",
+    "timestamp": "20260516_141319",
+    "screenshot": "images/capture.png"
+  },
+  {
+    "sentence": "清芬草",
+    "translation": "Qingfencao",
+    "audio": "audio/audio_20260516_141452.mp3",
+    "pronunciation": "qing1 fen1 cao3",
+    "lang": "zh",
+    "source": "Game",
+    "timestamp": "20260516_141452",
+    "screenshot": "images/capture.png"
   }
 ]
