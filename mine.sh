@@ -14,6 +14,7 @@ trap "rm -f $LOCK_FILE" EXIT
 
 OCR_LANG="zh"; TRANSLATE_TO="en"; AUDIO_DURATION=5
 LIVE=false; LONG_TEXT=false; EXTENDED=false; ZONE=""
+PARALLEL=false; NO_STABILITY=false
 
 while [[ $# -gt 0 ]]; do
     case $1 in
@@ -24,10 +25,12 @@ while [[ $# -gt 0 ]]; do
         --long-text) LONG_TEXT=true; shift ;;
         --extended) EXTENDED=true; AUDIO_DURATION=15; shift ;;
         --zone) ZONE="$2"; shift 2 ;;
+        --parallel) PARALLEL=true; shift ;;
+        --no-stability) NO_STABILITY=true; shift ;;
         --list-zones) $PYTHON "$SCRIPT_DIR/main.py" --list-zones; exit 0 ;;
         --save-zone) $PYTHON "$SCRIPT_DIR/main.py" --save-zone "$2"; exit 0 ;;
         --delete-zone) $PYTHON "$SCRIPT_DIR/main.py" --delete-zone "$2"; exit 0 ;;
-        -h) echo "Usage: $0 [-l LANG] [-t LANG] [-a SEC] [--live] [--long-text] [--extended] [--zone NAME]"; exit 0 ;;
+        -h) echo "Usage: $0 [-l LANG] [-t LANG] [-a SEC] [--live] [--parallel] [--long-text] [--extended] [--zone NAME]"; exit 0 ;;
         *) echo "Unknown: $1"; exit 1 ;;
     esac
 done
@@ -39,5 +42,7 @@ done
 CMD="$PYTHON \"$SCRIPT_DIR/main.py\" -l $OCR_LANG -t $TRANSLATE_TO -a $AUDIO_DURATION"
 [ "$LIVE" = true ] && CMD="$CMD --live"
 [ "$LONG_TEXT" = true ] && CMD="$CMD --long-text"
+[ "$PARALLEL" = true ] && CMD="$CMD --parallel"
+[ "$NO_STABILITY" = true ] && CMD="$CMD --no-stability"
 [ -n "$ZONE" ] && CMD="$CMD --zone $ZONE"
 eval $CMD

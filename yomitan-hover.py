@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Yomitan Hover Overlay - Resizable transparent window that OCRs and translates text."""
+"""Yomitan Hover Overlay - Semi-transparent window that OCRs the area it covers."""
 import sys, time, subprocess, os, threading, unicodedata, json, re
 from pathlib import Path
 from datetime import datetime
@@ -18,6 +18,7 @@ TEMP_DIR = f"{os.environ.get('XDG_RUNTIME_DIR', '/tmp')}/yomitan-hover"
 os.makedirs(TEMP_DIR, exist_ok=True)
 PID_FILE = f"{TEMP_DIR}/hover.pid"
 CLIPBOARD_FILE = MINING_DIR / "yomitan_clipboard.json"
+SERVER_URL = "http://127.0.0.1:5002/api/add"
 
 if os.path.exists(PID_FILE):
     try:
@@ -30,9 +31,20 @@ with open(PID_FILE, "w") as f: f.write(str(os.getpid()))
 OCR_LANG_SHORT = sys.argv[1] if len(sys.argv) > 1 else "zh"
 if OCR_LANG_SHORT in LANG_REGISTRY:
     OCR_LANG_TESS = LANG_REGISTRY[OCR_LANG_SHORT]["tess"]
+    SCRIPT_TYPE = LANG_REGISTRY[OCR_LANG_SHORT]["script"]
 else:
     OCR_LANG_TESS = OCR_LANG_SHORT
     OCR_LANG_SHORT = "zh"
+    SCRIPT_TYPE = "cjk"
+
+VALID_CHARS = {
+    "cjk": re.compile(r'[\u4e00-\u9fff\u3040-\u309f\u30a0-\u30ff\uac00-\ud7af]'),
+    "latin": re.compile(r'[\u0041-\u007a\u00c0-\u024f]'),
+    "greek": re.compile(r'[\u0370-\u03ff]'),
+    "cyrillic": re.compile(r'[\u0400-\u04ff]'),
+}
+CHAR_PATTERN = VALID_CHARS.get(SCRIPT_TYPE, VALID_CHARS["cjk"])
+
 CAPTURE_COUNT = 0
 LAST_TEXT = ""
 prewarm_tesseract(OCR_LANG_TESS)
@@ -53,132 +65,127 @@ def save_clipboard_entry(entry: dict):
     with open(CLIPBOARD_FILE, "w", encoding="utf-8") as f:
         json.dump(history, f, ensure_ascii=False, indent=2)
 
-def clean_display_text(text: str) -> str:
-    """Remove ALL unicode garbage, keep only clean readable text."""
-    if not text: return ""
-    # Remove zero-width, BOM, replacement chars
-    text = text.replace('\ufffd', '').replace('\u200b', '').replace('\ufeff', '')
-    text = text.replace('\u200c', '').replace('\u200d', '').replace('\u00a0', ' ')
-    # Remove ALL symbols and punctuation except basic ones
-    # Keep: letters, digits, spaces, basic punctuation (.!?,;:'"-)
-    cleaned = []
-    for c in text:
-        cat = unicodedata.category(c)
-        # Keep letters (L), numbers (N), spaces (Zs), basic punctuation
-        if cat.startswith('L') or cat.startswith('N') or cat == 'Zs':
-            cleaned.append(c)
-        elif c in '.!?,;:\'"()- ':
-            cleaned.append(c)
-    text = ''.join(cleaned)
-    # Normalize whitespace
-    text = re.sub(r'\s+', ' ', text).strip()
-    return text
+def send_to_server(original, lang, translation="", pronunciation=""):
+    try:
+        import urllib.request
+        data = json.dumps({"original": original, "lang": lang,
+            "translation": translation, "pronunciation": pronunciation, "source": "Hover"}).encode()
+        req = urllib.request.Request(SERVER_URL, data=data, headers={"Content-Type": "application/json"})
+        urllib.request.urlopen(req, timeout=2)
+    except Exception: pass
 
-# Create window - keep on top, semi-transparent, resizable
+def clean_for_display(text: str) -> str:
+    if not text: return ""
+    text = text.replace('\ufffd', '').replace('\u200b', '').replace('\ufeff', '')
+    text = ''.join(c for c in text if unicodedata.category(c)[0] != 'C' or c in '\n\t')
+    # Remove UI symbols, circled numbers, dingbats, math, arrows
+    text = re.sub(r'[\u2460-\u24ff\u2600-\u26ff\u2700-\u27bf\u3000-\u303f\uff00-\uffef\u2000-\u206f\u20a0-\u20cf\u2100-\u214f\u2190-\u21ff\u2200-\u22ff\u2300-\u23ff\u25a0-\u25ff\u2e80-\u2eff\u3100-\u312f\u3200-\u32ff]', '', text)
+    text = re.sub(r'[©®™℗℠]', '', text)
+    chars = CHAR_PATTERN.findall(text)
+    punct = re.findall(r'[。！？.!?、，,;:…—\-\'"()\[\]]', text)
+    text = ''.join(chars + punct)
+    return re.sub(r'\s+', ' ', text).strip()
+
+def clean_english(text: str) -> str:
+    if not text: return ""
+    return ''.join(c for c in text if ord(c) < 128 or c == ' ')
+
+# Create semi-transparent overlay - labels visible, background see-through
 root = tk.Tk()
 root.title("Yomitan Hover")
-root.geometry("400x80+200+200")
-root.minsize(200, 40)
+root.geometry("300x45+200+200")
+root.minsize(150, 30)
+root.maxsize(800, 150)
 root.attributes("-topmost", True)
-root.attributes("-alpha", 0.75)
-root.configure(bg="#1a1a1a")
+root.attributes("-alpha", 0.85)  # Semi-transparent - see game text through it
+root.configure(bg="#000000")
 root.resizable(True, True)
 
-# Top accent bar
-top_bar = tk.Frame(root, bg="#00d4ff", height=2)
-top_bar.pack(fill=tk.X, side=tk.TOP)
+# Make window background transparent but keep labels opaque
+root.wm_attributes("-transparentcolor", "#000000")
 
-# Display variables
 orig_var = tk.StringVar(value="")
-trans_var = tk.StringVar(value=f"Hover ({OCR_LANG_SHORT.upper()}) - drag over text")
+trans_var = tk.StringVar(value=f"Hover ({OCR_LANG_SHORT.upper()})")
 
-# Original text line
-orig_label = tk.Label(root, textvariable=orig_var, bg="#1a1a1a", fg="#ffffff",
-                      font=("Sans", 11), justify=tk.LEFT, anchor=tk.W)
-orig_label.pack(fill=tk.X, padx=8, pady=(6, 2))
+# Labels with visible background so text is readable
+orig_label = tk.Label(root, textvariable=orig_var, bg="#1a1a2e", fg="#00ff88",
+                      font=("Sans", 10), justify=tk.LEFT, anchor=tk.W, padx=4, pady=2)
+orig_label.pack(fill=tk.X, padx=2, pady=(2, 0))
 
-# Translation line
-trans_label = tk.Label(root, textvariable=trans_var, bg="#1a1a1a", fg="#ffdd57",
-                       font=("Sans", 12, "bold"), justify=tk.LEFT, anchor=tk.W)
-trans_label.pack(fill=tk.X, padx=8, pady=(0, 6))
+trans_label = tk.Label(root, textvariable=trans_var, bg="#1a1a2e", fg="#ffdd57",
+                       font=("Sans", 11, "bold"), justify=tk.LEFT, anchor=tk.W, padx=4, pady=2)
+trans_label.pack(fill=tk.X, padx=2, pady=(0, 2))
 
-# Bottom accent bar
-bottom_bar = tk.Frame(root, bg="#00d4ff", height=2)
-bottom_bar.pack(fill=tk.X, side=tk.BOTTOM)
-
-# Draggable - always raise window
+# Draggable
 drag_data = {"x": 0, "y": 0}
 def on_press(event):
-    drag_data["x"] = event.x
-    drag_data["y"] = event.y
-    root.lift()  # Bring to front
+    drag_data["x"] = event.x; drag_data["y"] = event.y
+    root.lift()
 def on_drag(event):
     x = root.winfo_x() + event.x - drag_data["x"]
     y = root.winfo_y() + event.y - drag_data["y"]
     root.geometry(f"+{x}+{y}")
-    root.lift()  # Keep in front while dragging
+    root.lift()
 root.bind("<Button-1>", on_press)
 root.bind("<B1-Motion>", on_drag)
-# Also raise on any click
 root.bind("<Enter>", lambda e: root.lift())
+
+def capture_and_ocr():
+    """Hide window briefly, capture, OCR, show again."""
+    root.withdraw()
+    time.sleep(0.08)
+    try:
+        x, y, w, h = root.winfo_x(), root.winfo_y(), root.winfo_width(), root.winfo_height()
+        img_path = f"{TEMP_DIR}/hover.png"
+        geom = f"{x},{y} {w}x{h}"
+        subprocess.run(["grim", "-g", geom, img_path], capture_output=True, check=True, timeout=3)
+    except Exception:
+        root.deiconify()
+        return None
+    root.deiconify()
+    if not os.path.exists(img_path):
+        return None
+    raw_text = ocr_image(Path(img_path), OCR_LANG_SHORT)
+    return clean_for_display(clean_text(raw_text))
 
 def ocr_loop():
     global CAPTURE_COUNT, LAST_TEXT
     stable_count = 0
-    time.sleep(1)
+    time.sleep(0.5)
     while True:
         try:
-            x, y, w, h = root.winfo_x(), root.winfo_y(), root.winfo_width(), root.winfo_height()
-            if w < 10 or h < 10:
-                time.sleep(2); continue
-            # Capture area BELOW the window (offset by window height)
-            capture_y = y + h
-            capture_h = max(40, h)
-            img_path = f"{TEMP_DIR}/hover.png"
-            geom = f"{x},{capture_y} {w}x{capture_h}"
-            subprocess.run(["grim", "-g", geom, img_path], capture_output=True, check=True, timeout=3)
-            raw_text = ocr_image(Path(img_path), OCR_LANG_SHORT)
-            text = clean_display_text(clean_text(raw_text))
-            # Only update if text is different and stable (seen 2+ times)
-            if text and len(text) > 1:
-                if text == LAST_TEXT:
-                    stable_count += 1
-                else:
-                    stable_count = 0
-                    LAST_TEXT = text
-                    continue
-                # Only process after seeing same text twice (reduces flicker)
-                if stable_count >= 1:
-                    CAPTURE_COUNT += 1
-                    # Get translation (async to not block)
-                    tr = translate_text(text, src=OCR_LANG_SHORT, dest="en")
-                    pron = get_pronunciation(text, OCR_LANG_SHORT)
-                    # Clean display text
-                    orig_display = clean_display_text(text)
-                    trans_display = clean_display_text(tr) if tr else ""
-                    if pron:
-                        pron_clean = clean_display_text(pron)
-                        trans_display = f"{trans_display} | {pron_clean}"
-                    # Update UI
-                    root.after(0, lambda o=orig_display, t=trans_display: (
-                        orig_var.set(o),
-                        trans_var.set(t) if t else trans_var.set("")
-                    ))
-                    # Save entry
-                    entry = {
-                        "timestamp": datetime.now().isoformat(),
-                        "lang": OCR_LANG_SHORT,
-                        "original": text,
-                        "translation": tr,
-                        "pronunciation": pron,
-                    }
-                    save_clipboard_entry(entry)
-                    copy_to_clipboard(text)
-                    log.info(f"Hover #{CAPTURE_COUNT}: {text[:60]} -> {tr[:60]}")
-            time.sleep(1.5)
+            text = capture_and_ocr()
+            if not text:
+                time.sleep(0.5); continue
+            valid_count = len(CHAR_PATTERN.findall(text))
+            if valid_count < 2 or len(text) < 2:
+                time.sleep(0.5); continue
+            if text != LAST_TEXT:
+                LAST_TEXT = text
+                stable_count = 0
+                time.sleep(0.3); continue
+            stable_count += 1
+            if stable_count >= 2:
+                CAPTURE_COUNT += 1
+                root.after(0, lambda t=text[:80]: orig_var.set(t))
+                tr = translate_text(text, src=OCR_LANG_SHORT, dest="en")
+                pron = get_pronunciation(text, OCR_LANG_SHORT)
+                tr_clean = clean_english(tr)
+                pron_clean = clean_english(pron)
+                display = tr_clean[:100] if tr_clean else "(no translation)"
+                if pron_clean: display += f" | {pron_clean[:30]}"
+                root.after(0, lambda d=display: trans_var.set(d))
+                entry = {"timestamp": datetime.now().isoformat(), "lang": OCR_LANG_SHORT,
+                         "original": text, "translation": tr_clean, "pronunciation": pron_clean}
+                save_clipboard_entry(entry)
+                send_to_server(text, OCR_LANG_SHORT, tr_clean, pron_clean)
+                copy_to_clipboard(text)
+                log.info(f"Hover #{CAPTURE_COUNT}: {text[:60]} -> {tr_clean[:60]}")
+                stable_count = 0
+            time.sleep(0.5)
         except Exception as e:
             log.warning(f"Hover error: {e}")
-            time.sleep(2)
+            time.sleep(0.5)
 
 threading.Thread(target=ocr_loop, daemon=True).start()
 notify("Yomitan Hover", f"Active ({OCR_LANG_SHORT.upper()})", timeout=2000)

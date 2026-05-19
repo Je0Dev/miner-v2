@@ -718,5 +718,176 @@
     "source": "Game",
     "timestamp": "20260516_142426",
     "screenshot": "images/capture.png"
+  },
+  {
+    "sentence": "洁芬草",
+    "translation": "jeffen grass",
+    "audio": "audio/audio_20260516_144934.mp3",
+    "pronunciation": "jie2 fen1 cao3",
+    "lang": "zh",
+    "source": "Game",
+    "timestamp": "20260516_144934",
+    "screenshot": "images/capture.png"
+  },
+  {
+    "sentence": "河汀止",
+    "translation": "Hetingzhi",
+    "audio": "audio/audio_20260516_144959.mp3",
+    "pronunciation": "he2 ting1 zhi3",
+    "lang": "zh",
+    "source": "Game",
+    "timestamp": "20260516_144959",
+    "screenshot": "images/capture.png"
+  },
+  {
+    "sentence": "生日索拉等级联觉等级联觉经验",
+    "translation": "Birthday Sola Level Synesthesia Level Synesthesia Experience",
+    "audio": "audio/audio_20260516_145611.mp3",
+    "pronunciation": "sheng1 ri4 suo3 la1 deng3 ji2 lian2 jue2 deng3 ji2 lian2 jue2 jing1 yan4",
+    "lang": "zh",
+    "source": "Game",
+    "timestamp": "20260516_145611",
+    "screenshot": "images/capture.png"
+  },
+  {
+    "sentence": "生日索拉等级联觉等级联觉经验",
+    "translation": "Birthday Sola Level Synesthesia Level Synesthesia Experience",
+    "audio": "audio/audio_20260516_151517.mp3",
+    "pronunciation": "sheng1 ri4 suo3 la1 deng3 ji2 lian2 jue2 deng3 ji2 lian2 jue2 jing1 yan4",
+    "lang": "zh",
+    "source": "Game",
+    "timestamp": "20260516_151517",
+    "screenshot": "images/capture.png"
+  },
+  {
+    "sentence": "点击以综裙签名",
+    "translation": "Click to sign the skirt",
+    "audio": "audio/audio_20260516_154306.mp3",
+    "pronunciation": "dian3 ji1 yi3 zong1 qun2 qian1 ming2",
+    "lang": "zh",
+    "source": "Game",
+    "timestamp": "20260516_154306",
+    "screenshot": "images/capture.png",
+    "words": [
+      {
+        "word": "点击",
+        "pinyin": "dian3 ji1",
+        "definition": ""
+      },
+      {
+        "word": "以",
+        "pinyin": "yi3",
+        "definition": ""
+      },
+      {
+        "word": "综裙",
+        "pinyin": "zong1 qun2",
+        "definition": ""
+      },
+      {
+        "word": "签名",
+        "pinyin": "qian1 ming2",
+        "definition": ""
+      }
+    ],
+    "tags": [],
+    "character": ""
+  },
+  {
+    "sentence": "阮翅蛤",
+    "translation": "Ruan-winged clam",
+    "audio": "audio/audio_20260516_154830.mp3",
+    "pronunciation": "ruan3 chi4 ha2",
+    "lang": "zh",
+    "source": "Game",
+    "timestamp": "20260516_154830",
+    "screenshot": "images/capture.png",
+    "words": [
+      {
+        "word": "阮翅",
+        "pinyin": "ruan3 chi4",
+        "definition": ""
+      },
+      {
+        "word": "蛤",
+        "pinyin": "ha2",
+        "definition": ""
+      }
+    ],
+    "tags": [],
+    "character": ""
+  },
+  {
+    "sentence": "一二工 , 芸二些",
+    "translation": "One or two workers, two or more",
+    "audio": "audio/audio_20260516_154852.mp3",
+    "pronunciation": "yi1 er4 gong1  ,  yun2 er4 xie1",
+    "lang": "zh",
+    "source": "Game",
+    "timestamp": "20260516_154852",
+    "screenshot": "images/capture.png",
+    "words": [
+      {
+        "word": "一二",
+        "pinyin": "yi1 er4",
+        "definition": ""
+      },
+      {
+        "word": "工",
+        "pinyin": "gong1",
+        "definition": ""
+      },
+      {
+        "word": ",",
+        "pinyin": ",",
+        "definition": ""
+      },
+      {
+        "word": "芸二些",
+        "pinyin": "yun2 er4 xie1",
+        "definition": ""
+      }
+    ],
+    "tags": [],
+    "character": ""
+  },
+  {
+    "sentence": "万物图鉴地图背包反馈",
+    "translation": "Feedback on All Things Illustrated Map Backpack",
+    "audio": "audio/audio_20260516_161148.mp3",
+    "pronunciation": "wan4 wu4 tu2 jian4 di4 tu2 bei1 bao1 fan3 kui4",
+    "lang": "zh",
+    "source": "Game",
+    "timestamp": "20260516_161148",
+    "screenshot": "images/capture.png",
+    "words": [
+      {
+        "word": "万物",
+        "pinyin": "wan4 wu4",
+        "definition": ""
+      },
+      {
+        "word": "图鉴",
+        "pinyin": "tu2 jian4",
+        "definition": ""
+      },
+      {
+        "word": "地图",
+        "pinyin": "di4 tu2",
+        "definition": ""
+      },
+      {
+        "word": "背包",
+        "pinyin": "bei1 bao1",
+        "definition": ""
+      },
+      {
+        "word": "反馈",
+        "pinyin": "fan3 kui4",
+        "definition": ""
+      }
+    ],
+    "tags": [],
+    "character": ""
   }
 ]

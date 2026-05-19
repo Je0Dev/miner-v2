@@ -11,13 +11,21 @@ HANGUL_RE = re.compile(r'[\uac00-\ud7af\u1100-\u11ff]')
 LATIN_ACCENT_RE = re.compile(r'[\u00c0-\u024f]')
 CJK_PUNCT = re.compile(r'[。！？、；：""''（）【】《》〈〉]')
 COMMON_PUNCT = re.compile(r'[.,!?;:\'"()\[\]{}\-—–]')
+# English translation should only have ASCII + basic punctuation
+ENGLISH_CLEAN = re.compile(r'[\x20-\x7e]')
+
+_translation_cache = {}
 
 def _clean_translation(text: str) -> str:
-    """Clean translation output: normalize Unicode, remove weird chars."""
+    """Clean translation output: ONLY ASCII + basic punctuation for English."""
     if not text: return ""
     text = unicodedata.normalize('NFC', text)
     text = text.replace('\ufffd', '').replace('\u200b', '').replace('\ufeff', '')
-    text = text.replace('\xa0', ' ').strip()
+    text = text.replace('\u200c', '').replace('\u200d', '').replace('\xa0', ' ')
+    # Remove ALL non-ASCII characters from English translation
+    text = ''.join(ENGLISH_CLEAN.findall(text))
+    # Clean up multiple spaces
+    text = re.sub(r'\s+', ' ', text).strip()
     return text
 
 def _clean_for_translation(text: str, lang: str) -> str:
@@ -92,15 +100,28 @@ def _is_valid_for_translation(text: str, lang: str = "zh") -> bool:
     return False
 
 def translate_text(text: str, src: str = "zh", dest: str = "en") -> str:
+    """Translate text with caching for faster repeated translations."""
     # Clean text first to remove garbage
     cleaned = _clean_for_translation(text, src)
     if not _is_valid_for_translation(cleaned, src): return ""
+    # Check cache first
+    cache_key = f"{src}:{dest}:{cleaned}"
+    if cache_key in _translation_cache:
+        return _translation_cache[cache_key]
     try:
         from deep_translator import GoogleTranslator
         t = GoogleTranslator(source=GOOGLE_LANG_CODES.get(src, src),
                              target=GOOGLE_LANG_CODES.get(dest, dest))
         result = t.translate(cleaned)
-        return _clean_translation(result.strip()) if result else ""
+        cleaned_result = _clean_translation(result.strip()) if result else ""
+        # Cache result
+        _translation_cache[cache_key] = cleaned_result
+        if len(_translation_cache) > 1000:
+            # Clear oldest entries
+            keys = list(_translation_cache.keys())
+            for k in keys[:500]:
+                del _translation_cache[k]
+        return cleaned_result
     except Exception as e:
         log.error(f"Translation failed: {e}")
         return ""

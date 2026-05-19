@@ -19,8 +19,10 @@ def main():
     parser.add_argument("-a", "--audio-duration", type=int, default=5, help="Audio duration")
     parser.add_argument("-s", "--source", default="Game", help="Source name")
     parser.add_argument("--live", action="store_true", help="Live OCR overlay")
+    parser.add_argument("--parallel", action="store_true", help="Multi-engine parallel translation")
     parser.add_argument("--no-clipboard", action="store_true", help="No clipboard")
     parser.add_argument("--long-text", action="store_true", help="Long text mode")
+    parser.add_argument("--no-stability", action="store_true", help="Disable MSSIM stability check")
     parser.add_argument("--zone", help="Use saved zone")
     parser.add_argument("--save-zone", metavar="NAME", help="Save zone")
     parser.add_argument("--list-zones", action="store_true", help="List zones")
@@ -35,6 +37,10 @@ def main():
     parser.add_argument("--export-json", action="store_true", help="Export JSON")
     parser.add_argument("--export-excel", action="store_true", help="Export Excel CSV")
     parser.add_argument("--dashboard", action="store_true", help="Start stats dashboard")
+    parser.add_argument("--profiles", action="store_true", help="List game profiles")
+    parser.add_argument("--detect-game", action="store_true", help="Detect current game")
+    parser.add_argument("--bridge", action="store_true", help="Start Yomitan WebSocket bridge")
+    parser.add_argument("--clipboard", action="store_true", help="Start clipboard monitor")
     args = parser.parse_args()
 
     if args.health:
@@ -70,11 +76,35 @@ def main():
         from dashboard import run_dashboard
         run_dashboard()
         return
+    if args.profiles:
+        from game_profiles import list_profiles
+        for p in list_profiles():
+            print(f"  {p['window_class']}: lang={p['ocr_lang']}, zone={p.get('zone', 'none')}")
+        return
+    if args.detect_game:
+        from game_profiles import auto_detect_and_apply
+        profile = auto_detect_and_apply()
+        print(f"Detected: {profile}")
+        return
+    if args.bridge:
+        from yomitan_bridge import run_bridge
+        print("Starting Yomitan Bridge on ws://localhost:8766")
+        run_bridge()
+        return
+    if args.clipboard:
+        from clipboard_monitor import monitor_clipboard
+        monitor_clipboard(lang=args.lang if args.lang != "zh" else None)
+        return
 
     if args.live:
         from overlay import LiveOCROverlay
-        LiveOCROverlay(ocr_lang=args.lang, translate_to=args.translate_to,
-                       source_name=args.source).run()
+        overlay = LiveOCROverlay(ocr_lang=args.lang, translate_to=args.translate_to,
+                                  source_name=args.source)
+        if args.parallel:
+            overlay._parallel_translate = True
+        if args.no_stability:
+            overlay._stability = None
+        overlay.run()
     elif args.multi_region:
         from mine import mine_multi_region
         mine_multi_region(ocr_lang=args.lang, translate_to=args.translate_to,

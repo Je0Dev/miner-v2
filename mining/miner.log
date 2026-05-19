@@ -2186,3 +2186,311 @@ Translation:
 2026-05-16 14:40:10,437 [INFO] Hover #4: 吊匹 -> hanging horse
 2026-05-16 14:40:14,582 [INFO] Copied to clipboard: 吊匹
 2026-05-16 14:40:14,582 [INFO] Hover #5: 吊匹 -> hanging horse
+2026-05-16 14:41:59,282 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 14:41:59,326 [INFO] Notification: [Yomitan Hover] Active (ZH)
+2026-05-16 14:42:31,765 [INFO] Copied to clipboard: 一扎小史
+2026-05-16 14:42:31,765 [INFO] Hover #1: 一扎小史
+2026-05-16 14:42:33,346 [INFO] Copied to clipboard: 一扎小史
+2026-05-16 14:42:33,346 [INFO] Hover #2: 一扎小史
+2026-05-16 14:42:34,926 [INFO] Copied to clipboard: 一扎小史
+2026-05-16 14:42:34,926 [INFO] Hover #3: 一扎小史
+2026-05-16 14:42:36,503 [INFO] Copied to clipboard: 一扎小史
+2026-05-16 14:42:36,503 [INFO] Hover #4: 一扎小史
+2026-05-16 14:43:10,304 [INFO] Copied to clipboard: 生日
+2026-05-16 14:43:10,304 [INFO] Hover #5: 生日
+2026-05-16 14:43:15,592 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 14:43:15,622 [INFO] Notification: [Yomitan Hover] Active (ZH) - place over text
+2026-05-16 14:45:03,168 [INFO] Exported 2 entries to /home/mastroni/miner-v2/mining/test_anki_export.csv
+2026-05-16 14:45:03,859 [INFO] Tesseract pre-warmed (eng)
+2026-05-16 14:45:08,275 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 14:45:08,314 [INFO] Notification: [Yomitan Hover] Active (ZH) - place over text
+2026-05-16 14:45:49,587 [INFO] Backup created: /home/mastroni/miner-v2/mining/backups/backup_20260516_144549
+2026-05-16 14:45:53,091 [INFO] Copied to clipboard: test clipboard content
+2026-05-16 14:45:53,113 [INFO] Notification: [Test] Notification test
+2026-05-16 14:45:55,584 [INFO] Zone saved: zone_a (0,0 100x50)
+2026-05-16 14:45:55,584 [INFO] Zone saved: zone_b (100,100 200x50)
+2026-05-16 14:45:55,585 [INFO] Zone deleted: zone_a
+2026-05-16 14:45:55,585 [INFO] Zone deleted: zone_b
+2026-05-16 14:45:55,585 [INFO] Zone saved: test_zone (100,100 200x50)
+2026-05-16 14:45:55,585 [INFO] Zone deleted: test_zone
+2026-05-16 14:48:07,571 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 14:48:07,603 [INFO] Notification: [Yomitan Hover] Active (ZH)
+2026-05-16 14:49:34,256 [INFO] Mining: zh->en
+2026-05-16 14:49:34,256 [INFO] Select text region...
+2026-05-16 14:49:36,738 [INFO] Captured region: 1722,701 78x20
+2026-05-16 14:49:37,295 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 14:49:37,851 [INFO] OCR result: 洁芬草
+2026-05-16 14:49:38,278 [INFO] Translation: jeffen grass
+2026-05-16 14:49:38,473 [INFO] Notification: [Sentence Captured] Text: 洁芬草
+pinyin: jie2 fen1 cao3
+Translation: jeffen grass
+2026-05-16 14:49:38,508 [INFO] Copied to clipboard: 洁芬草
+2026-05-16 14:49:38,508 [INFO] Recording 5s audio...
+2026-05-16 14:49:39,760 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 14:49:45,077 [INFO] Audio recording: success
+2026-05-16 14:49:45,087 [INFO] Notification: [Sentence Mined] Text: 洁芬草
+Translation: jeffen grass
+Audio: Yes
+Saved: 20260516_144934
+2026-05-16 14:49:45,088 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_144934
+2026-05-16 14:49:59,981 [INFO] Mining: zh->en
+2026-05-16 14:49:59,982 [INFO] Select text region...
+2026-05-16 14:50:05,191 [INFO] Captured region: 1723,698 52x63
+2026-05-16 14:50:05,756 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 14:50:06,372 [INFO] OCR result: 河汀止
+2026-05-16 14:50:07,091 [INFO] Translation: Hetingzhi
+2026-05-16 14:50:07,290 [INFO] Notification: [Sentence Captured] Text: 河汀止
+pinyin: he2 ting1 zhi3
+Translation: Hetingzhi
+2026-05-16 14:50:07,333 [INFO] Copied to clipboard: 河汀止
+2026-05-16 14:50:07,333 [INFO] Recording 5s audio...
+2026-05-16 14:50:08,595 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 14:50:13,862 [INFO] Audio recording: success
+2026-05-16 14:50:13,875 [INFO] Notification: [Sentence Mined] Text: 河汀止
+Translation: Hetingzhi
+Audio: Yes
+Saved: 20260516_144959
+2026-05-16 14:50:13,876 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_144959
+2026-05-16 14:50:18,047 [INFO] Mining: zh->en
+2026-05-16 14:50:18,047 [INFO] Select text region...
+2026-05-16 14:50:23,290 [INFO] Captured region: 1504,950 65x18
+2026-05-16 14:50:23,870 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 14:50:26,186 [INFO] Notification: [Mining] No text detected
+2026-05-16 14:56:11,473 [INFO] Mining: zh->en
+2026-05-16 14:56:11,473 [INFO] Select text region...
+2026-05-16 14:56:12,851 [INFO] Captured region: 1405,715 157x197
+2026-05-16 14:56:13,367 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 14:56:13,964 [INFO] OCR result: 生日索拉等级联觉等级联觉经验
+2026-05-16 14:56:15,734 [INFO] Translation: Birthday Sola Level Synesthesia Level Synesthesia Experience
+2026-05-16 14:56:15,908 [INFO] Notification: [Sentence Captured] Text: 生日索拉等级联觉等级联觉经验
+pinyin: sheng1 ri4 suo3 la1 deng3 ji2 lian2 jue2 deng3 ji2 
+2026-05-16 14:56:15,940 [INFO] Copied to clipboard: 生日索拉等级联觉等级联觉经验
+2026-05-16 14:56:15,941 [INFO] Recording 5s audio...
+2026-05-16 14:56:17,179 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 14:56:22,393 [INFO] Audio recording: success
+2026-05-16 14:56:22,404 [INFO] Notification: [Sentence Mined] Text: 生日索拉等级联觉等级联觉经验
+Translation: Birthday Sola Level Synesthesia Level Synesthe
+2026-05-16 14:56:22,404 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_145611
+2026-05-16 14:57:41,270 [INFO] Exported 2 entries to /home/mastroni/miner-v2/mining/test_anki_export.csv
+2026-05-16 14:57:41,934 [INFO] Tesseract pre-warmed (eng)
+2026-05-16 14:58:17,841 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 14:58:17,869 [INFO] Notification: [Yomitan Hover] Active (ZH)
+2026-05-16 14:58:22,316 [INFO] Backup created: /home/mastroni/miner-v2/mining/backups/backup_20260516_145822
+2026-05-16 14:58:26,529 [INFO] Copied to clipboard: test clipboard content
+2026-05-16 14:58:26,553 [INFO] Notification: [Test] Notification test
+2026-05-16 14:58:29,027 [INFO] Zone saved: zone_a (0,0 100x50)
+2026-05-16 14:58:29,027 [INFO] Zone saved: zone_b (100,100 200x50)
+2026-05-16 14:58:29,028 [INFO] Zone deleted: zone_a
+2026-05-16 14:58:29,028 [INFO] Zone deleted: zone_b
+2026-05-16 14:58:29,028 [INFO] Zone saved: test_zone (100,100 200x50)
+2026-05-16 14:58:29,028 [INFO] Zone deleted: test_zone
+2026-05-16 14:58:36,511 [INFO] Exported 2 entries to /home/mastroni/miner-v2/mining/test_anki_export.csv
+2026-05-16 14:58:37,124 [INFO] Tesseract pre-warmed (eng)
+2026-05-16 15:01:20,693 [INFO] Exported 2 entries to /home/mastroni/miner-v2/mining/test_anki_export.csv
+2026-05-16 15:01:21,244 [INFO] Tesseract pre-warmed (eng)
+2026-05-16 15:01:37,847 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 15:01:37,878 [INFO] Notification: [Yomitan Hover] Active (ZH)
+2026-05-16 15:01:58,145 [INFO] Exported 2 entries to /home/mastroni/miner-v2/mining/test_anki_export.csv
+2026-05-16 15:01:58,791 [INFO] Tesseract pre-warmed (eng)
+2026-05-16 15:03:15,004 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 15:03:15,030 [INFO] Notification: [Yomitan Hover] Active (ZH)
+2026-05-16 15:03:28,629 [INFO] Copied to clipboard: 点击以绽辑签名
+2026-05-16 15:03:28,629 [INFO] Hover #1: 点击以绽辑签名 -> Click to edit signature
+2026-05-16 15:03:31,190 [INFO] Copied to clipboard: 点击以综辑签名
+2026-05-16 15:03:31,190 [INFO] Hover #2: 点击以综辑签名 -> Click to sign the compilation
+2026-05-16 15:03:32,353 [INFO] Copied to clipboard: 点击以综辑签名
+2026-05-16 15:03:32,353 [INFO] Hover #3: 点击以综辑签名 -> Click to sign the compilation
+2026-05-16 15:03:33,496 [INFO] Copied to clipboard: 点击以综辑签名
+2026-05-16 15:03:33,496 [INFO] Hover #4: 点击以综辑签名 -> Click to sign the compilation
+2026-05-16 15:03:44,748 [INFO] Copied to clipboard: 生日
+2026-05-16 15:03:44,748 [INFO] Hover #5: 生日 -> Birthday
+2026-05-16 15:03:47,405 [INFO] Copied to clipboard: 生日
+2026-05-16 15:03:47,405 [INFO] Hover #6: 生日 -> Birthday
+2026-05-16 15:04:26,518 [INFO] Copied to clipboard: 纶辑文字内容诽遮守当地法律法规
+2026-05-16 15:04:26,518 [INFO] Hover #7: 纶辑文字内容诽遮守当地法律法规 -> The content of Lun Jis text slanders and complies with local
+2026-05-16 15:04:27,703 [INFO] Copied to clipboard: 纶辑文字内容诽遮守当地法律法规
+2026-05-16 15:04:27,703 [INFO] Hover #8: 纶辑文字内容诽遮守当地法律法规 -> The content of Lun Jis text slanders and complies with local
+2026-05-16 15:04:28,364 [INFO] Copied to clipboard: 纶辑文字内容诽遮守当地法律法规
+2026-05-16 15:04:28,364 [INFO] Hover #9: 纶辑文字内容诽遮守当地法律法规 -> The content of Lun Jis text slanders and complies with local
+2026-05-16 15:04:29,560 [INFO] Copied to clipboard: 纶辑文字内容诽遮守当地法律法规
+2026-05-16 15:04:29,560 [INFO] Hover #10: 纶辑文字内容诽遮守当地法律法规 -> The content of Lun Jis text slanders and complies with local
+2026-05-16 15:04:30,220 [INFO] Copied to clipboard: 纶辑文字内容诽遮守当地法律法规
+2026-05-16 15:04:30,220 [INFO] Hover #11: 纶辑文字内容诽遮守当地法律法规 -> The content of Lun Jis text slanders and complies with local
+2026-05-16 15:04:30,885 [INFO] Copied to clipboard: 纶辑文字内容诽遮守当地法律法规
+2026-05-16 15:04:30,886 [INFO] Hover #12: 纶辑文字内容诽遮守当地法律法规 -> The content of Lun Jis text slanders and complies with local
+2026-05-16 15:04:31,558 [INFO] Copied to clipboard: 纶辑文字内容诽遮守当地法律法规
+2026-05-16 15:04:31,558 [INFO] Hover #13: 纶辑文字内容诽遮守当地法律法规 -> The content of Lun Jis text slanders and complies with local
+2026-05-16 15:04:37,733 [INFO] Copied to clipboard: 伟孝阮芸闯沥衍-
+2026-05-16 15:04:37,734 [INFO] Hover #14: 伟孝阮芸闯沥衍- -> Wei Xiao Ruan Yun Chuang Li Yan
+2026-05-16 15:04:42,195 [INFO] Copied to clipboard: 绛辑文字内容请遵守当地法律法规
+2026-05-16 15:04:42,196 [INFO] Hover #15: 绛辑文字内容请遵守当地法律法规 -> Please abide by local laws and regulations when editing text
+2026-05-16 15:09:56,138 [INFO] Exported 2 entries to /home/mastroni/miner-v2/mining/test_anki_export.csv
+2026-05-16 15:09:56,784 [INFO] Tesseract pre-warmed (eng)
+2026-05-16 15:10:12,829 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 15:10:12,858 [INFO] Notification: [Yomitan Hover] Active (ZH)
+2026-05-16 15:10:41,266 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 15:10:41,306 [INFO] Notification: [Yomitan Hover] Active (ZH)
+2026-05-16 15:15:17,724 [INFO] Mining: zh->en
+2026-05-16 15:15:17,724 [INFO] Select text region...
+2026-05-16 15:15:18,759 [INFO] Captured region: 1209,660 103x185
+2026-05-16 15:15:19,329 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 15:15:19,890 [INFO] OCR result: 生日索拉等级联觉等级联觉经验
+2026-05-16 15:15:20,314 [INFO] Translation: Birthday Sola Level Synesthesia Level Synesthesia Experience
+2026-05-16 15:15:20,534 [INFO] Notification: [Sentence Captured] Text: 生日索拉等级联觉等级联觉经验
+pinyin: sheng1 ri4 suo3 la1 deng3 ji2 lian2 jue2 deng3 ji2 
+2026-05-16 15:15:20,576 [INFO] Copied to clipboard: 生日索拉等级联觉等级联觉经验
+2026-05-16 15:15:20,576 [INFO] Recording 5s audio...
+2026-05-16 15:15:21,855 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 15:15:27,120 [INFO] Audio recording: success
+2026-05-16 15:15:27,141 [INFO] Notification: [Sentence Mined] Text: 生日索拉等级联觉等级联觉经验
+Translation: Birthday Sola Level Synesthesia Level Synesthe
+2026-05-16 15:15:27,141 [INFO] Mining complete: /home/mastroni/miner-v2/mining/20260516_151517
+2026-05-16 15:19:46,927 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 15:19:49,228 [INFO] Copied to clipboard: 共鸣者合成成就好友倡崇国要万物图鉴地图背包反馈国园幽邮箱绑定任务教程百科攻略站
+2026-05-16 15:43:07,501 [INFO] Captured region: 497,438 177x36
+2026-05-16 15:43:07,985 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 15:43:08,493 [INFO] Mining: 点击以综裙签名
+2026-05-16 15:43:09,735 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 15:43:14,950 [INFO] Audio recording: success
+2026-05-16 15:43:16,630 [DEBUG] Building prefix dict from the default dictionary ...
+2026-05-16 15:43:17,215 [DEBUG] Dumping model to file cache /tmp/jieba.cache
+2026-05-16 15:43:17,288 [DEBUG] Loading model cost 0.659 seconds.
+2026-05-16 15:43:17,288 [DEBUG] Prefix dict has been built successfully.
+2026-05-16 15:43:17,331 [INFO] Copied to clipboard: 点击以综裙签名
+2026-05-16 15:43:17,340 [INFO] Notification: [Sentence Mined] Text: 点击以综裙签名
+Translation: Click to sign the skirt
+Sentences: 1
+2026-05-16 15:48:33,026 [INFO] Captured region: 1687,576 71x25
+2026-05-16 15:48:33,589 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 15:48:34,154 [INFO] Mining: 阮翅蛤
+2026-05-16 15:48:35,406 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 15:48:40,623 [INFO] Audio recording: success
+2026-05-16 15:48:42,497 [DEBUG] Building prefix dict from the default dictionary ...
+2026-05-16 15:48:42,497 [DEBUG] Loading model from cache /tmp/jieba.cache
+2026-05-16 15:48:43,246 [DEBUG] Loading model cost 0.748 seconds.
+2026-05-16 15:48:43,246 [DEBUG] Prefix dict has been built successfully.
+2026-05-16 15:48:43,293 [INFO] Copied to clipboard: 阮翅蛤
+2026-05-16 15:48:43,305 [INFO] Notification: [Sentence Mined] Text: 阮翅蛤
+Translation: Ruan-winged clam
+Sentences: 1
+2026-05-16 15:48:48,970 [INFO] Notification: [Mining] Capture cancelled
+2026-05-16 15:48:53,995 [INFO] Captured region: 1687,572 58x31
+2026-05-16 15:48:54,603 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 15:48:55,194 [INFO] Mining: 一二工 , 芸二些
+2026-05-16 15:48:56,396 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 15:49:01,618 [INFO] Audio recording: success
+2026-05-16 15:49:03,523 [DEBUG] Building prefix dict from the default dictionary ...
+2026-05-16 15:49:03,523 [DEBUG] Loading model from cache /tmp/jieba.cache
+2026-05-16 15:49:04,085 [DEBUG] Loading model cost 0.562 seconds.
+2026-05-16 15:49:04,085 [DEBUG] Prefix dict has been built successfully.
+2026-05-16 15:49:04,136 [INFO] Copied to clipboard: 一二工 , 芸二些
+2026-05-16 15:49:04,143 [INFO] Notification: [Sentence Mined] Text: 一二工 , 芸二些
+Translation: One or two workers, two or more
+Sentences: 1
+2026-05-16 15:52:10,869 [INFO] CC-CEDict downloaded (9857879 bytes)
+2026-05-16 15:52:11,354 [INFO] CC-CEDict loaded: 197912 entries
+2026-05-16 15:52:22,511 [INFO] CC-CEDict loaded: 197912 entries
+2026-05-16 15:52:22,656 [DEBUG] Building prefix dict from the default dictionary ...
+2026-05-16 15:52:22,657 [DEBUG] Loading model from cache /tmp/jieba.cache
+2026-05-16 15:52:23,289 [DEBUG] Loading model cost 0.633 seconds.
+2026-05-16 15:52:23,289 [DEBUG] Prefix dict has been built successfully.
+2026-05-16 15:56:57,449 [INFO] Notification: [Mining] Capture cancelled
+2026-05-16 15:57:11,502 [INFO] Clipboard monitor started (lang=auto)
+2026-05-16 15:57:11,509 [INFO] Notification: [Clipboard Monitor] Watching clipboard
+2026-05-16 15:57:11,684 [INFO] Clipboard #1: ws://localhost:8766 -> ws:localhost:8766
+2026-05-16 15:57:41,862 [INFO] Clipboard #2: python ~/miner-v/main.py --bridge & -> python miner-vmain.py --bridge
+2026-05-16 15:57:49,392 [INFO] Clipboard #3: ecent call last): File "/home/mastroni/miner-v/main.py", lin -> ecent call last): File "homemastroniminer-vmain.py", line 12
+2026-05-16 15:58:47,150 [INFO] Clipboard #4: file:///home/mastroni/miner-v/mining_bindings.conf -> file:homemastroniminer-vmining_bindings.conf
+2026-05-16 15:58:56,190 [INFO] Clipboard #5: python ~/miner-v/main.py --bridge & -> python miner-vmain.py --bridge
+2026-05-16 15:58:57,691 [INFO] Yomitan Bridge starting on ws://localhost:8766
+2026-05-16 15:59:02,218 [INFO] Clipboard #6: py", line 122, in <module> main() ~~~~^^ File "/home/mastron -> py", line 122, in module main() File "homemastroniminer-vmai
+2026-05-16 15:59:21,457 [INFO] Yomitan Bridge starting on ws://localhost:8766
+2026-05-16 15:59:48,643 [INFO] Yomitan Bridge starting on ws://localhost:8766
+2026-05-16 15:59:48,665 [INFO] server listening on [::1]:8766
+2026-05-16 15:59:48,665 [INFO] server listening on 127.0.0.1:8766
+2026-05-16 15:59:48,665 [INFO] Yomitan Bridge running on ws://localhost:8766
+2026-05-16 16:00:03,098 [INFO] Yomitan Bridge started (ws://localhost:8766)
+2026-05-16 16:00:03,098 [INFO] Yomitan Bridge starting on ws://localhost:8766
+2026-05-16 16:00:08,509 [INFO] Clipboard #7: miner-v main ? Starting Yomitan Bridge on ws://localhost:876 -> miner-v main ? Starting Yomitan Bridge on ws:localhost:8766 
+2026-05-16 16:00:21,643 [INFO] Yomitan Bridge started (ws://localhost:8766)
+2026-05-16 16:00:21,643 [INFO] Yomitan Bridge starting on ws://localhost:8766
+2026-05-16 16:00:21,661 [INFO] server listening on 127.0.0.1:8766
+2026-05-16 16:00:21,661 [INFO] server listening on [::1]:8766
+2026-05-16 16:00:21,661 [INFO] Yomitan Bridge running on ws://localhost:8766
+2026-05-16 16:00:39,656 [INFO] Clipboard #8: ws://localhost:8766 -> ws:localhost:8766
+2026-05-16 16:00:45,183 [INFO] Clipboard #9: This site cant be reached The webpage at ws://localhost:8766 -> This site cant be reached The webpage at ws:localhost:8766 m
+2026-05-16 16:01:14,063 [INFO] Yomitan Bridge starting on ws://localhost:8766
+2026-05-16 16:01:14,080 [INFO] server listening on 127.0.0.1:8766
+2026-05-16 16:01:14,080 [INFO] server listening on [::1]:8766
+2026-05-16 16:01:14,080 [INFO] Yomitan Bridge running on ws://localhost:8766
+2026-05-16 16:01:15,563 [INFO] connection open
+2026-05-16 16:01:15,564 [INFO] Yomitan connected: ('::1', 36262, 0, 0)
+2026-05-16 16:01:15,817 [DEBUG] Building prefix dict from the default dictionary ...
+2026-05-16 16:01:15,817 [DEBUG] Loading model from cache /tmp/jieba.cache
+2026-05-16 16:01:16,425 [DEBUG] Loading model cost 0.608 seconds.
+2026-05-16 16:01:16,425 [DEBUG] Prefix dict has been built successfully.
+2026-05-16 16:01:43,945 [INFO] Clipboard #10: 127...:8766 -> 127...:8766
+2026-05-16 16:01:46,509 [INFO] connection rejected (426 Upgrade Required)
+2026-05-16 16:01:46,512 [ERROR] opening handshake failed
+Traceback (most recent call last):
+  File "/home/mastroni/.local/share/mise/installs/python/3.14.0/lib/python3.14/site-packages/websockets/asyncio/server.py", line 356, in conn_handler
+    await connection.handshake(
+    ...<3 lines>...
+    )
+  File "/home/mastroni/.local/share/mise/installs/python/3.14.0/lib/python3.14/site-packages/websockets/asyncio/server.py", line 207, in handshake
+    raise self.protocol.handshake_exc
+  File "/home/mastroni/.local/share/mise/installs/python/3.14.0/lib/python3.14/site-packages/websockets/server.py", line 140, in accept
+    ) = self.process_request(request)
+        ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/mastroni/.local/share/mise/installs/python/3.14.0/lib/python3.14/site-packages/websockets/server.py", line 235, in process_request
+    raise InvalidUpgrade(
+        "Connection", ", ".join(connection) if connection else None
+    )
+websockets.exceptions.InvalidUpgrade: invalid Connection header: keep-alive
+2026-05-16 16:01:46,779 [INFO] connection rejected (426 Upgrade Required)
+2026-05-16 16:01:46,785 [ERROR] opening handshake failed
+Traceback (most recent call last):
+  File "/home/mastroni/.local/share/mise/installs/python/3.14.0/lib/python3.14/site-packages/websockets/asyncio/server.py", line 356, in conn_handler
+    await connection.handshake(
+    ...<3 lines>...
+    )
+  File "/home/mastroni/.local/share/mise/installs/python/3.14.0/lib/python3.14/site-packages/websockets/asyncio/server.py", line 207, in handshake
+    raise self.protocol.handshake_exc
+  File "/home/mastroni/.local/share/mise/installs/python/3.14.0/lib/python3.14/site-packages/websockets/server.py", line 140, in accept
+    ) = self.process_request(request)
+        ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/mastroni/.local/share/mise/installs/python/3.14.0/lib/python3.14/site-packages/websockets/server.py", line 235, in process_request
+    raise InvalidUpgrade(
+        "Connection", ", ".join(connection) if connection else None
+    )
+websockets.exceptions.InvalidUpgrade: invalid Connection header: keep-alive
+2026-05-16 16:01:51,482 [INFO] Clipboard #11: Failed to open a WebSocket connection: invalid Connection he -> Failed to open a WebSocket connection: invalid Connection he
+2026-05-16 16:03:51,048 [INFO] Yomitan Bridge starting on ws://localhost:8766
+2026-05-16 16:03:51,064 [INFO] server listening on 127.0.0.1:8766
+2026-05-16 16:03:51,064 [INFO] server listening on [::1]:8766
+2026-05-16 16:03:51,064 [INFO] Yomitan Bridge running on ws://localhost:8766
+2026-05-16 16:03:51,746 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5002
+2026-05-16 16:03:51,746 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-16 16:03:52,699 [INFO] 127.0.0.1 - - [16/May/2026 16:03:52] "GET /bridge HTTP/1.1" 200 -
+2026-05-16 16:03:52,791 [INFO] connection open
+2026-05-16 16:03:52,791 [INFO] Yomitan connected: ('::1', 54518, 0, 0)
+2026-05-16 16:03:53,024 [INFO] 127.0.0.1 - - [16/May/2026 16:03:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-16 16:04:04,508 [DEBUG] Building prefix dict from the default dictionary ...
+2026-05-16 16:04:04,509 [DEBUG] Loading model from cache /tmp/jieba.cache
+2026-05-16 16:04:05,145 [DEBUG] Loading model cost 0.637 seconds.
+2026-05-16 16:04:05,145 [DEBUG] Prefix dict has been built successfully.
+2026-05-16 16:11:50,267 [INFO] Captured region: 845,451 613x53
+2026-05-16 16:11:50,775 [INFO] Tesseract pre-warmed (chi_sim)
+2026-05-16 16:11:51,371 [INFO] Mining: 万物图鉴地图背包反馈
+2026-05-16 16:11:52,730 [INFO] Recording audio from: alsa_output.pci-0000_01_00.1.hdmi-stereo.monitor
+2026-05-16 16:11:57,996 [INFO] Audio recording: success
+2026-05-16 16:11:59,836 [DEBUG] Building prefix dict from the default dictionary ...
+2026-05-16 16:11:59,836 [DEBUG] Loading model from cache /tmp/jieba.cache
+2026-05-16 16:12:00,546 [DEBUG] Loading model cost 0.710 seconds.
+2026-05-16 16:12:00,546 [DEBUG] Prefix dict has been built successfully.
+2026-05-16 16:12:00,625 [INFO] Copied to clipboard: 万物图鉴地图背包反馈
+2026-05-16 16:12:00,634 [INFO] Notification: [Sentence Mined] Text: 万物图鉴地图背包反馈
+Translation: Feedback on All Things Illustrated Map Backpack
+Se
+2026-05-16 16:12:01,414 [INFO] Clipboard #12: 万物图鉴地图背包反馈 -> Feedback on All Things Illustrated Map Backpack
